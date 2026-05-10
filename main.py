@@ -11,10 +11,10 @@ from graph.workflow import build_workflow
 
 
 BASE_DIR = Path(__file__).resolve().parent
-ENV_PATH = BASE_DIR / '.env'
+ENV_PATH = BASE_DIR.joinpath('.env').resolve()
 
 
-load_dotenv(dotenv_path=ENV_PATH)
+load_dotenv(dotenv_path=ENV_PATH, override=True)
 
 
 app = FastAPI()
@@ -98,33 +98,47 @@ async def get_response():
 @app.post('/api/v1/config/llm')
 async def configure_llm(request: LLMConfigRequest):
 
-    lines = []
+    env_lines = []
 
     if ENV_PATH.exists():
 
-        with open(ENV_PATH, 'r') as file:
-            lines = file.readlines()
+        with open(ENV_PATH, 'r', encoding='utf-8') as file:
+            env_lines = file.readlines()
 
-    updated = False
+    llm_model_found = False
 
-    for index, line in enumerate(lines):
+    updated_lines = []
 
-        if line.startswith('LLM_MODEL='):
-            lines[index] = f'LLM_MODEL={request.model}\n'
-            updated = True
-            break
+    for line in env_lines:
 
-    if not updated:
-        lines.append(f'LLM_MODEL={request.model}\n')
+        if line.strip().startswith('LLM_MODEL='):
+            updated_lines.append(
+                f'LLM_MODEL={request.model}\n'
+            )
+            llm_model_found = True
+        else:
+            updated_lines.append(line)
 
-    with open(ENV_PATH, 'w') as file:
-        file.writelines(lines)
+    if not llm_model_found:
+        updated_lines.append(
+            f'LLM_MODEL={request.model}\n'
+        )
+
+    with open(ENV_PATH, 'w', encoding='utf-8') as file:
+        file.writelines(updated_lines)
+        file.flush()
 
     os.environ['LLM_MODEL'] = request.model
 
+    load_dotenv(
+        dotenv_path=ENV_PATH,
+        override=True
+    )
+
     return {
         'message': 'LLM model updated successfully',
-        'model': request.model
+        'model': request.model,
+        'env_path': str(ENV_PATH)
     }
 
 
