@@ -1,0 +1,8 @@
+[
+  {"timestamp": "2024-01-15T03:42:18Z", "level": "error", "component": "kubelet", "pod": "api-server-7f8d9b6c4-xj2k9", "namespace": "production", "message": "Container OOMKilled", "reason": "OOMKilled", "exitCode": 137, "restartCount": 5},
+  {"timestamp": "2024-01-15T03:42:19Z", "level": "warning", "component": "kubelet", "pod": "api-server-7f8d9b6c4-xj2k9", "namespace": "production", "message": "Back-off restarting failed container", "reason": "CrashLoopBackOff", "restartCount": 5},
+  {"timestamp": "2024-01-15T03:42:25Z", "level": "error", "component": "scheduler", "pod": "worker-batch-9c7f3a2-m4k8", "namespace": "production", "message": "Failed to schedule pod: insufficient memory", "reason": "FailedScheduling", "availableMemory": "512Mi", "requestedMemory": "2Gi"},
+  {"timestamp": "2024-01-15T03:42:30Z", "level": "error", "component": "kubelet", "pod": "redis-cache-0", "namespace": "production", "message": "Liveness probe failed: connection refused", "reason": "Unhealthy", "probeType": "liveness", "failureCount": 3},
+  {"timestamp": "2024-01-15T03:42:35Z", "level": "warning", "component": "endpoint-controller", "service": "api-gateway", "namespace": "production", "message": "No ready endpoints for service", "readyEndpoints": 0, "totalEndpoints": 3},
+  {"timestamp": "2024-01-15T03:42:40Z", "level": "error", "component": "ingress-controller", "namespace": "production", "message": "Upstream connection timeout", "backend": "api-gateway:8080", "timeout": "60s", "statusCode": 504}
+]

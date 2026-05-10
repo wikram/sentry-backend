@@ -1,0 +1,9 @@
+timestamp,level,service,error_type,message,request_id,user_id
+2024-01-15T03:42:18Z,ERROR,payment-service,ConnectionError,Failed to connect to payment gateway: timeout after 30s,req-a1b2c3,user-1001
+2024-01-15T03:42:20Z,ERROR,payment-service,ConnectionError,Failed to connect to payment gateway: timeout after 30s,req-d4e5f6,user-1002
+2024-01-15T03:42:22Z,ERROR,user-service,DatabaseError,deadlock detected: Process 4523 waits for ShareLock on transaction 98712,req-g7h8i9,user-1003
+2024-01-15T03:42:25Z,WARN,auth-service,RateLimitExceeded,Rate limit exceeded for IP 10.0.3.42: 100 requests/min,req-j1k2l3,
+2024-01-15T03:42:28Z,ERROR,notification-service,SMTPError,Failed to send email: Connection refused to smtp.internal:587,req-m4n5o6,user-1004
+2024-01-15T03:42:30Z,ERROR,inventory-service,CacheError,Redis connection lost: ECONNRESET,req-p7q8r9,
+2024-01-15T03:42:35Z,WARN,api-gateway,CircuitBreakerOpen,Circuit breaker open for payment-service: 5 failures in 60s,req-s1t2u3,user-1005
+2024-01-15T03:42:40Z,ERROR,order-service,ValidationError,Order total mismatch: calculated=99.99 submitted=0.01,req-v4w5x6,user-1006

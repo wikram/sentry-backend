@@ -1,0 +1,1000 @@
+80.94.95.107 - - [09/May/2026:00:00:53 +0000] "POST /sitemap.xml HTTP/1.1" 400 159 "-" "python-requests/2.31.0" 4161ms
+95.214.55.25 - - [09/May/2026:00:01:16 +0000] "POST /contact HTTP/1.1" 500 679 "-" "axios/1.6.8" 1019ms
+May 15 00:02:41 web-prod-01 sshd[10489]: Disconnected from authenticating user root 71.6.135.131 port 18727 [preauth]
+2026/05/09 00:04:20 [warn] 21848#39: *33561 SSL_write() failed (32: Broken pipe) while sending response to client, client: 66.240.192.138
+194.165.16.11 - - [09/May/2026:00:06:01 +0000] "POST /favicon.ico HTTP/1.1" 404 559 "-" "Mozilla/5.0 (X11; Linux x86_64; rv:124.0) Gecko/20100101 Firefox/124.0" 2363ms
+95.214.55.25 - - [09/May/2026:00:07:18 +0000] "POST /about HTTP/1.1" 403 179 "https://shop.example.com/" "Bingbot/2.0 (+http://www.bing.com/bingbot.htm)" 4576ms
+May 15 00:08:58 worker-01 sudo[31955]: pam_unix(sudo:session): session closed for user root
+89.248.167.131 - - [09/May/2026:00:09:31 +0000] "PATCH /api/v1/products HTTP/1.1" 404 353 "https://t.co/abc123" "masscan/1.3 (https://github.com/robertdavidgraham/masscan)" 3264ms
+2026-03-15T00:09:53.000Z	255 backup_user	Query	SELECT TABLE_NAME, TABLE_ROWS FROM information_schema.TABLES WHERE TABLE_SCHEMA = 'ecommerce_db'
+80.94.95.107 - - [09/May/2026:00:10:34 +0000] "PUT / HTTP/1.1" 302 77467 "https://www.bing.com/" "Wget/1.21.4" 1498ms
+2026/05/09 00:10:46 [warn] 20440#17: *91504 FastCGI sent in stderr: "PHP message: PHP Fatal error: Uncaught Error: Call to a member function query() on null" while reading response header from FastCGI upstream, client: 80.94.95.107
+2026/05/09 00:12:17 [error] 22914#14: *64114 invalid header: "198.51.100.22" from upstream, client: 198.51.100.22, server: cdn.example.com
+2026/05/09 00:12:36 [error] 21142#7: *14419 connect() failed (111: Connection refused) while connecting to upstream, client: 91.108.4.10, server: shop.example.com, request: "GET /api/v1/products HTTP/1.1", upstream: "http://127.0.0.1:8080/api/v1/products"
+2026-03-15T00:13:07.000Z	226 backup_user	Query	COMMIT
+May 15 00:14:05 web-prod-01 dockerd[11218]: time="2026-03-15T00:14:05Z" level=info msg="ignoring event" module=libcontainerd namespace=moby topic=/tasks/delete
+2026/05/09 00:14:55 [error] 21655#29: *70807 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 192.0.2.88
+May 15 00:15:49 web-prod-02 kernel[17147]: nf_conntrack: nf_conntrack: table full, dropping packet
+2026/05/09 00:16:14 [warn] 30449#1: *63845 invalid header: "194.165.16.11" from upstream, client: 194.165.16.11, server: cdn.example.com
+May 15 00:17:48 cache-01 kernel[15218]: SCSI error: return code = 0x08000002
+89.248.167.131 - - [09/May/2026:00:19:18 +0000] "POST /index.html HTTP/1.1" 200 13720 "https://shop.example.com/products" "Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 Mobile Safari/537.36" 4318ms
+91.108.4.10 - - [09/May/2026:00:19:54 +0000] "POST /checkout HTTP/1.1" 200 34245 "-" "zgrab/0.x" 4464ms
+May 15 00:20:13 worker-01 postfix/smtpd[18426]: connect from unknown[172.67.68.10]
+37.19.221.13 - - [09/May/2026:00:21:36 +0000] "GET /about HTTP/1.1" 405 200 "https://reddit.com/r/deals" "libwww-perl/6.72" 4164ms
+2026-03-15T00:21:51.000Z	277 backup_user	Field List	reviews
+May 15 00:23:07 worker-01 kernel[14652]: SCSI error: return code = 0x08000002
+May 15 00:24:18 cache-01 systemd[8330]: Started mysql.service - MySQL Community Server.
+May 15 00:25:07 web-prod-01 kernel[9702]: TCP: request_sock_TCP: Possible SYN flooding on port 443. Sending cookies. Check SNMP counters.
+2026/05/09 00:25:30 [error] 18812#3: *84157 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 162.55.36.149, server: shop.example.com, upstream: "http://127.0.0.1:8080"
+89.248.167.131 - - [09/May/2026:00:25:52 +0000] "GET / HTTP/1.1" 200 72741 "-" "Wget/1.21.4" 3427ms
+May 15 00:26:09 web-prod-01 cron[7611]: (root) CMD (/usr/bin/find /tmp -mtime +7 -delete)
+37.19.221.13 - - [09/May/2026:00:27:26 +0000] "OPTIONS /wp-admin/ HTTP/1.1" 403 606 "https://reddit.com/r/deals" "masscan/1.3 (https://github.com/robertdavidgraham/masscan)" 4477ms
+91.108.4.10 - - [09/May/2026:00:28:17 +0000] "OPTIONS /api/v1/products HTTP/1.1" 201 45804 "-" "Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 Mobile Safari/537.36" 450ms
+162.55.36.149 - - [09/May/2026:00:28:38 +0000] "PUT /.env HTTP/1.1" 502 618 "https://www.google.com/" "Googlebot/2.1 (+http://www.google.com/bot.html)" 5498ms
+167.94.138.52 - - [09/May/2026:00:30:18 +0000] "GET / HTTP/1.1" 200 47978 "https://shop.example.com/" "-" 2699ms
+2026/05/09 00:31:01 [error] 20988#49: *11995 client intended to send too large body: 20971520 bytes, client: 198.51.100.22, server: api.example.com
+May 15 00:32:17 worker-01 sudo[3941]: deploy : TTY=pts/0 ; PWD=/var/www/app ; USER=root ; COMMAND=/usr/bin/npm run migrate
+May 15 00:34:01 db-master systemd[28370]: app.service: Main process exited, code=exited, status=1/FAILURE
+2026-03-15T00:34:23.000Z	248 replicator	Query	SELECT * FROM users WHERE email = 'john.doe@email.com' LIMIT 1
+May 15 00:35:37 cache-01 sudo[3164]: pam_unix(sudo:session): session opened for user root by deploy(uid=1001)
+2026-03-15T00:37:27.000Z	232 reporting	Connect	reporting@localhost on ecommerce_db using TCP/IP
+2026-03-15T00:38:41.000Z	266 admin	Query	SELECT id FROM products WHERE stock < 10 AND active = 1
+167.94.138.52 - - [09/May/2026:00:39:18 +0000] "POST /../../../etc/passwd HTTP/1.1" 206 35463 "https://www.google.com/" "python-requests/2.31.0" 3174ms
+May 15 00:39:39 web-prod-02 cron[20771]: (root) CMD (/usr/local/bin/backup-db.sh >> /var/log/backup.log 2>&1)
+172.67.68.10 - - [09/May/2026:00:40:44 +0000] "GET /images/banner.jpg HTTP/1.1" 404 446 "https://www.google.com/" "Mozilla/5.0 (iPhone; CPU iPhone OS 17_4 like Mac OS X) AppleWebKit/605.1.15 Mobile/15E148 Safari/604.1" 3267ms
+2026/05/09 00:42:27 [error] 22784#10: *48278 open() "/var/www/html/blog/how-to-setup-linux" failed (2: No such file or directory), client: 203.0.113.5, server: api.example.com
+May 15 00:42:45 web-prod-01 cron[9169]: (root) CMD (/usr/bin/apt-get -q -y --no-show-upgraded autoclean)
+May 15 00:43:03 worker-01 cron[30881]: (deploy) CMD (/var/www/app/scripts/send-digest-email.sh)
+2026-03-15T00:44:37.000Z	270 readonly	Init DB	ecommerce_db
+91.108.4.10 - - [09/May/2026:00:45:59 +0000] "POST /images/banner.jpg HTTP/1.1" 200 48524 "-" "python-requests/2.31.0" 2121ms
+May 15 00:47:46 cache-01 kernel[12082]: usb 1-1: USB disconnect, device number 2
+2026/05/09 00:48:37 [crit] 25508#63: *1023 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 203.0.113.5, server: blog.example.com, upstream: "http://127.0.0.1:8080"
+May 15 00:49:56 web-prod-02 kernel[18116]: TCP: request_sock_TCP: Possible SYN flooding on port 80. Sending cookies. Check SNMP counters.
+162.55.36.149 - - [09/May/2026:00:50:24 +0000] "GET /checkout HTTP/1.1" 200 51116 "-" "axios/1.6.8" 2142ms
+66.240.192.138 - - [09/May/2026:00:50:37 +0000] "GET /api/v1/search?q=laptop HTTP/1.1" 301 69230 "https://www.google.com/" "-" 1928ms
+95.214.55.25 - - [09/May/2026:00:50:52 +0000] "POST /wp-login.php HTTP/1.1" 200 33969 "https://shop.example.com/" "zgrab/0.x" 1871ms
+2026-03-15T00:51:33.000Z	250 readonly	Connect	readonly@10.0.0.2 on ecommerce_db using TCP/IP
+2026/05/09 00:52:10 [error] 19664#14: *82736 client intended to send too large body: 20971520 bytes, client: 167.94.138.52, server: blog.example.com
+May 15 00:52:45 cache-01 sshd[31209]: Connection closed by 194.165.16.11 port 19593
+45.142.212.100 - - [09/May/2026:00:53:21 +0000] "DELETE /sitemap.xml HTTP/1.1" 200 58240 "-" "Mozilla/5.0 (iPhone; CPU iPhone OS 17_4 like Mac OS X) AppleWebKit/605.1.15 Mobile/15E148 Safari/604.1" 1391ms
+2026/05/09 00:53:43 [error] 28387#27: *50824 SSL_do_handshake() failed (SSL: error:14094418:SSL routines:ssl3_read_bytes:tlsv1 alert unknown ca) while SSL handshaking, client: 162.55.36.149
+192.0.2.88 - - [09/May/2026:00:54:50 +0000] "POST /phpmyadmin/ HTTP/1.1" 200 42626 "-" "Go-http-client/2.0" 2988ms
+95.214.55.25 - - [09/May/2026:00:56:22 +0000] "GET /products HTTP/1.1" 429 163 "-" "python-requests/2.31.0" 2110ms
+2026/05/09 00:57:51 [warn] 11428#34: *98837 could not be resolved (3: Host not found), client: 104.21.44.80, server: api.example.com
+May 15 00:58:38 worker-01 sudo[8663]: deploy : TTY=pts/0 ; PWD=/var/www/app ; USER=root ; COMMAND=/bin/systemctl restart app.service
+2026/05/09 01:00:07 [crit] 29520#11: *68093 limiting connections by zone "conn_limit_per_ip", excess: 1 by zone "conn_limit_per_ip", client: 194.165.16.11
+45.142.212.100 - - [09/May/2026:01:01:55 +0000] "GET /api/v1/orders/history HTTP/1.1" 304 42947 "-" "zgrab/0.x" 1321ms
+162.55.36.149 - - [09/May/2026:01:02:16 +0000] "POST /phpmyadmin/ HTTP/1.1" 200 30946 "https://t.co/abc123" "zgrab/0.x" 1093ms
+194.165.16.11 - - [09/May/2026:01:03:47 +0000] "POST /sitemap.xml HTTP/1.1" 200 34372 "https://www.google.com/" "libwww-perl/6.72" 1636ms
+194.165.16.11 - - [09/May/2026:01:04:22 +0000] "HEAD /api/v1/auth/register HTTP/1.1" 200 8744 "https://www.google.com/" "Wget/1.21.4" 3249ms
+2026-03-15T01:05:38.000Z	213 app_user	Query	INSERT INTO orders (user_id, total, status, created_at) VALUES (7779, 915.22, 'pending', NOW())
+194.165.16.11 - - [09/May/2026:01:06:27 +0000] "HEAD /checkout HTTP/1.1" 200 10095 "-" "Java/17.0.10" 3054ms
+89.248.167.131 - - [09/May/2026:01:07:36 +0000] "POST /api/v1/wishlist HTTP/1.1" 200 28777 "https://shop.example.com/" "Scrapy/2.11.1 (+https://scrapy.org)" 311ms
+198.51.100.22 - - [09/May/2026:01:08:06 +0000] "PATCH /api/v1/auth/logout HTTP/1.1" 429 111 "https://shop.example.com/" "zgrab/0.x" 2685ms
+89.248.167.131 - - [09/May/2026:01:08:41 +0000] "OPTIONS /api/v1/orders/history HTTP/1.1" 301 8543 "https://shop.example.com/products" "Mozilla/5.0 (iPhone; CPU iPhone OS 17_4 like Mac OS X) AppleWebKit/605.1.15 Mobile/15E148 Safari/604.1" 3348ms
+66.240.192.138 - - [09/May/2026:01:10:17 +0000] "GET /blog/how-to-setup-linux HTTP/1.1" 201 37382 "https://shop.example.com/products" "Googlebot/2.1 (+http://www.google.com/bot.html)" 5475ms
+2026/05/09 01:10:35 [notice] 21920#26: *52213 could not be resolved (3: Host not found), client: 167.94.138.52, server: api.example.com
+2026/05/09 01:11:13 [notice] 12965#52: *76732 SSL_do_handshake() failed (SSL: error:14094418:SSL routines:ssl3_read_bytes:tlsv1 alert unknown ca) while SSL handshaking, client: 203.0.113.5
+45.142.212.100 - - [09/May/2026:01:13:03 +0000] "GET /.git/config HTTP/1.1" 200 75336 "https://reddit.com/r/deals" "Scrapy/2.11.1 (+https://scrapy.org)" 5102ms
+80.94.95.107 - - [09/May/2026:01:13:36 +0000] "GET /products HTTP/1.1" 200 50546 "https://www.bing.com/" "python-requests/2.31.0" 4023ms
+198.51.100.22 - - [09/May/2026:01:14:04 +0000] "HEAD /.env HTTP/1.1" 200 81559 "https://www.google.com/" "curl/8.6.0" 5642ms
+51.77.135.89 - - [09/May/2026:01:15:35 +0000] "GET /.git/config HTTP/1.1" 304 20760 "-" "Scrapy/2.11.1 (+https://scrapy.org)" 3147ms
+May 15 01:16:06 web-prod-01 sshd[11623]: pam_unix(sshd:session): session opened for user deploy by (uid=0)
+May 15 01:17:20 cache-01 dockerd[16506]: time="2026-03-15T01:17:20Z" level=warning msg="Container exited with non-zero code" container=worker-3 exitCode=137
+149.28.200.120 - - [09/May/2026:01:17:38 +0000] "GET /api/v1/wishlist HTTP/1.1" 404 212 "https://t.co/abc123" "Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 Mobile Safari/537.36" 1591ms
+May 15 01:18:26 web-prod-01 cron[30377]: (root) CMD (/usr/bin/certbot renew --quiet >> /var/log/certbot.log 2>&1)
+May 15 01:20:04 web-prod-02 cron[18390]: (root) CMD (/usr/bin/find /tmp -mtime +7 -delete)
+2026/05/09 01:21:03 [error] 24492#30: *24167 upstream prematurely closed connection while reading response header from upstream, client: 71.6.135.131
+2026-03-15T01:21:52.000Z	240 reporting	Statistics	
+2026/05/09 01:23:22 [error] 14326#63: *30787 upstream prematurely closed connection while reading response header from upstream, client: 95.214.55.25
+2026/05/09 01:23:36 [error] 27140#46: *71007 limiting connections by zone "conn_limit_per_ip", excess: 1 by zone "conn_limit_per_ip", client: 198.51.100.22
+2026/05/09 01:25:02 [notice] 25561#21: *18661 connect() failed (111: Connection refused) while connecting to upstream, client: 167.94.138.52, server: blog.example.com, request: "GET /api/v1/products HTTP/1.1", upstream: "http://127.0.0.1:8080/api/v1/products"
+80.94.95.107 - - [09/May/2026:01:26:44 +0000] "GET /blog/how-to-setup-linux HTTP/1.1" 201 34884 "https://reddit.com/r/deals" "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4 Safari/605.1.15" 99ms
+May 15 01:27:40 worker-01 dockerd[30606]: time="2026-03-15T01:27:40Z" level=warning msg="Container exited with non-zero code" container=worker-17 exitCode=137
+95.214.55.25 - - [09/May/2026:01:29:14 +0000] "GET /contact HTTP/1.1" 503 589 "-" "-" 5865ms
+May 15 01:30:14 web-prod-01 dockerd[4449]: time="2026-03-15T01:30:14Z" level=warning msg="Container exited with non-zero code" container=worker-9 exitCode=137
+91.108.4.10 - - [09/May/2026:01:31:03 +0000] "GET /api/v1/search?q=laptop HTTP/1.1" 500 307 "https://www.google.com/" "Bingbot/2.0 (+http://www.bing.com/bingbot.htm)" 1309ms
+May 15 01:32:04 cache-01 dockerd[23859]: time="2026-03-15T01:32:04Z" level=info msg="ignoring event" module=libcontainerd namespace=moby topic=/tasks/delete
+172.67.68.10 - - [09/May/2026:01:32:36 +0000] "GET /about HTTP/1.1" 404 169 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4 Safari/605.1.15" 6040ms
+May 15 01:34:03 worker-01 sudo[30963]: pam_unix(sudo:session): session closed for user root
+2026/05/09 01:34:27 [error] 10685#45: *34646 limiting requests, excess: 8.560 by zone "api_rate_limit", client: 91.108.4.10
+2026-03-15T01:36:10.000Z	279 reporting	Query	SELECT u.email, u.name, o.total FROM users u JOIN orders o ON u.id = o.user_id WHERE o.status = 'pending'
+2026-03-15T01:37:06.000Z	273 admin	Query	SELECT p.name, p.price, r.rating, r.comment FROM products p LEFT JOIN reviews r ON p.id = r.product_id WHERE p.id = 2792
+2026/05/09 01:38:55 [warn] 16046#64: *78667 SSL_do_handshake() failed (SSL: error:14094418:SSL routines:ssl3_read_bytes:tlsv1 alert unknown ca) while SSL handshaking, client: 198.51.100.22
+May 15 01:39:40 db-master kernel[4601]: SCSI error: return code = 0x08000002
+2026/05/09 01:40:39 [warn] 26422#22: *50716 invalid header: "91.108.4.10" from upstream, client: 91.108.4.10, server: api.example.com
+2026-03-15T01:41:49.000Z	219 replicator	Field List	users
+2026/05/09 01:43:15 [crit] 17796#25: *36059 limiting requests, excess: 8.560 by zone "api_rate_limit", client: 194.165.16.11
+2026-03-15T01:43:46.000Z	220 readonly	Connect	readonly@10.0.0.3 on ecommerce_db using TCP/IP
+2026/05/09 01:44:11 [error] 19899#39: *58006 limiting requests, excess: 8.560 by zone "api_rate_limit", client: 45.142.212.100
+May 15 01:44:36 web-prod-02 dockerd[14075]: time="2026-03-15T01:44:36Z" level=info msg="Container started" container=web-19 image=nginx:alpine
+May 15 01:46:23 worker-01 systemd[15873]: Started mysql.service - MySQL Community Server.
+2026/05/09 01:48:01 [warn] 13485#5: *33928 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 45.142.212.100
+May 15 01:48:33 web-prod-01 dockerd[16588]: time="2026-03-15T01:48:33Z" level=warning msg="Container exited with non-zero code" container=worker-12 exitCode=137
+2026/05/09 01:50:06 [error] 10436#10: *55864 open() "/var/www/html/robots.txt" failed (2: No such file or directory), client: 198.51.100.22, server: api.example.com
+162.55.36.149 - - [09/May/2026:01:51:32 +0000] "POST /shell.php HTTP/1.1" 200 51625 "-" "python-requests/2.31.0" 3790ms
+2026-03-15T01:52:00.000Z	218 admin	Query	ROLLBACK
+37.19.221.13 - - [09/May/2026:01:52:28 +0000] "GET /blog/10-best-gadgets-2026 HTTP/1.1" 204 24614 "https://www.bing.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" 3950ms
+2026/05/09 01:53:25 [error] 30426#11: *87411 SSL_do_handshake() failed (SSL: error:14094418:SSL routines:ssl3_read_bytes:tlsv1 alert unknown ca) while SSL handshaking, client: 194.165.16.11
+May 15 01:54:15 web-prod-01 fail2ban.actions[28240]: Ban 51.77.135.89
+May 15 01:55:18 worker-01 sudo[26823]: pam_unix(sudo:session): session opened for user root by deploy(uid=1001)
+2026-03-15T01:55:37.000Z	263 readonly	Query	SHOW PROCESSLIST
+May 15 01:56:48 db-master fail2ban.actions[23149]: Unban 71.6.135.131
+95.214.55.25 - - [09/May/2026:01:57:27 +0000] "PUT /favicon.ico HTTP/1.1" 301 69133 "https://www.bing.com/" "python-requests/2.31.0" 4544ms
+2026-03-15T01:58:34.000Z	237 admin	Query	INSERT INTO audit_log (user_id, action, ip_address, created_at) VALUES (8090, 'LOGIN', '104.21.44.80', NOW())
+May 15 01:59:50 cache-01 fail2ban.actions[24369]: Ban 172.67.68.10
+198.51.100.22 - - [09/May/2026:02:01:19 +0000] "PUT /api/v1/payments/intent HTTP/1.1" 503 797 "-" "python-requests/2.31.0" 684ms
+2026-03-15T02:02:56.000Z	253 app_user	Query	SELECT id FROM products WHERE stock < 10 AND active = 1
+2026/05/09 02:04:38 [error] 10668#56: *75230 invalid header: "162.55.36.149" from upstream, client: 162.55.36.149, server: api.example.com
+May 15 02:04:56 web-prod-01 postfix/smtpd[31101]: connect from unknown[37.19.221.13]
+May 15 02:06:02 web-prod-01 sudo[5226]: ubuntu : TTY=pts/1 ; PWD=/home/ubuntu ; USER=root ; COMMAND=/usr/bin/tail -n 100 /var/log/nginx/error.log
+May 15 02:07:44 db-master sshd[1373]: pam_unix(sshd:session): session closed for user deploy
+2026/05/09 02:08:56 [warn] 15374#54: *63516 open() "/var/www/html/phpmyadmin/" failed (2: No such file or directory), client: 45.142.212.100, server: blog.example.com
+71.6.135.131 - - [09/May/2026:02:09:42 +0000] "PUT /api/v1/payments/intent HTTP/1.1" 200 79656 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" 5950ms
+2026/05/09 02:11:10 [warn] 22327#30: *60148 limiting requests, excess: 8.560 by zone "api_rate_limit", client: 167.94.138.52
+162.55.36.149 - - [09/May/2026:02:12:03 +0000] "HEAD /about HTTP/1.1" 200 18687 "https://www.bing.com/" "Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 Mobile Safari/537.36" 4690ms
+37.19.221.13 - - [09/May/2026:02:13:25 +0000] "POST /.env HTTP/1.1" 200 30925 "https://shop.example.com/products" "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4 Safari/605.1.15" 2540ms
+May 15 02:14:36 worker-01 postfix/smtpd[3873]: warning: unknown[91.108.4.10]: SASL LOGIN authentication failed: authentication failure
+May 15 02:15:34 cache-01 systemd[31232]: app.service: Start request repeated too quickly.
+May 15 02:16:48 db-master cron[15642]: (deploy) CMD (/var/www/app/scripts/send-digest-email.sh)
+51.77.135.89 - - [09/May/2026:02:18:16 +0000] "POST /products/laptop HTTP/1.1" 403 618 "https://t.co/abc123" "curl/8.6.0" 3225ms
+172.67.68.10 - - [09/May/2026:02:18:48 +0000] "HEAD /robots.txt HTTP/1.1" 200 72711 "https://www.bing.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4 Safari/605.1.15" 232ms
+37.19.221.13 - - [09/May/2026:02:20:05 +0000] "PATCH /api/v1/auth/register HTTP/1.1" 403 405 "-" "libwww-perl/6.72" 4836ms
+2026/05/09 02:21:17 [error] 25771#49: *23095 client intended to send too large body: 20971520 bytes, client: 104.21.44.80, server: api.example.com
+May 15 02:21:47 web-prod-02 systemd[8227]: Reached target multi-user.target - Multi-User System.
+2026/05/09 02:23:00 [crit] 11858#24: *94549 client intended to send too large body: 20971520 bytes, client: 185.220.101.34, server: api.example.com
+2026/05/09 02:23:30 [error] 15101#4: *36534 upstream prematurely closed connection while reading response header from upstream, client: 185.180.143.49
+45.142.212.100 - - [09/May/2026:02:24:24 +0000] "POST /xmlrpc.php HTTP/1.1" 200 20352 "https://www.google.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4 Safari/605.1.15" 4211ms
+37.19.221.13 - - [09/May/2026:02:25:47 +0000] "GET /sitemap.xml HTTP/1.1" 204 34528 "-" "axios/1.6.8" 1960ms
+167.94.138.52 - - [09/May/2026:02:26:48 +0000] "DELETE /static/js/bundle.min.js HTTP/1.1" 200 84111 "https://reddit.com/r/deals" "libwww-perl/6.72" 136ms
+149.28.200.120 - - [09/May/2026:02:27:43 +0000] "OPTIONS /shell.php HTTP/1.1" 200 24605 "-" "zgrab/0.x" 2954ms
+91.108.4.10 - - [09/May/2026:02:28:47 +0000] "OPTIONS /shell.php HTTP/1.1" 405 335 "https://www.google.com/" "curl/8.6.0" 5834ms
+May 15 02:30:15 worker-01 cron[5490]: (root) CMD (/usr/bin/certbot renew --quiet >> /var/log/certbot.log 2>&1)
+203.0.113.5 - - [09/May/2026:02:30:38 +0000] "PUT /api/v1/search?q=laptop HTTP/1.1" 200 74060 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4 Safari/605.1.15" 3012ms
+2026-03-15T02:32:19.000Z	266 app_user	Init DB	ecommerce_db
+May 15 02:33:12 db-master dockerd[1840]: time="2026-03-15T02:33:12Z" level=info msg="ignoring event" module=libcontainerd namespace=moby topic=/tasks/delete
+203.0.113.5 - - [09/May/2026:02:33:57 +0000] "POST /robots.txt HTTP/1.1" 502 196 "-" "curl/8.6.0" 5879ms
+2026-03-15T02:34:43.000Z	214 app_user	Query	SELECT * FROM users WHERE email = 'john.doe@email.com' LIMIT 1
+80.94.95.107 - - [09/May/2026:02:35:24 +0000] "OPTIONS /.env HTTP/1.1" 403 530 "-" "Java/17.0.10" 4895ms
+2026/05/09 02:36:26 [notice] 20979#56: *74980 SSL_write() failed (32: Broken pipe) while sending response to client, client: 198.51.100.22
+2026-03-15T02:37:29.000Z	231 replicator	Connect	replicator@localhost on ecommerce_db using TCP/IP
+2026-03-15T02:38:22.000Z	217 replicator	Query	INSERT INTO orders (user_id, total, status, created_at) VALUES (6506, 811.17, 'pending', NOW())
+89.248.167.131 - - [09/May/2026:02:38:38 +0000] "POST /about HTTP/1.1" 401 202 "https://reddit.com/r/deals" "Mozilla/5.0 (iPhone; CPU iPhone OS 17_4 like Mac OS X) AppleWebKit/605.1.15 Mobile/15E148 Safari/604.1" 2057ms
+95.214.55.25 - - [09/May/2026:02:38:51 +0000] "GET /api/v1/orders HTTP/1.1" 200 8158 "https://www.bing.com/" "Java/17.0.10" 4873ms
+185.180.143.49 - - [09/May/2026:02:39:13 +0000] "GET /static/js/bundle.min.js HTTP/1.1" 201 75923 "https://www.google.com/" "Wget/1.21.4" 2366ms
+2026-03-15T02:40:59.000Z	228 reporting	Statistics	
+2026/05/09 02:42:09 [notice] 20174#4: *32752 SSL_do_handshake() failed (SSL: error:14094418:SSL routines:ssl3_read_bytes:tlsv1 alert unknown ca) while SSL handshaking, client: 66.240.192.138
+2026/05/09 02:42:45 [error] 15318#31: *43461 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 149.28.200.120
+162.55.36.149 - - [09/May/2026:02:43:59 +0000] "OPTIONS /api/v1/orders HTTP/1.1" 304 9005 "https://t.co/abc123" "Scrapy/2.11.1 (+https://scrapy.org)" 4968ms
+2026/05/09 02:45:35 [crit] 13579#29: *89822 could not be resolved (3: Host not found), client: 198.51.100.22, server: cdn.example.com
+2026-03-15T02:46:40.000Z	278 admin	Statistics	
+80.94.95.107 - - [09/May/2026:02:48:12 +0000] "PATCH /checkout HTTP/1.1" 200 65508 "https://shop.example.com/products" "Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 Mobile Safari/537.36" 3261ms
+May 15 02:48:59 cache-01 dockerd[12554]: time="2026-03-15T02:48:59Z" level=error msg="Handler for DELETE /v1.43/containers/e020f6711cec returned error: removal of container e020f6711cec is already in progress"
+May 15 02:49:59 web-prod-01 fail2ban.actions[28464]: Ban 71.6.135.131
+2026/05/09 02:51:17 [error] 29487#45: *60384 connect() failed (111: Connection refused) while connecting to upstream, client: 149.28.200.120, server: cdn.example.com, request: "GET /api/v1/products HTTP/1.1", upstream: "http://127.0.0.1:8080/api/v1/products"
+2026/05/09 02:52:36 [error] 31251#20: *25669 open() "/var/www/html/config.php" failed (2: No such file or directory), client: 194.165.16.11, server: shop.example.com
+May 15 02:53:39 worker-01 sudo[11422]: ubuntu : TTY=pts/1 ; PWD=/home/ubuntu ; USER=root ; COMMAND=/usr/bin/tail -n 100 /var/log/nginx/error.log
+149.28.200.120 - - [09/May/2026:02:54:17 +0000] "PUT /api/v1/payments/intent HTTP/1.1" 200 46542 "https://shop.example.com/products" "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4 Safari/605.1.15" 4673ms
+203.0.113.5 - - [09/May/2026:02:54:30 +0000] "GET /products/phone HTTP/1.1" 400 115 "https://www.google.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" 5478ms
+2026-03-15T02:55:04.000Z	273 readonly	Query	CALL sp_calculate_shipping(6736, 'US', 'CA')
+149.28.200.120 - - [09/May/2026:02:56:53 +0000] "GET /shell.php HTTP/1.1" 302 61528 "-" "zgrab/0.x" 5026ms
+2026-03-15T02:58:28.000Z	235 readonly	Connect	readonly@10.0.0.3 on ecommerce_db using TCP/IP
+2026-03-15T02:58:48.000Z	206 readonly	Query	COMMIT
+194.165.16.11 - - [09/May/2026:02:59:30 +0000] "POST /api/v1/auth/login HTTP/1.1" 200 1057 "https://shop.example.com/products" "Googlebot/2.1 (+http://www.google.com/bot.html)" 3735ms
+162.55.36.149 - - [09/May/2026:03:00:59 +0000] "POST /checkout HTTP/1.1" 200 54447 "https://t.co/abc123" "masscan/1.3 (https://github.com/robertdavidgraham/masscan)" 2537ms
+194.165.16.11 - - [09/May/2026:03:01:13 +0000] "GET / HTTP/1.1" 503 397 "https://shop.example.com/" "-" 3249ms
+2026/05/09 03:01:39 [error] 14039#55: *47038 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 104.21.44.80
+2026/05/09 03:02:40 [error] 11144#36: *88067 connect() failed (111: Connection refused) while connecting to upstream, client: 91.108.4.10, server: cdn.example.com, request: "GET /api/v1/products HTTP/1.1", upstream: "http://127.0.0.1:8080/api/v1/products"
+194.165.16.11 - - [09/May/2026:03:03:11 +0000] "POST /api/v1/products HTTP/1.1" 400 553 "-" "axios/1.6.8" 3831ms
+2026/05/09 03:04:10 [warn] 16817#39: *63384 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 172.67.68.10
+2026-03-15T03:04:51.000Z	275 admin	Init DB	ecommerce_db
+80.94.95.107 - - [09/May/2026:03:05:30 +0000] "OPTIONS /.env HTTP/1.1" 200 74657 "-" "Googlebot/2.1 (+http://www.google.com/bot.html)" 1193ms
+2026/05/09 03:06:31 [warn] 13570#9: *74661 SSL_do_handshake() failed (SSL: error:14094418:SSL routines:ssl3_read_bytes:tlsv1 alert unknown ca) while SSL handshaking, client: 192.0.2.88
+2026-03-15T03:08:20.000Z	228 admin	Query	INSERT INTO search_logs (query, user_id, results_count, created_at) VALUES ('wireless headphones', 2067, 42, NOW())
+80.94.95.107 - - [09/May/2026:03:09:52 +0000] "PUT /robots.txt HTTP/1.1" 504 522 "https://www.google.com/" "libwww-perl/6.72" 211ms
+172.67.68.10 - - [09/May/2026:03:10:55 +0000] "GET /api/v1/payments/intent HTTP/1.1" 404 324 "https://shop.example.com/products" "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4 Safari/605.1.15" 5842ms
+89.248.167.131 - - [09/May/2026:03:11:12 +0000] "GET /.env HTTP/1.1" 404 140 "-" "Googlebot/2.1 (+http://www.google.com/bot.html)" 4529ms
+194.165.16.11 - - [09/May/2026:03:12:36 +0000] "POST /api/v1/reviews HTTP/1.1" 200 377 "-" "Googlebot/2.1 (+http://www.google.com/bot.html)" 921ms
+2026-03-15T03:14:02.000Z	240 readonly	Query	SELECT TABLE_NAME, TABLE_ROWS FROM information_schema.TABLES WHERE TABLE_SCHEMA = 'ecommerce_db'
+2026-03-15T03:15:49.000Z	254 replicator	Connect	replicator@10.0.0.3 on ecommerce_db using TCP/IP
+May 15 03:17:30 worker-01 systemd[7202]: nginx.service: Reloading.
+2026-03-15T03:19:03.000Z	261 readonly	Init DB	ecommerce_db
+May 15 03:19:32 web-prod-02 systemd[8889]: mysql.service: Deactivated successfully.
+May 15 03:20:46 web-prod-01 cron[23990]: (root) CMD (/usr/bin/certbot renew --quiet >> /var/log/certbot.log 2>&1)
+2026-03-15T03:22:32.000Z	262 readonly	Quit	
+167.94.138.52 - - [09/May/2026:03:22:55 +0000] "PATCH /index.html HTTP/1.1" 405 504 "https://shop.example.com/" "Googlebot/2.1 (+http://www.google.com/bot.html)" 1193ms
+May 15 03:23:30 web-prod-01 cron[11704]: (root) CMD (/usr/bin/apt-get -q -y --no-show-upgraded autoclean)
+2026/05/09 03:23:48 [error] 19816#11: *19597 could not be resolved (3: Host not found), client: 91.108.4.10, server: cdn.example.com
+80.94.95.107 - - [09/May/2026:03:24:20 +0000] "GET /phpmyadmin/ HTTP/1.1" 301 25260 "-" "Scrapy/2.11.1 (+https://scrapy.org)" 1793ms
+89.248.167.131 - - [09/May/2026:03:24:36 +0000] "PUT /../../../etc/passwd HTTP/1.1" 404 531 "https://t.co/abc123" "Mozilla/5.0 (X11; Linux x86_64; rv:124.0) Gecko/20100101 Firefox/124.0" 2779ms
+45.142.212.100 - - [09/May/2026:03:24:49 +0000] "POST /api/v1/reviews HTTP/1.1" 403 456 "https://t.co/abc123" "python-requests/2.31.0" 4654ms
+2026/05/09 03:25:11 [warn] 30503#20: *53607 upstream prematurely closed connection while reading response header from upstream, client: 66.240.192.138
+2026-03-15T03:25:33.000Z	273 replicator	Statistics	
+149.28.200.120 - - [09/May/2026:03:26:28 +0000] "PATCH /products/laptop HTTP/1.1" 200 76150 "https://shop.example.com/products" "-" 3052ms
+2026/05/09 03:27:26 [error] 13743#30: *24658 limiting connections by zone "conn_limit_per_ip", excess: 1 by zone "conn_limit_per_ip", client: 149.28.200.120
+2026-03-15T03:29:13.000Z	267 reporting	Query	SELECT * FROM users WHERE email = 'john.doe@email.com' LIMIT 1
+May 15 03:30:34 worker-01 sudo[23265]: pam_unix(sudo:session): session closed for user root
+71.6.135.131 - - [09/May/2026:03:31:10 +0000] "OPTIONS /contact HTTP/1.1" 201 31301 "-" "Scrapy/2.11.1 (+https://scrapy.org)" 391ms
+89.248.167.131 - - [09/May/2026:03:31:23 +0000] "DELETE /wp-admin/ HTTP/1.1" 503 189 "-" "python-requests/2.31.0" 5093ms
+May 15 03:33:08 db-master fail2ban.actions[9376]: Ban 172.67.68.10
+172.67.68.10 - - [09/May/2026:03:33:52 +0000] "HEAD /phpmyadmin/ HTTP/1.1" 200 2996 "-" "Mozilla/5.0 (iPhone; CPU iPhone OS 17_4 like Mac OS X) AppleWebKit/605.1.15 Mobile/15E148 Safari/604.1" 4003ms
+May 15 03:34:37 worker-01 postfix/smtpd[29685]: NOQUEUE: reject: RCPT from unknown[45.142.212.100]: 554 5.7.1 Service unavailable; Client host [45.142.212.100] blocked using zen.spamhaus.org
+May 15 03:36:11 cache-01 dockerd[29607]: time="2026-03-15T03:36:11Z" level=info msg="ignoring event" module=libcontainerd namespace=moby topic=/tasks/delete
+2026/05/09 03:37:03 [error] 10672#32: *61215 upstream prematurely closed connection while reading response header from upstream, client: 203.0.113.5
+2026/05/09 03:38:35 [error] 26384#34: *47770 upstream prematurely closed connection while reading response header from upstream, client: 80.94.95.107
+May 15 03:39:54 web-prod-01 sudo[26372]: pam_unix(sudo:session): session closed for user root
+66.240.192.138 - - [09/May/2026:03:40:50 +0000] "GET /images/banner.jpg HTTP/1.1" 503 593 "https://www.google.com/" "Scrapy/2.11.1 (+https://scrapy.org)" 4131ms
+172.67.68.10 - - [09/May/2026:03:41:32 +0000] "OPTIONS /admin/ HTTP/1.1" 201 58644 "-" "Googlebot/2.1 (+http://www.google.com/bot.html)" 3249ms
+2026-03-15T03:42:59.000Z	273 backup_user	Query	UPDATE cart SET quantity = 5579 WHERE user_id = 1205 AND product_id = 3117
+2026/05/09 03:44:25 [warn] 21697#55: *95529 FastCGI sent in stderr: "PHP message: PHP Fatal error: Uncaught Error: Call to a member function query() on null" while reading response header from FastCGI upstream, client: 45.142.212.100
+May 15 03:45:39 db-master sshd[21527]: Received disconnect from 104.21.44.80 port 20784: 11: disconnected by user
+71.6.135.131 - - [09/May/2026:03:46:00 +0000] "GET / HTTP/1.1" 401 430 "https://shop.example.com/" "python-requests/2.31.0" 230ms
+2026-03-15T03:46:53.000Z	222 app_user	Connect	app_user@10.0.0.2 on ecommerce_db using Socket
+May 15 03:48:08 db-master sshd[19485]: Accepted publickey for deploy from 89.248.167.131 port 30767 ssh2: RSA SHA256:xKd9mNpQrT2wVbLz
+2026-03-15T03:49:28.000Z	279 admin	Query	SELECT id FROM products WHERE stock < 10 AND active = 1
+2026-03-15T03:51:10.000Z	216 admin	Query	SHOW STATUS LIKE 'Threads_connected'
+May 15 03:51:41 web-prod-01 systemd[18801]: app.service: Failed with result 'exit-code'.
+May 15 03:52:49 db-master postfix/smtpd[11611]: warning: unknown[37.19.221.13]: SASL LOGIN authentication failed: authentication failure
+2026-03-15T03:53:04.000Z	229 admin	Query	SELECT p.name, p.price, r.rating, r.comment FROM products p LEFT JOIN reviews r ON p.id = r.product_id WHERE p.id = 3330
+May 15 03:54:19 cache-01 cron[27962]: (nobody) CMD (/usr/bin/php /var/www/app/artisan schedule:run >> /dev/null 2>&1)
+May 15 03:54:36 cache-01 cron[27378]: (root) CMD (/usr/bin/apt-get -q -y --no-show-upgraded autoclean)
+May 15 03:55:30 web-prod-02 sshd[17540]: Accepted publickey for deploy from 198.51.100.22 port 18836 ssh2: RSA SHA256:xKd9mNpQrT2wVbLz
+2026-03-15T03:57:09.000Z	267 admin	Query	SELECT * FROM users WHERE email = 'john.doe@email.com' LIMIT 1
+192.0.2.88 - - [09/May/2026:03:58:54 +0000] "GET /about HTTP/1.1" 200 66933 "https://reddit.com/r/deals" "zgrab/0.x" 397ms
+2026-03-15T03:59:52.000Z	269 admin	Init DB	ecommerce_db
+162.55.36.149 - - [09/May/2026:04:01:39 +0000] "POST /api/v1/cart HTTP/1.1" 201 50767 "-" "Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 Mobile Safari/537.36" 3363ms
+May 15 04:02:21 worker-01 kernel[4806]: nf_conntrack: nf_conntrack: table full, dropping packet
+May 15 04:03:38 web-prod-02 postfix/smtpd[3101]: disconnect from mail.example.org[104.21.44.80] ehlo=1 mail=1 rcpt=0 quit=1 commands=3
+71.6.135.131 - - [09/May/2026:04:04:56 +0000] "GET /shell.php HTTP/1.1" 201 68922 "-" "Java/17.0.10" 1683ms
+May 15 04:05:54 web-prod-02 dockerd[28113]: time="2026-03-15T04:05:54Z" level=warning msg="Container exited with non-zero code" container=worker-17 exitCode=137
+167.94.138.52 - - [09/May/2026:04:07:12 +0000] "GET /phpmyadmin/ HTTP/1.1" 403 214 "-" "Go-http-client/2.0" 3685ms
+2026-03-15T04:09:01.000Z	262 backup_user	Connect	backup_user@10.0.0.2 on ecommerce_db using TCP/IP
+2026-03-15T04:09:45.000Z	275 readonly	Query	INSERT INTO audit_log (user_id, action, ip_address, created_at) VALUES (5023, 'LOGIN', '203.0.113.5', NOW())
+2026-03-15T04:10:27.000Z	211 readonly	Init DB	ecommerce_db
+2026/05/09 04:11:26 [crit] 19674#53: *57487 invalid header: "198.51.100.22" from upstream, client: 198.51.100.22, server: cdn.example.com
+May 15 04:12:10 cache-01 systemd[7278]: Reached target multi-user.target - Multi-User System.
+2026-03-15T04:12:35.000Z	253 replicator	Quit	
+May 15 04:13:04 web-prod-02 postfix/smtpd[31335]: connect from unknown[149.28.200.120]
+May 15 04:14:43 cache-01 postfix/smtpd[14334]: connect from unknown[91.108.4.10]
+149.28.200.120 - - [09/May/2026:04:15:45 +0000] "GET /.env HTTP/1.1" 429 546 "https://www.bing.com/" "Wget/1.21.4" 4425ms
+2026-03-15T04:16:22.000Z	259 reporting	Connect	reporting@10.0.0.2 on ecommerce_db using TCP/IP
+185.180.143.49 - - [09/May/2026:04:16:59 +0000] "GET /api/v1/reviews HTTP/1.1" 500 431 "https://www.google.com/" "Wget/1.21.4" 294ms
+May 15 04:18:07 web-prod-02 dockerd[15577]: time="2026-03-15T04:18:07Z" level=info msg="ignoring event" module=libcontainerd namespace=moby topic=/tasks/delete
+2026-03-15T04:19:22.000Z	218 reporting	Query	UPDATE products SET stock = stock - 3390 WHERE id = 8458 AND stock >= 3390
+2026-03-15T04:19:45.000Z	256 reporting	Query	DELETE FROM sessions WHERE expires_at < NOW()
+May 15 04:20:02 db-master fail2ban.actions[6045]: Notice: already banned 45.142.212.100
+2026/05/09 04:20:39 [warn] 23152#15: *6087 FastCGI sent in stderr: "PHP message: PHP Fatal error: Uncaught Error: Call to a member function query() on null" while reading response header from FastCGI upstream, client: 185.180.143.49
+2026/05/09 04:21:06 [error] 26270#12: *27281 client intended to send too large body: 20971520 bytes, client: 91.108.4.10, server: shop.example.com
+89.248.167.131 - - [09/May/2026:04:21:56 +0000] "GET /api/v1/users/profile HTTP/1.1" 400 407 "-" "Mozilla/5.0 (iPhone; CPU iPhone OS 17_4 like Mac OS X) AppleWebKit/605.1.15 Mobile/15E148 Safari/604.1" 270ms
+91.108.4.10 - - [09/May/2026:04:22:52 +0000] "GET /phpmyadmin/ HTTP/1.1" 301 32676 "-" "Scrapy/2.11.1 (+https://scrapy.org)" 2704ms
+2026/05/09 04:23:18 [crit] 28073#15: *22151 upstream prematurely closed connection while reading response header from upstream, client: 167.94.138.52
+2026-03-15T04:24:29.000Z	252 reporting	Query	UPDATE cart SET quantity = 2163 WHERE user_id = 6805 AND product_id = 9470
+2026-03-15T04:25:28.000Z	242 app_user	Query	SELECT u.email, u.name, o.total FROM users u JOIN orders o ON u.id = o.user_id WHERE o.status = 'pending'
+185.220.101.34 - - [09/May/2026:04:26:10 +0000] "POST /images/banner.jpg HTTP/1.1" 301 32489 "-" "-" 1348ms
+162.55.36.149 - - [09/May/2026:04:27:26 +0000] "POST /api/v1/products HTTP/1.1" 200 70346 "-" "axios/1.6.8" 4115ms
+May 15 04:27:39 cache-01 kernel[25577]: nf_conntrack: nf_conntrack: table full, dropping packet
+2026-03-15T04:29:21.000Z	205 readonly	Query	INSERT INTO search_logs (query, user_id, results_count, created_at) VALUES ('wireless headphones', 2863, 42, NOW())
+May 15 04:30:48 db-master postfix/smtpd[3885]: warning: unknown[45.142.212.100]: SASL LOGIN authentication failed: authentication failure
+May 15 04:31:04 web-prod-01 sudo[2649]: ubuntu : TTY=pts/1 ; PWD=/home/ubuntu ; USER=root ; COMMAND=/usr/bin/tail -n 100 /var/log/nginx/error.log
+2026/05/09 04:32:51 [warn] 26808#39: *99045 upstream prematurely closed connection while reading response header from upstream, client: 185.180.143.49
+May 15 04:34:26 db-master kernel[20255]: nf_conntrack: nf_conntrack: table full, dropping packet
+May 15 04:34:49 worker-01 postfix/smtpd[10845]: disconnect from mail.example.org[194.165.16.11] ehlo=1 mail=1 rcpt=0 quit=1 commands=3
+2026-03-15T04:35:43.000Z	252 reporting	Init DB	ecommerce_db
+2026/05/09 04:37:15 [error] 14944#47: *22943 limiting connections by zone "conn_limit_per_ip", excess: 1 by zone "conn_limit_per_ip", client: 198.51.100.22
+51.77.135.89 - - [09/May/2026:04:38:45 +0000] "OPTIONS /api/v1/payments/intent HTTP/1.1" 200 21511 "-" "Java/17.0.10" 3207ms
+2026/05/09 04:38:57 [crit] 31533#33: *97545 SSL_do_handshake() failed (SSL: error:14094418:SSL routines:ssl3_read_bytes:tlsv1 alert unknown ca) while SSL handshaking, client: 45.142.212.100
+May 15 04:40:19 web-prod-02 cron[3487]: (root) CMD (/usr/bin/apt-get -q -y --no-show-upgraded autoclean)
+185.220.101.34 - - [09/May/2026:04:40:38 +0000] "POST /api/v1/cart HTTP/1.1" 404 721 "-" "libwww-perl/6.72" 6147ms
+May 15 04:41:31 web-prod-01 cron[20252]: (root) CMD (/usr/bin/certbot renew --quiet >> /var/log/certbot.log 2>&1)
+2026-03-15T04:43:09.000Z	241 readonly	Query	SHOW STATUS LIKE 'Threads_connected'
+91.108.4.10 - - [09/May/2026:04:43:38 +0000] "POST /static/css/styles.min.css HTTP/1.1" 200 77225 "https://shop.example.com/" "masscan/1.3 (https://github.com/robertdavidgraham/masscan)" 2443ms
+May 15 04:45:18 db-master dockerd[11515]: time="2026-03-15T04:45:18Z" level=warning msg="Container exited with non-zero code" container=worker-6 exitCode=137
+May 15 04:46:10 db-master dockerd[3505]: time="2026-03-15T04:46:10Z" level=info msg="ignoring event" module=libcontainerd namespace=moby topic=/tasks/delete
+194.165.16.11 - - [09/May/2026:04:46:55 +0000] "PUT /wp-login.php HTTP/1.1" 500 213 "-" "curl/8.6.0" 2519ms
+May 15 04:48:39 cache-01 fail2ban.actions[17377]: Unban 185.220.101.34
+2026/05/09 04:48:51 [error] 28799#36: *90068 SSL_write() failed (32: Broken pipe) while sending response to client, client: 71.6.135.131
+194.165.16.11 - - [09/May/2026:04:49:22 +0000] "GET /about HTTP/1.1" 404 764 "-" "Googlebot/2.1 (+http://www.google.com/bot.html)" 3125ms
+May 15 04:50:56 web-prod-01 cron[30618]: (root) CMD (/usr/sbin/logrotate /etc/logrotate.conf)
+2026-03-15T04:52:05.000Z	204 app_user	Statistics	
+2026-03-15T04:52:54.000Z	271 readonly	Query	SELECT * FROM users WHERE email = 'john.doe@email.com' LIMIT 1
+2026/05/09 04:53:28 [warn] 18969#12: *77666 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 203.0.113.5, server: api.example.com, upstream: "http://127.0.0.1:8080"
+2026-03-15T04:54:29.000Z	247 backup_user	Query	BEGIN
+2026/05/09 04:54:58 [error] 30174#25: *15664 open() "/var/www/html/api/v1/orders" failed (2: No such file or directory), client: 95.214.55.25, server: cdn.example.com
+91.108.4.10 - - [09/May/2026:04:55:46 +0000] "OPTIONS /api/v1/auth/register HTTP/1.1" 405 371 "https://www.bing.com/" "-" 1653ms
+2026/05/09 04:57:33 [error] 10426#34: *74105 SSL_do_handshake() failed (SSL: error:14094418:SSL routines:ssl3_read_bytes:tlsv1 alert unknown ca) while SSL handshaking, client: 203.0.113.5
+104.21.44.80 - - [09/May/2026:04:58:57 +0000] "PATCH /robots.txt HTTP/1.1" 204 4101 "-" "libwww-perl/6.72" 5847ms
+May 15 04:59:52 db-master dockerd[30875]: time="2026-03-15T04:59:52Z" level=info msg="ignoring event" module=libcontainerd namespace=moby topic=/tasks/delete
+May 15 05:01:10 web-prod-02 postfix/smtpd[1421]: NOQUEUE: reject: RCPT from unknown[95.214.55.25]: 554 5.7.1 Service unavailable; Client host [95.214.55.25] blocked using zen.spamhaus.org
+May 15 05:02:41 cache-01 kernel[7699]: oom-kill event(s) in system (total 1), killed process 7699 (node) total-vm:1843200kB, anon-rss:462400kB, file-rss:0kB
+2026-03-15T05:03:53.000Z	260 backup_user	Init DB	ecommerce_db
+2026/05/09 05:04:13 [crit] 17345#5: *32800 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 194.165.16.11, server: blog.example.com, upstream: "http://127.0.0.1:8080"
+2026/05/09 05:04:25 [error] 11449#53: *35466 connect() failed (111: Connection refused) while connecting to upstream, client: 198.51.100.22, server: cdn.example.com, request: "GET /api/v1/products HTTP/1.1", upstream: "http://127.0.0.1:8080/api/v1/products"
+May 15 05:05:36 web-prod-01 sudo[27445]: ubuntu : TTY=pts/1 ; PWD=/home/ubuntu ; USER=root ; COMMAND=/usr/bin/tail -n 100 /var/log/nginx/error.log
+2026-03-15T05:07:04.000Z	237 replicator	Statistics	
+45.142.212.100 - - [09/May/2026:05:07:19 +0000] "PUT /api/v1/auth/logout HTTP/1.1" 403 539 "https://reddit.com/r/deals" "Mozilla/5.0 (X11; Linux x86_64; rv:124.0) Gecko/20100101 Firefox/124.0" 909ms
+May 15 05:08:37 web-prod-01 sudo[9978]: deploy : TTY=pts/0 ; PWD=/var/www/app ; USER=root ; COMMAND=/bin/systemctl restart app.service
+May 15 05:09:41 web-prod-01 sshd[2003]: pam_unix(sshd:session): session closed for user deploy
+May 15 05:10:05 web-prod-02 dockerd[27333]: time="2026-03-15T05:10:05Z" level=error msg="Handler for DELETE /v1.43/containers/d0ad88f66862 returned error: removal of container d0ad88f66862 is already in progress"
+2026/05/09 05:10:21 [warn] 13993#59: *22117 limiting connections by zone "conn_limit_per_ip", excess: 1 by zone "conn_limit_per_ip", client: 104.21.44.80
+May 15 05:10:39 cache-01 sudo[8145]: pam_unix(sudo:session): session opened for user root by deploy(uid=1001)
+2026-03-15T05:11:34.000Z	233 backup_user	Query	SELECT TABLE_NAME, TABLE_ROWS FROM information_schema.TABLES WHERE TABLE_SCHEMA = 'ecommerce_db'
+2026-03-15T05:12:24.000Z	246 app_user	Query	ROLLBACK
+May 15 05:13:41 web-prod-02 cron[14400]: (root) CMD (/usr/local/bin/backup-db.sh >> /var/log/backup.log 2>&1)
+104.21.44.80 - - [09/May/2026:05:15:18 +0000] "GET /products/laptop HTTP/1.1" 200 77186 "-" "Wget/1.21.4" 2560ms
+May 15 05:15:35 web-prod-01 sshd[22372]: Invalid user oracle from 80.94.95.107 port 26642
+May 15 05:16:33 web-prod-02 systemd[13477]: app.service: Failed to start Application Server.
+2026/05/09 05:17:15 [error] 13600#59: *73784 could not be resolved (3: Host not found), client: 167.94.138.52, server: shop.example.com
+2026/05/09 05:17:38 [error] 17561#55: *58706 connect() failed (111: Connection refused) while connecting to upstream, client: 51.77.135.89, server: shop.example.com, request: "GET /api/v1/products HTTP/1.1", upstream: "http://127.0.0.1:8080/api/v1/products"
+2026/05/09 05:18:14 [error] 21093#8: *10373 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 192.0.2.88
+91.108.4.10 - - [09/May/2026:05:19:27 +0000] "POST /contact HTTP/1.1" 200 68609 "https://shop.example.com/" "Java/17.0.10" 1402ms
+185.220.101.34 - - [09/May/2026:05:20:06 +0000] "HEAD /admin/ HTTP/1.1" 422 234 "https://shop.example.com/" "libwww-perl/6.72" 614ms
+91.108.4.10 - - [09/May/2026:05:20:30 +0000] "DELETE /xmlrpc.php HTTP/1.1" 301 33977 "-" "Java/17.0.10" 1479ms
+2026-03-15T05:22:02.000Z	268 reporting	Query	SHOW STATUS LIKE 'Threads_connected'
+May 15 05:22:32 web-prod-01 fail2ban.actions[8434]: Ban 51.77.135.89
+May 15 05:24:10 db-master kernel[13245]: TCP: request_sock_TCP: Possible SYN flooding on port 443. Sending cookies. Check SNMP counters.
+2026/05/09 05:24:26 [crit] 10752#48: *22243 limiting connections by zone "conn_limit_per_ip", excess: 1 by zone "conn_limit_per_ip", client: 95.214.55.25
+2026/05/09 05:24:57 [warn] 27952#50: *19047 limiting requests, excess: 8.560 by zone "api_rate_limit", client: 89.248.167.131
+185.220.101.34 - - [09/May/2026:05:26:20 +0000] "GET /shell.php HTTP/1.1" 200 76456 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4 Safari/605.1.15" 2636ms
+2026-03-15T05:27:01.000Z	252 admin	Init DB	ecommerce_db
+2026/05/09 05:27:47 [notice] 13411#3: *38963 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 95.214.55.25, server: shop.example.com, upstream: "http://127.0.0.1:8080"
+45.142.212.100 - - [09/May/2026:05:29:35 +0000] "GET /static/css/styles.min.css HTTP/1.1" 429 779 "-" "Java/17.0.10" 5357ms
+2026-03-15T05:30:44.000Z	266 backup_user	Connect	backup_user@10.0.0.2 on ecommerce_db using TCP/IP
+2026-03-15T05:32:09.000Z	246 backup_user	Quit	
+2026/05/09 05:33:21 [error] 31217#24: *62014 SSL_do_handshake() failed (SSL: error:14094418:SSL routines:ssl3_read_bytes:tlsv1 alert unknown ca) while SSL handshaking, client: 91.108.4.10
+2026/05/09 05:34:28 [error] 17618#48: *97372 could not be resolved (3: Host not found), client: 192.0.2.88, server: blog.example.com
+May 15 05:35:28 web-prod-02 kernel[2168]: net_ratelimit: 32 callbacks suppressed
+45.142.212.100 - - [09/May/2026:05:37:06 +0000] "PUT /static/js/bundle.min.js HTTP/1.1" 500 663 "https://www.google.com/" "python-requests/2.31.0" 5264ms
+May 15 05:38:48 db-master cron[6354]: (root) CMD (/usr/bin/apt-get -q -y --no-show-upgraded autoclean)
+194.165.16.11 - - [09/May/2026:05:39:10 +0000] "GET /api/v1/search?q=laptop HTTP/1.1" 200 3388 "-" "Mozilla/5.0 (X11; Linux x86_64; rv:124.0) Gecko/20100101 Firefox/124.0" 940ms
+80.94.95.107 - - [09/May/2026:05:39:47 +0000] "GET /static/js/bundle.min.js HTTP/1.1" 204 63012 "-" "Bingbot/2.0 (+http://www.bing.com/bingbot.htm)" 2122ms
+162.55.36.149 - - [09/May/2026:05:40:09 +0000] "PUT /blog/10-best-gadgets-2026 HTTP/1.1" 200 43327 "https://t.co/abc123" "Java/17.0.10" 2804ms
+May 15 05:40:39 web-prod-02 postfix/smtpd[24495]: warning: unknown[91.108.4.10]: SASL LOGIN authentication failed: authentication failure
+95.214.55.25 - - [09/May/2026:05:42:03 +0000] "POST /products/phone HTTP/1.1" 500 749 "https://www.bing.com/" "axios/1.6.8" 3751ms
+95.214.55.25 - - [09/May/2026:05:43:19 +0000] "DELETE /api/v1/users/profile HTTP/1.1" 304 38366 "https://www.google.com/" "libwww-perl/6.72" 1737ms
+91.108.4.10 - - [09/May/2026:05:43:54 +0000] "GET /admin/ HTTP/1.1" 405 447 "https://shop.example.com/products" "Googlebot/2.1 (+http://www.google.com/bot.html)" 5772ms
+May 15 05:44:46 web-prod-01 fail2ban.actions[2608]: Ban 149.28.200.120
+2026/05/09 05:45:07 [warn] 12185#33: *88625 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 185.220.101.34
+May 15 05:46:16 cache-01 fail2ban.actions[26551]: Notice: already banned 104.21.44.80
+2026/05/09 05:46:32 [error] 14745#51: *92415 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 167.94.138.52, server: shop.example.com, upstream: "http://127.0.0.1:8080"
+167.94.138.52 - - [09/May/2026:05:46:48 +0000] "GET /api/v1/orders HTTP/1.1" 429 644 "-" "zgrab/0.x" 4950ms
+2026-03-15T05:47:30.000Z	215 readonly	Connect	readonly@10.0.0.3 on ecommerce_db using TCP/IP
+May 15 05:49:14 web-prod-02 cron[13884]: (nobody) CMD (/usr/bin/php /var/www/app/artisan schedule:run >> /dev/null 2>&1)
+May 15 05:50:44 web-prod-02 fail2ban.actions[14710]: Ban 104.21.44.80
+2026/05/09 05:51:34 [error] 17443#2: *89576 open() "/var/www/html/api/v1/reviews" failed (2: No such file or directory), client: 172.67.68.10, server: api.example.com
+May 15 05:53:22 web-prod-02 cron[22493]: (root) CMD (/usr/local/bin/backup-db.sh >> /var/log/backup.log 2>&1)
+2026/05/09 05:54:57 [warn] 17016#44: *48304 limiting connections by zone "conn_limit_per_ip", excess: 1 by zone "conn_limit_per_ip", client: 198.51.100.22
+May 15 05:55:21 web-prod-01 sshd[3315]: Failed password for admin from 185.220.101.34 port 34250 ssh2
+May 15 05:57:06 worker-01 sudo[14645]: ubuntu : TTY=pts/0 ; PWD=/home/ubuntu ; USER=root ; COMMAND=/bin/systemctl status nginx
+80.94.95.107 - - [09/May/2026:05:58:49 +0000] "GET /../../../etc/passwd HTTP/1.1" 422 465 "-" "axios/1.6.8" 836ms
+2026/05/09 05:59:29 [crit] 12523#54: *27440 SSL_do_handshake() failed (SSL: error:14094418:SSL routines:ssl3_read_bytes:tlsv1 alert unknown ca) while SSL handshaking, client: 172.67.68.10
+2026-03-15T06:00:23.000Z	201 reporting	Field List	coupons
+May 15 06:00:56 worker-01 sudo[12852]: pam_unix(sudo:session): session closed for user root
+2026-03-15T06:01:11.000Z	235 readonly	Statistics	
+May 15 06:01:29 db-master systemd[8767]: redis.service: Watchdog timeout (limit 30s)!
+2026/05/09 06:02:46 [error] 12281#54: *19626 SSL_do_handshake() failed (SSL: error:14094418:SSL routines:ssl3_read_bytes:tlsv1 alert unknown ca) while SSL handshaking, client: 198.51.100.22
+May 15 06:03:19 cache-01 kernel[6283]: nf_conntrack: nf_conntrack: table full, dropping packet
+2026-03-15T06:04:33.000Z	275 backup_user	Init DB	ecommerce_db
+51.77.135.89 - - [09/May/2026:06:05:30 +0000] "PATCH /favicon.ico HTTP/1.1" 201 51619 "https://t.co/abc123" "Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 Mobile Safari/537.36" 5292ms
+May 15 06:06:55 web-prod-01 dockerd[21642]: time="2026-03-15T06:06:55Z" level=error msg="Handler for DELETE /v1.43/containers/5493c45a4440 returned error: removal of container 5493c45a4440 is already in progress"
+May 15 06:08:22 db-master systemd[14189]: Started nginx.service - A high performance web server.
+37.19.221.13 - - [09/May/2026:06:09:55 +0000] "PUT /api/v1/reviews HTTP/1.1" 422 366 "https://shop.example.com/products" "Scrapy/2.11.1 (+https://scrapy.org)" 142ms
+May 15 06:10:15 db-master cron[6250]: (nobody) CMD (/usr/bin/php /var/www/app/artisan schedule:run >> /dev/null 2>&1)
+2026/05/09 06:10:45 [error] 11306#64: *96728 open() "/var/www/html/wp-admin/" failed (2: No such file or directory), client: 66.240.192.138, server: shop.example.com
+45.142.212.100 - - [09/May/2026:06:11:08 +0000] "GET /products/headphones HTTP/1.1" 200 3106 "-" "curl/8.6.0" 2690ms
+45.142.212.100 - - [09/May/2026:06:12:19 +0000] "GET /api/v1/auth/register HTTP/1.1" 201 16095 "https://shop.example.com/products" "Bingbot/2.0 (+http://www.bing.com/bingbot.htm)" 3564ms
+2026/05/09 06:13:23 [error] 15737#22: *24579 no live upstreams while connecting to upstream, client: 162.55.36.149, server: cdn.example.com, upstream: "backend_pool"
+2026-03-15T06:14:55.000Z	256 backup_user	Query	SELECT id, name, price, stock FROM products WHERE category_id = 9433 AND active = 1 ORDER BY created_at DESC LIMIT 20
+May 15 06:16:23 worker-01 sshd[19376]: Unable to negotiate with 104.21.44.80 port 61542: no matching host key type found
+May 15 06:17:47 db-master systemd[7254]: Started app.service - Node.js Application Server.
+May 15 06:19:01 cache-01 sshd[25938]: Failed password for root from 162.55.36.149 port 38055 ssh2
+185.180.143.49 - - [09/May/2026:06:19:23 +0000] "OPTIONS /static/css/styles.min.css HTTP/1.1" 200 8774 "https://www.bing.com/" "Wget/1.21.4" 5365ms
+2026-03-15T06:20:22.000Z	258 reporting	Query	INSERT INTO orders (user_id, total, status, created_at) VALUES (5206, 958.71, 'pending', NOW())
+2026-03-15T06:22:09.000Z	216 admin	Field List	products
+37.19.221.13 - - [09/May/2026:06:23:17 +0000] "OPTIONS /about HTTP/1.1" 200 61140 "-" "Go-http-client/2.0" 4926ms
+167.94.138.52 - - [09/May/2026:06:25:02 +0000] "GET /products/headphones HTTP/1.1" 401 290 "https://shop.example.com/" "Wget/1.21.4" 4102ms
+May 15 06:25:35 cache-01 kernel[30904]: net_ratelimit: 32 callbacks suppressed
+2026-03-15T06:27:14.000Z	267 readonly	Init DB	ecommerce_db
+May 15 06:28:36 web-prod-02 dockerd[31579]: time="2026-03-15T06:28:36Z" level=info msg="ignoring event" module=libcontainerd namespace=moby topic=/tasks/delete
+May 15 06:29:37 db-master fail2ban.actions[5063]: Ban 71.6.135.131
+May 15 06:31:06 db-master kernel[14778]: IPv4: Maytian source from 91.108.4.10, on dev eth0
+May 15 06:31:52 web-prod-01 fail2ban.actions[1289]: Notice: already banned 198.51.100.22
+51.77.135.89 - - [09/May/2026:06:32:45 +0000] "OPTIONS /wp-admin/ HTTP/1.1" 200 35692 "https://shop.example.com/products" "Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 Mobile Safari/537.36" 4218ms
+May 15 06:33:43 web-prod-01 postfix/smtpd[24791]: NOQUEUE: reject: RCPT from unknown[203.0.113.5]: 554 5.7.1 Service unavailable; Client host [203.0.113.5] blocked using zen.spamhaus.org
+2026-03-15T06:35:06.000Z	207 readonly	Query	SELECT id, name, price, stock FROM products WHERE category_id = 6925 AND active = 1 ORDER BY created_at DESC LIMIT 20
+May 15 06:35:48 web-prod-01 postfix/smtpd[16609]: warning: unknown[172.67.68.10]: SASL LOGIN authentication failed: authentication failure
+192.0.2.88 - - [09/May/2026:06:36:43 +0000] "OPTIONS /phpmyadmin/ HTTP/1.1" 200 20526 "https://shop.example.com/products" "Googlebot/2.1 (+http://www.google.com/bot.html)" 1414ms
+2026-03-15T06:37:36.000Z	215 reporting	Init DB	ecommerce_db
+May 15 06:38:30 worker-01 kernel[6508]: clocksource: timekeeping watchdog on CPU0: Mayking clocksource 'tsc' as unstable
+194.165.16.11 - - [09/May/2026:06:39:24 +0000] "POST /wp-admin/ HTTP/1.1" 200 20662 "-" "Mozilla/5.0 (X11; Linux x86_64; rv:124.0) Gecko/20100101 Firefox/124.0" 699ms
+2026/05/09 06:40:45 [warn] 26005#33: *26430 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 91.108.4.10, server: api.example.com, upstream: "http://127.0.0.1:8080"
+May 15 06:42:09 web-prod-01 dockerd[3199]: time="2026-03-15T06:42:09Z" level=warning msg="Container exited with non-zero code" container=worker-19 exitCode=137
+2026-03-15T06:43:53.000Z	252 reporting	Connect	reporting@localhost on ecommerce_db using TCP/IP
+2026-03-15T06:44:21.000Z	233 reporting	Query	SELECT * FROM users WHERE email = 'john.doe@email.com' LIMIT 1
+80.94.95.107 - - [09/May/2026:06:44:33 +0000] "GET /checkout HTTP/1.1" 200 73524 "https://reddit.com/r/deals" "libwww-perl/6.72" 4823ms
+May 15 06:45:10 cache-01 systemd[17727]: Started app.service - Node.js Application Server.
+2026-03-15T06:46:09.000Z	269 replicator	Field List	products
+May 15 06:46:53 web-prod-02 fail2ban.actions[12778]: Ban 37.19.221.13
+2026/05/09 06:47:09 [warn] 13557#24: *64918 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 95.214.55.25, server: api.example.com, upstream: "http://127.0.0.1:8080"
+2026-03-15T06:47:46.000Z	253 replicator	Connect	replicator@10.0.0.3 on ecommerce_db using TCP/IP
+45.142.212.100 - - [09/May/2026:06:48:21 +0000] "PUT /api/v1/search?q=laptop HTTP/1.1" 200 5060 "https://shop.example.com/products" "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4 Safari/605.1.15" 1422ms
+2026-03-15T06:49:27.000Z	234 replicator	Query	SELECT id, name, price, stock FROM products WHERE category_id = 8365 AND active = 1 ORDER BY created_at DESC LIMIT 20
+May 15 06:50:29 cache-01 fail2ban.actions[11520]: Ban 51.77.135.89
+71.6.135.131 - - [09/May/2026:06:52:19 +0000] "GET /api/v1/payments/intent HTTP/1.1" 200 67100 "https://www.google.com/" "Mozilla/5.0 (iPhone; CPU iPhone OS 17_4 like Mac OS X) AppleWebKit/605.1.15 Mobile/15E148 Safari/604.1" 3775ms
+May 15 06:52:58 cache-01 sshd[4801]: Unable to negotiate with 185.180.143.49 port 24958: no matching host key type found
+198.51.100.22 - - [09/May/2026:06:53:11 +0000] "PUT /api/v1/payments/intent HTTP/1.1" 500 580 "-" "masscan/1.3 (https://github.com/robertdavidgraham/masscan)" 4497ms
+162.55.36.149 - - [09/May/2026:06:53:36 +0000] "OPTIONS / HTTP/1.1" 200 12505 "https://shop.example.com/" "curl/8.6.0" 750ms
+2026/05/09 06:53:48 [crit] 21398#48: *94465 no live upstreams while connecting to upstream, client: 95.214.55.25, server: cdn.example.com, upstream: "backend_pool"
+2026/05/09 06:55:05 [notice] 27729#27: *29898 open() "/var/www/html/robots.txt" failed (2: No such file or directory), client: 149.28.200.120, server: cdn.example.com
+May 15 06:55:59 db-master fail2ban.actions[22512]: Ban 89.248.167.131
+172.67.68.10 - - [09/May/2026:06:57:08 +0000] "OPTIONS /admin/ HTTP/1.1" 200 49394 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4 Safari/605.1.15" 6013ms
+2026-03-15T06:58:08.000Z	269 replicator	Init DB	ecommerce_db
+45.142.212.100 - - [09/May/2026:06:58:42 +0000] "PUT /api/v1/orders HTTP/1.1" 403 621 "https://reddit.com/r/deals" "Googlebot/2.1 (+http://www.google.com/bot.html)" 2577ms
+80.94.95.107 - - [09/May/2026:07:00:02 +0000] "GET /static/css/styles.min.css HTTP/1.1" 403 305 "https://t.co/abc123" "axios/1.6.8" 4479ms
+2026/05/09 07:01:49 [warn] 15378#8: *86566 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 104.21.44.80, server: blog.example.com, upstream: "http://127.0.0.1:8080"
+May 15 07:03:19 worker-01 systemd[28715]: app.service: Failed to start Application Server.
+2026/05/09 07:04:48 [error] 10736#16: *7631 no live upstreams while connecting to upstream, client: 203.0.113.5, server: blog.example.com, upstream: "backend_pool"
+May 15 07:06:25 web-prod-01 dockerd[31359]: time="2026-03-15T07:06:25Z" level=error msg="Handler for DELETE /v1.43/containers/aaee94138020 returned error: removal of container aaee94138020 is already in progress"
+May 15 07:07:02 db-master kernel[11014]: TCP: request_sock_TCP: Possible SYN flooding on port 80. Sending cookies. Check SNMP counters.
+172.67.68.10 - - [09/May/2026:07:07:34 +0000] "PATCH /wp-admin/ HTTP/1.1" 200 62094 "https://www.google.com/" "python-requests/2.31.0" 4156ms
+May 15 07:09:09 worker-01 sudo[12422]: deploy : TTY=pts/0 ; PWD=/var/www/app ; USER=root ; COMMAND=/usr/bin/npm run migrate
+May 15 07:10:50 web-prod-01 postfix/smtpd[28342]: warning: unknown[45.142.212.100]: SASL LOGIN authentication failed: authentication failure
+2026-03-15T07:11:26.000Z	264 replicator	Init DB	ecommerce_db
+2026/05/09 07:13:16 [notice] 20040#30: *76082 no live upstreams while connecting to upstream, client: 71.6.135.131, server: shop.example.com, upstream: "backend_pool"
+May 15 07:14:15 web-prod-01 systemd[6026]: redis.service: Watchdog timeout (limit 30s)!
+185.180.143.49 - - [09/May/2026:07:15:05 +0000] "OPTIONS /wp-login.php HTTP/1.1" 200 29539 "https://shop.example.com/" "Mozilla/5.0 (iPhone; CPU iPhone OS 17_4 like Mac OS X) AppleWebKit/605.1.15 Mobile/15E148 Safari/604.1" 72ms
+May 15 07:16:52 cache-01 kernel[2201]: nf_conntrack: nf_conntrack: table full, dropping packet
+45.142.212.100 - - [09/May/2026:07:17:39 +0000] "GET /api/v1/auth/logout HTTP/1.1" 301 75593 "https://reddit.com/r/deals" "-" 2012ms
+May 15 07:18:06 cache-01 sshd[16998]: Failed password for invalid user test from 192.0.2.88 port 51093 ssh2
+104.21.44.80 - - [09/May/2026:07:19:50 +0000] "GET /products/laptop HTTP/1.1" 200 5893 "https://reddit.com/r/deals" "Googlebot/2.1 (+http://www.google.com/bot.html)" 2424ms
+May 15 07:21:30 web-prod-01 sudo[26534]: deploy : TTY=pts/0 ; PWD=/var/www/app ; USER=root ; COMMAND=/usr/bin/npm run migrate
+2026-03-15T07:22:30.000Z	250 backup_user	Quit	
+185.180.143.49 - - [09/May/2026:07:24:05 +0000] "POST /api/v1/wishlist HTTP/1.1" 200 47619 "-" "Java/17.0.10" 1255ms
+80.94.95.107 - - [09/May/2026:07:25:11 +0000] "GET /products/laptop HTTP/1.1" 200 80713 "https://t.co/abc123" "Googlebot/2.1 (+http://www.google.com/bot.html)" 3645ms
+2026/05/09 07:26:53 [warn] 10633#49: *48723 no live upstreams while connecting to upstream, client: 192.0.2.88, server: shop.example.com, upstream: "backend_pool"
+2026-03-15T07:27:16.000Z	211 backup_user	Query	SELECT p.name, p.price, r.rating, r.comment FROM products p LEFT JOIN reviews r ON p.id = r.product_id WHERE p.id = 3187
+185.180.143.49 - - [09/May/2026:07:28:21 +0000] "OPTIONS /contact HTTP/1.1" 400 199 "https://www.bing.com/" "zgrab/0.x" 4454ms
+2026/05/09 07:29:49 [warn] 17040#36: *89818 client intended to send too large body: 20971520 bytes, client: 198.51.100.22, server: shop.example.com
+71.6.135.131 - - [09/May/2026:07:30:24 +0000] "POST /static/css/styles.min.css HTTP/1.1" 304 36270 "-" "Java/17.0.10" 5235ms
+149.28.200.120 - - [09/May/2026:07:30:48 +0000] "GET /../../../etc/passwd HTTP/1.1" 500 615 "https://shop.example.com/" "Googlebot/2.1 (+http://www.google.com/bot.html)" 2391ms
+May 15 07:31:31 worker-01 kernel[9427]: usb 1-1: USB disconnect, device number 2
+185.180.143.49 - - [09/May/2026:07:32:34 +0000] "OPTIONS /api/v1/auth/login HTTP/1.1" 301 84399 "https://shop.example.com/products" "Java/17.0.10" 5325ms
+2026-03-15T07:32:51.000Z	247 reporting	Query	SELECT TABLE_NAME, TABLE_ROWS FROM information_schema.TABLES WHERE TABLE_SCHEMA = 'ecommerce_db'
+May 15 07:34:08 cache-01 fail2ban.actions[2200]: Notice: already banned 51.77.135.89
+45.142.212.100 - - [09/May/2026:07:35:29 +0000] "POST /api/v1/auth/logout HTTP/1.1" 301 44364 "-" "Java/17.0.10" 844ms
+May 15 07:35:59 db-master cron[9765]: (root) CMD (/usr/local/bin/backup-db.sh >> /var/log/backup.log 2>&1)
+2026-03-15T07:36:23.000Z	231 replicator	Query	INSERT INTO orders (user_id, total, status, created_at) VALUES (4698, 378.5, 'pending', NOW())
+May 15 07:36:50 worker-01 dockerd[14061]: time="2026-03-15T07:36:50Z" level=warning msg="Container exited with non-zero code" container=worker-19 exitCode=137
+2026/05/09 07:38:29 [error] 11249#43: *34317 could not be resolved (3: Host not found), client: 104.21.44.80, server: shop.example.com
+2026/05/09 07:40:05 [warn] 25305#41: *15391 could not be resolved (3: Host not found), client: 162.55.36.149, server: cdn.example.com
+185.220.101.34 - - [09/May/2026:07:40:39 +0000] "GET /favicon.ico HTTP/1.1" 200 43937 "https://t.co/abc123" "libwww-perl/6.72" 5965ms
+2026/05/09 07:40:56 [error] 24829#4: *3337 client intended to send too large body: 20971520 bytes, client: 45.142.212.100, server: shop.example.com
+May 15 07:42:12 web-prod-02 sshd[8792]: Connection closed by 192.0.2.88 port 36927
+May 15 07:43:18 db-master postfix/smtpd[1410]: connect from unknown[37.19.221.13]
+89.248.167.131 - - [09/May/2026:07:43:44 +0000] "OPTIONS /api/v1/payments/intent HTTP/1.1" 200 616 "https://shop.example.com/" "axios/1.6.8" 3892ms
+185.180.143.49 - - [09/May/2026:07:45:09 +0000] "PATCH /api/v1/wishlist HTTP/1.1" 200 43741 "https://www.google.com/" "-" 2519ms
+2026/05/09 07:46:33 [warn] 30791#19: *82696 could not be resolved (3: Host not found), client: 51.77.135.89, server: shop.example.com
+May 15 07:47:23 db-master sshd[24255]: Failed password for root from 66.240.192.138 port 30996 ssh2
+71.6.135.131 - - [09/May/2026:07:48:53 +0000] "POST /.env HTTP/1.1" 200 20375 "https://reddit.com/r/deals" "curl/8.6.0" 3677ms
+172.67.68.10 - - [09/May/2026:07:49:41 +0000] "POST /products/headphones HTTP/1.1" 200 374 "-" "-" 3258ms
+2026/05/09 07:50:34 [error] 27753#6: *77075 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 104.21.44.80, server: shop.example.com, upstream: "http://127.0.0.1:8080"
+80.94.95.107 - - [09/May/2026:07:51:50 +0000] "HEAD /static/css/styles.min.css HTTP/1.1" 200 381 "-" "Wget/1.21.4" 449ms
+May 15 07:53:40 worker-01 fail2ban.actions[11273]: Ban 45.142.212.100
+May 15 07:55:18 db-master cron[25272]: (root) CMD (/usr/local/bin/backup-db.sh >> /var/log/backup.log 2>&1)
+2026-03-15T07:55:40.000Z	257 app_user	Quit	
+2026-03-15T07:57:07.000Z	249 app_user	Query	SELECT u.email, u.name, o.total FROM users u JOIN orders o ON u.id = o.user_id WHERE o.status = 'pending'
+95.214.55.25 - - [09/May/2026:07:57:46 +0000] "OPTIONS /xmlrpc.php HTTP/1.1" 200 50037 "-" "Mozilla/5.0 (X11; Linux x86_64; rv:124.0) Gecko/20100101 Firefox/124.0" 5104ms
+192.0.2.88 - - [09/May/2026:07:58:55 +0000] "GET /products/phone HTTP/1.1" 200 66045 "https://reddit.com/r/deals" "curl/8.6.0" 5746ms
+May 15 08:00:02 cache-01 fail2ban.actions[5047]: Unban 91.108.4.10
+May 15 08:01:15 web-prod-02 sshd[27153]: Invalid user oracle from 89.248.167.131 port 56486
+194.165.16.11 - - [09/May/2026:08:02:48 +0000] "GET /admin/ HTTP/1.1" 401 543 "-" "masscan/1.3 (https://github.com/robertdavidgraham/masscan)" 2999ms
+192.0.2.88 - - [09/May/2026:08:03:28 +0000] "PATCH /wp-login.php HTTP/1.1" 403 459 "-" "zgrab/0.x" 4677ms
+71.6.135.131 - - [09/May/2026:08:04:10 +0000] "GET /config.php HTTP/1.1" 404 556 "https://reddit.com/r/deals" "Go-http-client/2.0" 309ms
+2026/05/09 08:04:48 [crit] 12578#28: *31983 client intended to send too large body: 20971520 bytes, client: 198.51.100.22, server: blog.example.com
+66.240.192.138 - - [09/May/2026:08:05:56 +0000] "PATCH /api/v1/auth/login HTTP/1.1" 403 312 "https://shop.example.com/products" "Mozilla/5.0 (X11; Linux x86_64; rv:124.0) Gecko/20100101 Firefox/124.0" 5650ms
+149.28.200.120 - - [09/May/2026:08:06:27 +0000] "POST /wp-admin/ HTTP/1.1" 200 16545 "https://t.co/abc123" "Mozilla/5.0 (X11; Linux x86_64; rv:124.0) Gecko/20100101 Firefox/124.0" 364ms
+2026/05/09 08:07:20 [error] 18748#24: *62306 no live upstreams while connecting to upstream, client: 198.51.100.22, server: cdn.example.com, upstream: "backend_pool"
+2026-03-15T08:09:09.000Z	271 app_user	Quit	
+2026/05/09 08:10:29 [error] 30298#41: *2689 connect() failed (111: Connection refused) while connecting to upstream, client: 194.165.16.11, server: shop.example.com, request: "GET /api/v1/products HTTP/1.1", upstream: "http://127.0.0.1:8080/api/v1/products"
+2026/05/09 08:12:09 [warn] 17222#39: *28320 could not be resolved (3: Host not found), client: 95.214.55.25, server: api.example.com
+37.19.221.13 - - [09/May/2026:08:13:32 +0000] "OPTIONS /api/v1/reviews HTTP/1.1" 503 130 "https://shop.example.com/products" "-" 4831ms
+2026/05/09 08:15:04 [warn] 28033#27: *65137 connect() failed (111: Connection refused) while connecting to upstream, client: 104.21.44.80, server: cdn.example.com, request: "GET /api/v1/products HTTP/1.1", upstream: "http://127.0.0.1:8080/api/v1/products"
+May 15 08:16:54 cache-01 cron[23553]: (root) CMD (/usr/local/bin/backup-db.sh >> /var/log/backup.log 2>&1)
+172.67.68.10 - - [09/May/2026:08:17:43 +0000] "POST /static/js/bundle.min.js HTTP/1.1" 200 49201 "-" "Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 Mobile Safari/537.36" 6158ms
+2026-03-15T08:18:33.000Z	236 reporting	Init DB	ecommerce_db
+203.0.113.5 - - [09/May/2026:08:20:18 +0000] "OPTIONS /wp-admin/ HTTP/1.1" 200 45103 "https://www.bing.com/" "Googlebot/2.1 (+http://www.google.com/bot.html)" 200ms
+149.28.200.120 - - [09/May/2026:08:20:31 +0000] "GET /sitemap.xml HTTP/1.1" 200 15920 "https://shop.example.com/products" "curl/8.6.0" 4167ms
+192.0.2.88 - - [09/May/2026:08:21:15 +0000] "POST /about HTTP/1.1" 200 55396 "https://reddit.com/r/deals" "Wget/1.21.4" 5108ms
+May 15 08:21:50 db-master kernel[23601]: net_ratelimit: 32 callbacks suppressed
+149.28.200.120 - - [09/May/2026:08:22:56 +0000] "GET /products/laptop HTTP/1.1" 200 46029 "-" "Go-http-client/2.0" 969ms
+2026-03-15T08:24:13.000Z	248 readonly	Query	SELECT * FROM coupons WHERE code = 'SAVE20' AND expires_at > NOW() AND used_count < max_uses
+37.19.221.13 - - [09/May/2026:08:24:35 +0000] "OPTIONS /index.html HTTP/1.1" 302 64257 "https://reddit.com/r/deals" "python-requests/2.31.0" 1645ms
+2026-03-15T08:25:51.000Z	243 readonly	Query	SHOW PROCESSLIST
+May 15 08:26:49 web-prod-01 sshd[13597]: Failed password for invalid user test from 192.0.2.88 port 50983 ssh2
+192.0.2.88 - - [09/May/2026:08:28:26 +0000] "POST /config.php HTTP/1.1" 204 78239 "https://www.bing.com/" "Wget/1.21.4" 5417ms
+95.214.55.25 - - [09/May/2026:08:28:41 +0000] "GET /api/v1/auth/logout HTTP/1.1" 404 314 "-" "Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 Mobile Safari/537.36" 1996ms
+2026/05/09 08:30:14 [error] 10107#56: *55937 could not be resolved (3: Host not found), client: 71.6.135.131, server: api.example.com
+May 15 08:31:30 worker-01 sshd[5457]: Invalid user oracle from 185.220.101.34 port 55574
+149.28.200.120 - - [09/May/2026:08:31:54 +0000] "GET /favicon.ico HTTP/1.1" 200 41298 "-" "Mozilla/5.0 (iPhone; CPU iPhone OS 17_4 like Mac OS X) AppleWebKit/605.1.15 Mobile/15E148 Safari/604.1" 1876ms
+May 15 08:32:59 web-prod-01 dockerd[14368]: time="2026-03-15T08:32:59Z" level=warning msg="Container exited with non-zero code" container=worker-7 exitCode=137
+2026-03-15T08:34:07.000Z	274 backup_user	Field List	reviews
+2026/05/09 08:35:32 [warn] 23806#9: *57658 limiting connections by zone "conn_limit_per_ip", excess: 1 by zone "conn_limit_per_ip", client: 95.214.55.25
+2026/05/09 08:36:50 [error] 19748#12: *58750 connect() failed (111: Connection refused) while connecting to upstream, client: 172.67.68.10, server: cdn.example.com, request: "GET /api/v1/products HTTP/1.1", upstream: "http://127.0.0.1:8080/api/v1/products"
+2026/05/09 08:38:34 [warn] 13929#47: *5837 limiting connections by zone "conn_limit_per_ip", excess: 1 by zone "conn_limit_per_ip", client: 185.220.101.34
+May 15 08:38:47 db-master fail2ban.actions[28409]: Ban 80.94.95.107
+198.51.100.22 - - [09/May/2026:08:39:17 +0000] "OPTIONS /checkout HTTP/1.1" 301 81067 "-" "Mozilla/5.0 (iPhone; CPU iPhone OS 17_4 like Mac OS X) AppleWebKit/605.1.15 Mobile/15E148 Safari/604.1" 1072ms
+May 15 08:40:22 worker-01 sudo[15402]: ubuntu : TTY=pts/2 ; PWD=/home/ubuntu ; USER=root ; COMMAND=/usr/bin/certbot renew
+2026/05/09 08:41:06 [error] 24677#16: *43210 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 95.214.55.25
+167.94.138.52 - - [09/May/2026:08:41:39 +0000] "HEAD /blog/how-to-setup-linux HTTP/1.1" 206 20700 "https://t.co/abc123" "Wget/1.21.4" 2406ms
+89.248.167.131 - - [09/May/2026:08:42:18 +0000] "GET /api/v1/auth/logout HTTP/1.1" 404 440 "https://www.bing.com/" "masscan/1.3 (https://github.com/robertdavidgraham/masscan)" 1425ms
+May 15 08:43:21 web-prod-02 sshd[31188]: Invalid user oracle from 37.19.221.13 port 64154
+May 15 08:43:59 db-master cron[24290]: (root) CMD (/usr/bin/find /tmp -mtime +7 -delete)
+71.6.135.131 - - [09/May/2026:08:45:40 +0000] "GET /blog/10-best-gadgets-2026 HTTP/1.1" 502 640 "https://www.google.com/" "zgrab/0.x" 645ms
+37.19.221.13 - - [09/May/2026:08:46:22 +0000] "HEAD /blog/10-best-gadgets-2026 HTTP/1.1" 500 220 "https://reddit.com/r/deals" "Scrapy/2.11.1 (+https://scrapy.org)" 3262ms
+2026-03-15T08:47:12.000Z	236 admin	Connect	admin@localhost on ecommerce_db using TCP/IP
+2026-03-15T08:47:34.000Z	243 admin	Quit	
+71.6.135.131 - - [09/May/2026:08:48:08 +0000] "GET /../../../etc/passwd HTTP/1.1" 304 62687 "https://shop.example.com/products" "-" 1117ms
+2026/05/09 08:49:34 [error] 10604#41: *19755 connect() failed (111: Connection refused) while connecting to upstream, client: 185.180.143.49, server: blog.example.com, request: "GET /api/v1/products HTTP/1.1", upstream: "http://127.0.0.1:8080/api/v1/products"
+45.142.212.100 - - [09/May/2026:08:49:53 +0000] "OPTIONS /products/phone HTTP/1.1" 304 20947 "https://reddit.com/r/deals" "Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 Mobile Safari/537.36" 3351ms
+167.94.138.52 - - [09/May/2026:08:51:29 +0000] "GET /.git/config HTTP/1.1" 200 16883 "-" "masscan/1.3 (https://github.com/robertdavidgraham/masscan)" 2487ms
+2026/05/09 08:52:51 [crit] 12878#43: *80439 client intended to send too large body: 20971520 bytes, client: 104.21.44.80, server: blog.example.com
+66.240.192.138 - - [09/May/2026:08:54:40 +0000] "GET /favicon.ico HTTP/1.1" 200 53660 "-" "-" 159ms
+45.142.212.100 - - [09/May/2026:08:55:04 +0000] "GET /blog/how-to-setup-linux HTTP/1.1" 403 227 "https://shop.example.com/" "Scrapy/2.11.1 (+https://scrapy.org)" 3048ms
+2026-03-15T08:56:39.000Z	243 admin	Query	INSERT INTO orders (user_id, total, status, created_at) VALUES (5263, 748.12, 'pending', NOW())
+May 15 08:57:36 db-master fail2ban.actions[5521]: Unban 149.28.200.120
+192.0.2.88 - - [09/May/2026:08:58:56 +0000] "GET /phpmyadmin/ HTTP/1.1" 401 738 "https://www.google.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" 5678ms
+May 15 08:59:14 web-prod-02 systemd[29839]: Stopping app.service - Node.js Application Server...
+2026-03-15T08:59:30.000Z	216 backup_user	Init DB	ecommerce_db
+2026/05/09 08:59:42 [crit] 23036#48: *75301 connect() failed (111: Connection refused) while connecting to upstream, client: 37.19.221.13, server: blog.example.com, request: "GET /api/v1/products HTTP/1.1", upstream: "http://127.0.0.1:8080/api/v1/products"
+185.220.101.34 - - [09/May/2026:08:59:59 +0000] "POST /api/v1/users/profile HTTP/1.1" 200 58919 "https://t.co/abc123" "Mozilla/5.0 (X11; Linux x86_64; rv:124.0) Gecko/20100101 Firefox/124.0" 5309ms
+66.240.192.138 - - [09/May/2026:09:01:19 +0000] "PUT /robots.txt HTTP/1.1" 302 28737 "https://shop.example.com/products" "Mozilla/5.0 (X11; Linux x86_64; rv:124.0) Gecko/20100101 Firefox/124.0" 3534ms
+2026-03-15T09:01:46.000Z	230 readonly	Query	INSERT INTO audit_log (user_id, action, ip_address, created_at) VALUES (3937, 'LOGIN', '149.28.200.120', NOW())
+2026/05/09 09:02:34 [warn] 28384#50: *79296 could not be resolved (3: Host not found), client: 198.51.100.22, server: shop.example.com
+2026/05/09 09:04:23 [notice] 19370#52: *6254 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 71.6.135.131, server: blog.example.com, upstream: "http://127.0.0.1:8080"
+May 15 09:05:53 worker-01 dockerd[9884]: time="2026-03-15T09:05:53Z" level=warning msg="Container exited with non-zero code" container=worker-10 exitCode=137
+May 15 09:06:23 worker-01 sudo[25020]: ubuntu : TTY=pts/0 ; PWD=/home/ubuntu ; USER=root ; COMMAND=/bin/systemctl status nginx
+71.6.135.131 - - [09/May/2026:09:06:44 +0000] "OPTIONS /index.html HTTP/1.1" 200 54826 "https://www.bing.com/" "Googlebot/2.1 (+http://www.google.com/bot.html)" 205ms
+172.67.68.10 - - [09/May/2026:09:06:58 +0000] "POST /shell.php HTTP/1.1" 403 569 "-" "Bingbot/2.0 (+http://www.bing.com/bingbot.htm)" 783ms
+162.55.36.149 - - [09/May/2026:09:08:18 +0000] "GET /admin/ HTTP/1.1" 206 31197 "https://www.bing.com/" "-" 1468ms
+2026/05/09 09:09:36 [warn] 28809#26: *12129 FastCGI sent in stderr: "PHP message: PHP Fatal error: Uncaught Error: Call to a member function query() on null" while reading response header from FastCGI upstream, client: 104.21.44.80
+May 15 09:10:57 web-prod-02 dockerd[14378]: time="2026-03-15T09:10:57Z" level=error msg="Handler for DELETE /v1.43/containers/030ab5ce678c returned error: removal of container 030ab5ce678c is already in progress"
+203.0.113.5 - - [09/May/2026:09:12:45 +0000] "POST /api/v1/search?q=laptop HTTP/1.1" 200 77315 "https://www.google.com/" "libwww-perl/6.72" 872ms
+194.165.16.11 - - [09/May/2026:09:13:06 +0000] "POST /products/headphones HTTP/1.1" 200 57249 "-" "Go-http-client/2.0" 2592ms
+2026/05/09 09:14:09 [warn] 16041#13: *90063 invalid header: "37.19.221.13" from upstream, client: 37.19.221.13, server: blog.example.com
+66.240.192.138 - - [09/May/2026:09:15:18 +0000] "GET /sitemap.xml HTTP/1.1" 502 231 "https://t.co/abc123" "zgrab/0.x" 692ms
+May 15 09:16:30 worker-01 dockerd[10431]: time="2026-03-15T09:16:30Z" level=warning msg="Container exited with non-zero code" container=worker-16 exitCode=137
+66.240.192.138 - - [09/May/2026:09:17:37 +0000] "OPTIONS /favicon.ico HTTP/1.1" 200 9565 "https://t.co/abc123" "Mozilla/5.0 (iPhone; CPU iPhone OS 17_4 like Mac OS X) AppleWebKit/605.1.15 Mobile/15E148 Safari/604.1" 2513ms
+2026/05/09 09:18:12 [warn] 11199#56: *25631 connect() failed (111: Connection refused) while connecting to upstream, client: 185.180.143.49, server: cdn.example.com, request: "GET /api/v1/products HTTP/1.1", upstream: "http://127.0.0.1:8080/api/v1/products"
+2026/05/09 09:19:44 [error] 21724#25: *72024 limiting requests, excess: 8.560 by zone "api_rate_limit", client: 80.94.95.107
+194.165.16.11 - - [09/May/2026:09:19:56 +0000] "PUT / HTTP/1.1" 401 211 "https://reddit.com/r/deals" "masscan/1.3 (https://github.com/robertdavidgraham/masscan)" 206ms
+May 15 09:21:01 web-prod-01 dockerd[2155]: time="2026-03-15T09:21:01Z" level=warning msg="Container exited with non-zero code" container=worker-3 exitCode=137
+May 15 09:22:09 web-prod-01 dockerd[29960]: time="2026-03-15T09:22:09Z" level=info msg="Container started" container=web-14 image=nginx:alpine
+May 15 09:23:49 worker-01 sshd[25595]: Accepted publickey for ubuntu from 71.6.135.131 port 21547 ssh2: ED25519 SHA256:Hy7tRqWmZ3cXpLvN
+2026-03-15T09:24:44.000Z	239 app_user	Query	BEGIN
+192.0.2.88 - - [09/May/2026:09:25:45 +0000] "POST /config.php HTTP/1.1" 200 11725 "https://www.google.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4 Safari/605.1.15" 5996ms
+2026-03-15T09:26:01.000Z	230 admin	Quit	
+2026/05/09 09:26:35 [notice] 19904#28: *71789 limiting connections by zone "conn_limit_per_ip", excess: 1 by zone "conn_limit_per_ip", client: 185.180.143.49
+May 15 09:27:25 web-prod-01 systemd[8283]: app.service: Failed with result 'exit-code'.
+2026/05/09 09:28:30 [error] 26555#40: *97764 upstream prematurely closed connection while reading response header from upstream, client: 162.55.36.149
+May 15 09:30:06 web-prod-01 dockerd[27868]: time="2026-03-15T09:30:06Z" level=warning msg="Container exited with non-zero code" container=worker-1 exitCode=137
+May 15 09:30:43 web-prod-01 sudo[12346]: ubuntu : TTY=pts/1 ; PWD=/home/ubuntu ; USER=root ; COMMAND=/usr/bin/tail -n 100 /var/log/nginx/error.log
+May 15 09:32:02 web-prod-02 systemd[21878]: Started mysql.service - MySQL Community Server.
+2026-03-15T09:32:42.000Z	272 backup_user	Statistics	
+May 15 09:34:09 db-master postfix/smtpd[19362]: connect from unknown[95.214.55.25]
+May 15 09:34:50 web-prod-02 sudo[14988]: ubuntu : TTY=pts/0 ; PWD=/home/ubuntu ; USER=root ; COMMAND=/bin/systemctl status nginx
+66.240.192.138 - - [09/May/2026:09:35:22 +0000] "POST /products HTTP/1.1" 503 275 "https://shop.example.com/" "libwww-perl/6.72" 3604ms
+2026/05/09 09:36:35 [warn] 14376#59: *3412 invalid header: "149.28.200.120" from upstream, client: 149.28.200.120, server: api.example.com
+2026/05/09 09:36:58 [error] 20509#53: *65647 upstream prematurely closed connection while reading response header from upstream, client: 172.67.68.10
+80.94.95.107 - - [09/May/2026:09:37:29 +0000] "GET /api/v1/products HTTP/1.1" 400 549 "-" "Java/17.0.10" 4789ms
+2026-03-15T09:39:03.000Z	268 backup_user	Query	ROLLBACK
+2026/05/09 09:40:17 [error] 26924#30: *30183 client intended to send too large body: 20971520 bytes, client: 167.94.138.52, server: cdn.example.com
+2026/05/09 09:40:51 [notice] 12462#54: *67260 SSL_write() failed (32: Broken pipe) while sending response to client, client: 37.19.221.13
+2026/05/09 09:41:12 [error] 25455#11: *63646 SSL_do_handshake() failed (SSL: error:14094418:SSL routines:ssl3_read_bytes:tlsv1 alert unknown ca) while SSL handshaking, client: 185.220.101.34
+May 15 09:41:43 web-prod-01 kernel[29283]: IPv4: Maytian source from 37.19.221.13, on dev eth0
+2026-03-15T09:42:27.000Z	258 readonly	Statistics	
+May 15 09:43:47 db-master sshd[16198]: Unable to negotiate with 172.67.68.10 port 30800: no matching host key type found
+149.28.200.120 - - [09/May/2026:09:44:40 +0000] "GET /.git/config HTTP/1.1" 200 80336 "-" "Mozilla/5.0 (iPhone; CPU iPhone OS 17_4 like Mac OS X) AppleWebKit/605.1.15 Mobile/15E148 Safari/604.1" 3962ms
+192.0.2.88 - - [09/May/2026:09:46:28 +0000] "OPTIONS /api/v1/users/profile HTTP/1.1" 200 6499 "-" "Mozilla/5.0 (X11; Linux x86_64; rv:124.0) Gecko/20100101 Firefox/124.0" 2655ms
+2026-03-15T09:48:18.000Z	266 readonly	Query	INSERT INTO search_logs (query, user_id, results_count, created_at) VALUES ('wireless headphones', 8838, 42, NOW())
+192.0.2.88 - - [09/May/2026:09:49:11 +0000] "GET /contact HTTP/1.1" 200 34777 "-" "-" 4878ms
+May 15 09:50:05 cache-01 kernel[4877]: IPv4: Maytian source from 172.67.68.10, on dev eth0
+2026-03-15T09:51:00.000Z	253 backup_user	Statistics	
+198.51.100.22 - - [09/May/2026:09:51:34 +0000] "PATCH /.env HTTP/1.1" 304 52539 "-" "Go-http-client/2.0" 2928ms
+2026/05/09 09:53:00 [error] 22075#56: *61766 upstream prematurely closed connection while reading response header from upstream, client: 194.165.16.11
+2026-03-15T09:54:29.000Z	274 replicator	Connect	replicator@10.0.0.2 on ecommerce_db using TCP/IP
+May 15 09:55:21 cache-01 sudo[9388]: deploy : TTY=pts/0 ; PWD=/var/www/app ; USER=root ; COMMAND=/usr/bin/npm run migrate
+May 15 09:56:53 web-prod-01 cron[15464]: (root) CMD (/usr/local/bin/backup-db.sh >> /var/log/backup.log 2>&1)
+66.240.192.138 - - [09/May/2026:09:58:07 +0000] "GET /about HTTP/1.1" 301 7268 "-" "masscan/1.3 (https://github.com/robertdavidgraham/masscan)" 4000ms
+2026-03-15T09:59:00.000Z	270 replicator	Field List	products
+2026-03-15T09:59:59.000Z	249 replicator	Query	SHOW STATUS LIKE 'Threads_connected'
+2026-03-15T10:00:26.000Z	234 replicator	Query	BEGIN
+172.67.68.10 - - [09/May/2026:10:02:08 +0000] "POST /api/v1/wishlist HTTP/1.1" 204 14035 "-" "Bingbot/2.0 (+http://www.bing.com/bingbot.htm)" 4988ms
+2026-03-15T10:03:56.000Z	218 app_user	Query	SHOW STATUS LIKE 'Threads_connected'
+May 15 10:05:10 web-prod-02 systemd[11697]: nginx.service: Reloading.
+162.55.36.149 - - [09/May/2026:10:05:29 +0000] "POST /images/banner.jpg HTTP/1.1" 200 81631 "https://www.google.com/" "Go-http-client/2.0" 3514ms
+2026-03-15T10:06:47.000Z	239 admin	Query	INSERT INTO search_logs (query, user_id, results_count, created_at) VALUES ('wireless headphones', 1881, 42, NOW())
+2026-03-15T10:08:02.000Z	248 app_user	Connect	app_user@localhost on ecommerce_db using Socket
+May 15 10:09:16 cache-01 systemd[22425]: mysql.service: Deactivated successfully.
+2026/05/09 10:10:33 [warn] 14792#8: *66188 invalid header: "185.180.143.49" from upstream, client: 185.180.143.49, server: shop.example.com
+May 15 10:11:13 web-prod-01 fail2ban.actions[17857]: Ban 198.51.100.22
+91.108.4.10 - - [09/May/2026:10:11:33 +0000] "GET /sitemap.xml HTTP/1.1" 504 658 "-" "python-requests/2.31.0" 2680ms
+71.6.135.131 - - [09/May/2026:10:12:56 +0000] "OPTIONS /sitemap.xml HTTP/1.1" 304 62213 "https://www.google.com/" "python-requests/2.31.0" 120ms
+May 15 10:13:15 web-prod-02 fail2ban.actions[24484]: Ban 104.21.44.80
+2026/05/09 10:13:34 [error] 28955#23: *48013 open() "/var/www/html/sitemap.xml" failed (2: No such file or directory), client: 198.51.100.22, server: shop.example.com
+2026-03-15T10:13:54.000Z	235 reporting	Field List	coupons
+192.0.2.88 - - [09/May/2026:10:15:10 +0000] "POST /api/v1/products HTTP/1.1" 502 146 "-" "-" 5327ms
+May 15 10:15:55 web-prod-01 postfix/smtpd[14185]: warning: unknown[149.28.200.120]: SASL LOGIN authentication failed: authentication failure
+2026-03-15T10:17:02.000Z	262 replicator	Query	SELECT id FROM products WHERE stock < 10 AND active = 1
+89.248.167.131 - - [09/May/2026:10:17:59 +0000] "GET /api/v1/cart HTTP/1.1" 200 24345 "https://shop.example.com/" "curl/8.6.0" 5026ms
+2026/05/09 10:18:40 [crit] 28953#33: *11988 SSL_write() failed (32: Broken pipe) while sending response to client, client: 194.165.16.11
+May 15 10:20:18 worker-01 dockerd[16585]: time="2026-03-15T10:20:18Z" level=info msg="Container started" container=web-17 image=nginx:alpine
+May 15 10:21:00 web-prod-02 sshd[7289]: Did not receive identification string from 172.67.68.10 port 18494
+162.55.36.149 - - [09/May/2026:10:22:25 +0000] "PUT /api/v1/orders/history HTTP/1.1" 405 433 "-" "Mozilla/5.0 (X11; Linux x86_64; rv:124.0) Gecko/20100101 Firefox/124.0" 469ms
+149.28.200.120 - - [09/May/2026:10:23:39 +0000] "GET /contact HTTP/1.1" 200 28684 "-" "Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 Mobile Safari/537.36" 5198ms
+192.0.2.88 - - [09/May/2026:10:24:56 +0000] "POST /.git/config HTTP/1.1" 404 670 "https://reddit.com/r/deals" "zgrab/0.x" 310ms
+May 15 10:26:18 worker-01 sshd[26321]: Failed password for invalid user test from 198.51.100.22 port 22258 ssh2
+2026-03-15T10:26:58.000Z	222 app_user	Field List	reviews
+May 15 10:27:20 cache-01 dockerd[23991]: time="2026-03-15T10:27:20Z" level=warning msg="Container exited with non-zero code" container=worker-8 exitCode=137
+May 15 10:28:05 web-prod-01 fail2ban.actions[1507]: Notice: already banned 37.19.221.13
+May 15 10:29:24 web-prod-01 kernel[13257]: TCP: request_sock_TCP: Possible SYN flooding on port 443. Sending cookies. Check SNMP counters.
+2026/05/09 10:30:56 [warn] 13025#24: *48519 could not be resolved (3: Host not found), client: 192.0.2.88, server: cdn.example.com
+37.19.221.13 - - [09/May/2026:10:31:33 +0000] "GET /../../../etc/passwd HTTP/1.1" 404 347 "https://www.bing.com/" "zgrab/0.x" 3681ms
+2026/05/09 10:32:48 [warn] 24257#61: *48413 FastCGI sent in stderr: "PHP message: PHP Fatal error: Uncaught Error: Call to a member function query() on null" while reading response header from FastCGI upstream, client: 51.77.135.89
+203.0.113.5 - - [09/May/2026:10:34:38 +0000] "POST /api/v1/orders HTTP/1.1" 200 8630 "https://shop.example.com/" "python-requests/2.31.0" 757ms
+2026-03-15T10:35:09.000Z	241 readonly	Field List	coupons
+185.220.101.34 - - [09/May/2026:10:35:35 +0000] "POST /static/css/styles.min.css HTTP/1.1" 304 80968 "-" "Java/17.0.10" 1489ms
+45.142.212.100 - - [09/May/2026:10:36:39 +0000] "POST /static/js/bundle.min.js HTTP/1.1" 301 67225 "https://reddit.com/r/deals" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" 4590ms
+2026/05/09 10:37:26 [warn] 31857#20: *23071 client intended to send too large body: 20971520 bytes, client: 192.0.2.88, server: cdn.example.com
+104.21.44.80 - - [09/May/2026:10:37:39 +0000] "HEAD /api/v1/auth/register HTTP/1.1" 200 4830 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4 Safari/605.1.15" 5712ms
+162.55.36.149 - - [09/May/2026:10:38:15 +0000] "GET /../../../etc/passwd HTTP/1.1" 301 17272 "-" "libwww-perl/6.72" 2840ms
+2026/05/09 10:39:30 [error] 17697#21: *23273 limiting connections by zone "conn_limit_per_ip", excess: 1 by zone "conn_limit_per_ip", client: 149.28.200.120
+2026-03-15T10:39:57.000Z	208 admin	Connect	admin@10.0.0.2 on ecommerce_db using TCP/IP
+2026-03-15T10:41:13.000Z	233 readonly	Statistics	
+162.55.36.149 - - [09/May/2026:10:42:34 +0000] "POST /api/v1/orders/history HTTP/1.1" 404 174 "https://www.bing.com/" "Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 Mobile Safari/537.36" 4184ms
+162.55.36.149 - - [09/May/2026:10:44:01 +0000] "POST /api/v1/wishlist HTTP/1.1" 201 731 "https://www.bing.com/" "Wget/1.21.4" 6029ms
+May 15 10:45:23 worker-01 dockerd[30811]: time="2026-03-15T10:45:23Z" level=error msg="Handler for DELETE /v1.43/containers/21c1ceb0a6ea returned error: removal of container 21c1ceb0a6ea is already in progress"
+May 15 10:47:02 cache-01 fail2ban.actions[25081]: Notice: already banned 91.108.4.10
+149.28.200.120 - - [09/May/2026:10:48:39 +0000] "POST /robots.txt HTTP/1.1" 301 8274 "https://www.bing.com/" "Googlebot/2.1 (+http://www.google.com/bot.html)" 640ms
+May 15 10:49:49 db-master postfix/smtpd[17879]: NOQUEUE: reject: RCPT from unknown[80.94.95.107]: 554 5.7.1 Service unavailable; Client host [80.94.95.107] blocked using zen.spamhaus.org
+May 15 10:51:37 web-prod-01 kernel[5184]: EXT4-fs warning (device sda1): ext4_dx_add_entry: Directory index full!
+2026-03-15T10:53:24.000Z	277 admin	Field List	products
+2026-03-15T10:53:59.000Z	208 app_user	Connect	app_user@10.0.0.2 on ecommerce_db using Socket
+May 15 10:54:52 worker-01 dockerd[10005]: time="2026-03-15T10:54:52Z" level=error msg="Handler for DELETE /v1.43/containers/842ad5a72fe1 returned error: removal of container 842ad5a72fe1 is already in progress"
+149.28.200.120 - - [09/May/2026:10:55:31 +0000] "POST /api/v1/cart HTTP/1.1" 500 226 "-" "Bingbot/2.0 (+http://www.bing.com/bingbot.htm)" 4171ms
+185.220.101.34 - - [09/May/2026:10:56:00 +0000] "OPTIONS /api/v1/search?q=laptop HTTP/1.1" 403 726 "https://shop.example.com/products" "Mozilla/5.0 (iPhone; CPU iPhone OS 17_4 like Mac OS X) AppleWebKit/605.1.15 Mobile/15E148 Safari/604.1" 2461ms
+May 15 10:56:22 web-prod-01 kernel[25711]: TCP: request_sock_TCP: Possible SYN flooding on port 80. Sending cookies. Check SNMP counters.
+May 15 10:56:56 worker-01 kernel[17130]: IPv4: Maytian source from 198.51.100.22, on dev eth0
+2026-03-15T10:57:15.000Z	254 app_user	Query	UPDATE products SET stock = stock - 4245 WHERE id = 6723 AND stock >= 4245
+May 15 10:58:29 web-prod-02 fail2ban.actions[17400]: Notice: already banned 167.94.138.52
+May 15 11:00:18 worker-01 systemd[5587]: Reached target multi-user.target - Multi-User System.
+2026-03-15T11:02:06.000Z	200 reporting	Query	SELECT p.name, p.price, r.rating, r.comment FROM products p LEFT JOIN reviews r ON p.id = r.product_id WHERE p.id = 332
+May 15 11:03:12 web-prod-02 systemd[8905]: app.service: Scheduled restart job, restart counter is at 3.
+185.220.101.34 - - [09/May/2026:11:04:02 +0000] "OPTIONS /about HTTP/1.1" 200 13219 "https://reddit.com/r/deals" "Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 Mobile Safari/537.36" 4511ms
+2026-03-15T11:05:48.000Z	219 readonly	Query	SELECT COUNT(*) FROM orders WHERE DATE(created_at) = CURDATE()
+66.240.192.138 - - [09/May/2026:11:07:37 +0000] "POST /sitemap.xml HTTP/1.1" 403 563 "https://shop.example.com/" "curl/8.6.0" 81ms
+2026/05/09 11:08:55 [warn] 11076#25: *72735 client intended to send too large body: 20971520 bytes, client: 80.94.95.107, server: cdn.example.com
+104.21.44.80 - - [09/May/2026:11:09:33 +0000] "GET /api/v1/auth/logout HTTP/1.1" 503 795 "https://reddit.com/r/deals" "axios/1.6.8" 3744ms
+May 15 11:10:01 web-prod-01 postfix/smtpd[31049]: warning: unknown[192.0.2.88]: SASL LOGIN authentication failed: authentication failure
+May 15 11:10:31 web-prod-02 cron[24798]: (root) CMD (/usr/bin/apt-get -q -y --no-show-upgraded autoclean)
+2026-03-15T11:11:36.000Z	269 admin	Query	UPDATE users SET last_login = NOW(), login_count = login_count + 1 WHERE id = 8633
+2026/05/09 11:12:06 [warn] 10004#11: *55872 connect() failed (111: Connection refused) while connecting to upstream, client: 172.67.68.10, server: blog.example.com, request: "GET /api/v1/products HTTP/1.1", upstream: "http://127.0.0.1:8080/api/v1/products"
+May 15 11:12:32 web-prod-01 fail2ban.actions[1998]: Notice: already banned 80.94.95.107
+2026-03-15T11:13:34.000Z	203 backup_user	Query	SELECT id FROM products WHERE stock < 10 AND active = 1
+May 15 11:14:34 web-prod-01 systemd[27815]: app.service: Failed with result 'exit-code'.
+May 15 11:14:48 db-master sudo[28586]: ubuntu : TTY=pts/2 ; PWD=/home/ubuntu ; USER=root ; COMMAND=/usr/bin/certbot renew
+May 15 11:15:32 cache-01 dockerd[3445]: time="2026-03-15T11:15:32Z" level=info msg="Container started" container=web-10 image=nginx:alpine
+198.51.100.22 - - [09/May/2026:11:16:10 +0000] "PATCH /api/v1/cart HTTP/1.1" 502 639 "https://reddit.com/r/deals" "zgrab/0.x" 2931ms
+May 15 11:16:40 web-prod-02 dockerd[25729]: time="2026-03-15T11:16:40Z" level=error msg="Handler for DELETE /v1.43/containers/8352c1ac90c0 returned error: removal of container 8352c1ac90c0 is already in progress"
+162.55.36.149 - - [09/May/2026:11:18:09 +0000] "PUT / HTTP/1.1" 304 76538 "https://shop.example.com/products" "Go-http-client/2.0" 863ms
+2026-03-15T11:19:03.000Z	224 admin	Connect	admin@10.0.0.2 on ecommerce_db using TCP/IP
+2026-03-15T11:19:30.000Z	258 reporting	Query	SELECT u.email, u.name, o.total FROM users u JOIN orders o ON u.id = o.user_id WHERE o.status = 'pending'
+May 15 11:21:11 worker-01 sshd[9949]: Invalid user oracle from 172.67.68.10 port 22618
+2026/05/09 11:23:01 [error] 13995#57: *32862 open() "/var/www/html/api/v1/reviews" failed (2: No such file or directory), client: 194.165.16.11, server: shop.example.com
+80.94.95.107 - - [09/May/2026:11:24:27 +0000] "DELETE /xmlrpc.php HTTP/1.1" 200 20173 "https://www.bing.com/" "python-requests/2.31.0" 3676ms
+May 15 11:25:03 worker-01 kernel[11311]: clocksource: timekeeping watchdog on CPU0: Mayking clocksource 'tsc' as unstable
+May 15 11:25:58 db-master sudo[31584]: ubuntu : TTY=pts/2 ; PWD=/home/ubuntu ; USER=root ; COMMAND=/usr/bin/certbot renew
+2026-03-15T11:26:43.000Z	255 admin	Field List	products
+167.94.138.52 - - [09/May/2026:11:27:44 +0000] "DELETE /api/v1/cart HTTP/1.1" 200 60593 "-" "Bingbot/2.0 (+http://www.bing.com/bingbot.htm)" 517ms
+2026-03-15T11:28:58.000Z	219 backup_user	Field List	coupons
+192.0.2.88 - - [09/May/2026:11:30:41 +0000] "GET /index.html HTTP/1.1" 200 72924 "-" "Java/17.0.10" 2225ms
+2026/05/09 11:31:22 [warn] 29940#9: *53426 invalid header: "149.28.200.120" from upstream, client: 149.28.200.120, server: cdn.example.com
+2026-03-15T11:32:39.000Z	214 readonly	Quit	
+51.77.135.89 - - [09/May/2026:11:34:20 +0000] "PUT /images/banner.jpg HTTP/1.1" 304 74714 "https://shop.example.com/" "Bingbot/2.0 (+http://www.bing.com/bingbot.htm)" 275ms
+167.94.138.52 - - [09/May/2026:11:35:20 +0000] "PUT /.env HTTP/1.1" 500 376 "https://shop.example.com/products" "Googlebot/2.1 (+http://www.google.com/bot.html)" 6167ms
+2026/05/09 11:36:22 [error] 26483#13: *96748 no live upstreams while connecting to upstream, client: 89.248.167.131, server: cdn.example.com, upstream: "backend_pool"
+May 15 11:36:37 worker-01 cron[29782]: (root) CMD (/usr/bin/certbot renew --quiet >> /var/log/certbot.log 2>&1)
+2026-03-15T11:38:14.000Z	249 admin	Query	SELECT id, name, price, stock FROM products WHERE category_id = 344 AND active = 1 ORDER BY created_at DESC LIMIT 20
+2026/05/09 11:39:29 [warn] 22202#15: *31147 client intended to send too large body: 20971520 bytes, client: 45.142.212.100, server: cdn.example.com
+104.21.44.80 - - [09/May/2026:11:41:01 +0000] "HEAD /static/js/bundle.min.js HTTP/1.1" 301 38714 "https://shop.example.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4 Safari/605.1.15" 582ms
+2026/05/09 11:42:28 [error] 15602#57: *38211 upstream prematurely closed connection while reading response header from upstream, client: 45.142.212.100
+2026/05/09 11:42:49 [warn] 14385#19: *57598 limiting connections by zone "conn_limit_per_ip", excess: 1 by zone "conn_limit_per_ip", client: 203.0.113.5
+2026/05/09 11:44:00 [error] 10685#37: *19367 no live upstreams while connecting to upstream, client: 192.0.2.88, server: cdn.example.com, upstream: "backend_pool"
+198.51.100.22 - - [09/May/2026:11:45:41 +0000] "GET /static/css/styles.min.css HTTP/1.1" 422 429 "https://www.bing.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" 2601ms
+2026-03-15T11:47:26.000Z	250 admin	Query	SELECT * FROM coupons WHERE code = 'SAVE20' AND expires_at > NOW() AND used_count < max_uses
+May 15 11:48:17 web-prod-02 postfix/smtpd[24586]: disconnect from mail.example.org[80.94.95.107] ehlo=1 mail=1 rcpt=0 quit=1 commands=3
+May 15 11:48:48 cache-01 sshd[26913]: pam_unix(sshd:session): session closed for user deploy
+May 15 11:50:26 worker-01 postfix/smtpd[30465]: warning: unknown[37.19.221.13]: SASL LOGIN authentication failed: authentication failure
+2026/05/09 11:51:24 [error] 16380#20: *95543 FastCGI sent in stderr: "PHP message: PHP Fatal error: Uncaught Error: Call to a member function query() on null" while reading response header from FastCGI upstream, client: 51.77.135.89
+May 15 11:52:53 worker-01 dockerd[16942]: time="2026-03-15T11:52:53Z" level=info msg="ignoring event" module=libcontainerd namespace=moby topic=/tasks/delete
+185.220.101.34 - - [09/May/2026:11:54:19 +0000] "OPTIONS /shell.php HTTP/1.1" 200 84938 "https://t.co/abc123" "masscan/1.3 (https://github.com/robertdavidgraham/masscan)" 1834ms
+2026/05/09 11:55:20 [error] 19460#47: *45839 no live upstreams while connecting to upstream, client: 51.77.135.89, server: cdn.example.com, upstream: "backend_pool"
+May 15 11:55:58 web-prod-01 cron[29641]: (nobody) CMD (/usr/bin/php /var/www/app/artisan schedule:run >> /dev/null 2>&1)
+May 15 11:56:33 db-master fail2ban.actions[22091]: Ban 198.51.100.22
+May 15 11:57:37 web-prod-01 systemd[26834]: Stopping app.service - Node.js Application Server...
+104.21.44.80 - - [09/May/2026:11:57:58 +0000] "GET /checkout HTTP/1.1" 302 14008 "https://shop.example.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4 Safari/605.1.15" 1101ms
+May 15 11:59:35 db-master sudo[14419]: ubuntu : TTY=pts/1 ; PWD=/home/ubuntu ; USER=root ; COMMAND=/usr/bin/tail -n 100 /var/log/nginx/error.log
+2026/05/09 12:00:38 [notice] 23172#27: *11878 SSL_do_handshake() failed (SSL: error:14094418:SSL routines:ssl3_read_bytes:tlsv1 alert unknown ca) while SSL handshaking, client: 71.6.135.131
+37.19.221.13 - - [09/May/2026:12:02:13 +0000] "POST /api/v1/search?q=laptop HTTP/1.1" 200 81897 "https://www.google.com/" "python-requests/2.31.0" 3989ms
+2026-03-15T12:03:47.000Z	235 replicator	Connect	replicator@10.0.0.2 on ecommerce_db using TCP/IP
+2026-03-15T12:04:10.000Z	206 readonly	Statistics	
+2026-03-15T12:04:55.000Z	231 replicator	Query	UPDATE cart SET quantity = 5921 WHERE user_id = 1269 AND product_id = 9084
+May 15 12:05:22 cache-01 dockerd[29594]: time="2026-03-15T12:05:22Z" level=info msg="ignoring event" module=libcontainerd namespace=moby topic=/tasks/delete
+May 15 12:05:58 web-prod-01 sudo[21405]: pam_unix(sudo:session): session opened for user root by deploy(uid=1001)
+149.28.200.120 - - [09/May/2026:12:06:11 +0000] "GET /api/v1/cart HTTP/1.1" 500 510 "-" "libwww-perl/6.72" 1370ms
+149.28.200.120 - - [09/May/2026:12:06:37 +0000] "HEAD /products/laptop HTTP/1.1" 200 63555 "-" "-" 1211ms
+2026/05/09 12:07:31 [error] 22445#7: *34454 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 95.214.55.25, server: shop.example.com, upstream: "http://127.0.0.1:8080"
+91.108.4.10 - - [09/May/2026:12:08:15 +0000] "GET /api/v1/users/profile HTTP/1.1" 403 186 "-" "Java/17.0.10" 3559ms
+May 15 12:10:02 db-master systemd[9850]: Stopping app.service - Node.js Application Server...
+May 15 12:11:25 web-prod-01 postfix/smtpd[27295]: NOQUEUE: reject: RCPT from unknown[185.220.101.34]: 554 5.7.1 Service unavailable; Client host [185.220.101.34] blocked using zen.spamhaus.org
+May 15 12:12:54 web-prod-01 cron[22212]: (root) CMD (/usr/bin/apt-get -q -y --no-show-upgraded autoclean)
+2026-03-15T12:13:41.000Z	238 reporting	Query	SELECT id FROM products WHERE stock < 10 AND active = 1
+2026-03-15T12:15:02.000Z	219 reporting	Query	SELECT TABLE_NAME, TABLE_ROWS FROM information_schema.TABLES WHERE TABLE_SCHEMA = 'ecommerce_db'
+2026-03-15T12:16:49.000Z	210 backup_user	Statistics	
+185.180.143.49 - - [09/May/2026:12:18:37 +0000] "HEAD /static/js/bundle.min.js HTTP/1.1" 301 70507 "https://reddit.com/r/deals" "Mozilla/5.0 (X11; Linux x86_64; rv:124.0) Gecko/20100101 Firefox/124.0" 3491ms
+95.214.55.25 - - [09/May/2026:12:19:36 +0000] "PUT /api/v1/cart HTTP/1.1" 304 62433 "https://shop.example.com/" "Mozilla/5.0 (iPhone; CPU iPhone OS 17_4 like Mac OS X) AppleWebKit/605.1.15 Mobile/15E148 Safari/604.1" 4461ms
+May 15 12:21:21 cache-01 sudo[18281]: ubuntu : TTY=pts/1 ; PWD=/home/ubuntu ; USER=root ; COMMAND=/usr/bin/tail -n 100 /var/log/nginx/error.log
+May 15 12:22:48 web-prod-01 dockerd[15796]: time="2026-03-15T12:22:48Z" level=error msg="Handler for DELETE /v1.43/containers/1080f6cef92d returned error: removal of container 1080f6cef92d is already in progress"
+71.6.135.131 - - [09/May/2026:12:24:32 +0000] "PUT /api/v1/products HTTP/1.1" 201 7362 "https://www.bing.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4 Safari/605.1.15" 4997ms
+45.142.212.100 - - [09/May/2026:12:25:36 +0000] "GET /wp-login.php HTTP/1.1" 404 446 "-" "Mozilla/5.0 (iPhone; CPU iPhone OS 17_4 like Mac OS X) AppleWebKit/605.1.15 Mobile/15E148 Safari/604.1" 2727ms
+2026/05/09 12:26:47 [warn] 10829#48: *91591 upstream prematurely closed connection while reading response header from upstream, client: 162.55.36.149
+2026/05/09 12:27:14 [error] 28968#60: *55498 FastCGI sent in stderr: "PHP message: PHP Fatal error: Uncaught Error: Call to a member function query() on null" while reading response header from FastCGI upstream, client: 149.28.200.120
+May 15 12:29:03 worker-01 kernel[29874]: TCP: request_sock_TCP: Possible SYN flooding on port 80. Sending cookies. Check SNMP counters.
+2026-03-15T12:29:31.000Z	221 readonly	Query	COMMIT
+2026/05/09 12:30:45 [error] 15239#46: *18761 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 51.77.135.89, server: shop.example.com, upstream: "http://127.0.0.1:8080"
+May 15 12:31:15 cache-01 sudo[14060]: ubuntu : TTY=pts/2 ; PWD=/home/ubuntu ; USER=root ; COMMAND=/usr/bin/certbot renew
+2026-03-15T12:32:18.000Z	211 app_user	Statistics	
+May 15 12:32:38 web-prod-02 kernel[20655]: usb 1-1: USB disconnect, device number 2
+95.214.55.25 - - [09/May/2026:12:34:27 +0000] "GET /api/v1/reviews HTTP/1.1" 200 30619 "https://reddit.com/r/deals" "Go-http-client/2.0" 3180ms
+2026-03-15T12:34:43.000Z	208 admin	Query	UPDATE products SET stock = stock - 3838 WHERE id = 1557 AND stock >= 3838
+91.108.4.10 - - [09/May/2026:12:35:47 +0000] "GET /api/v1/payments/intent HTTP/1.1" 403 457 "https://shop.example.com/" "libwww-perl/6.72" 3195ms
+71.6.135.131 - - [09/May/2026:12:37:11 +0000] "GET /admin/ HTTP/1.1" 304 59659 "https://t.co/abc123" "Bingbot/2.0 (+http://www.bing.com/bingbot.htm)" 902ms
+192.0.2.88 - - [09/May/2026:12:38:51 +0000] "GET /.git/config HTTP/1.1" 404 591 "-" "zgrab/0.x" 3507ms
+2026/05/09 12:39:46 [warn] 11006#30: *4138 could not be resolved (3: Host not found), client: 45.142.212.100, server: api.example.com
+2026/05/09 12:40:56 [warn] 24389#7: *6212 FastCGI sent in stderr: "PHP message: PHP Fatal error: Uncaught Error: Call to a member function query() on null" while reading response header from FastCGI upstream, client: 167.94.138.52
+2026/05/09 12:41:27 [warn] 19485#57: *23446 client intended to send too large body: 20971520 bytes, client: 185.220.101.34, server: api.example.com
+95.214.55.25 - - [09/May/2026:12:41:40 +0000] "GET /config.php HTTP/1.1" 200 13507 "https://www.bing.com/" "Mozilla/5.0 (X11; Linux x86_64; rv:124.0) Gecko/20100101 Firefox/124.0" 846ms
+2026/05/09 12:43:01 [crit] 13257#62: *35995 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 172.67.68.10, server: shop.example.com, upstream: "http://127.0.0.1:8080"
+May 15 12:43:58 cache-01 sudo[22235]: deploy : TTY=pts/0 ; PWD=/var/www/app ; USER=root ; COMMAND=/bin/systemctl restart app.service
+2026/05/09 12:44:52 [notice] 22032#23: *57258 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 45.142.212.100
+2026/05/09 12:45:38 [error] 28055#12: *91898 limiting connections by zone "conn_limit_per_ip", excess: 1 by zone "conn_limit_per_ip", client: 172.67.68.10
+51.77.135.89 - - [09/May/2026:12:47:02 +0000] "PUT /about HTTP/1.1" 200 57155 "https://shop.example.com/" "Java/17.0.10" 1914ms
+2026/05/09 12:48:01 [error] 23313#56: *79456 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 149.28.200.120
+2026-03-15T12:48:18.000Z	254 readonly	Init DB	ecommerce_db
+2026-03-15T12:49:25.000Z	252 app_user	Quit	
+185.180.143.49 - - [09/May/2026:12:50:38 +0000] "GET / HTTP/1.1" 301 6459 "https://t.co/abc123" "Bingbot/2.0 (+http://www.bing.com/bingbot.htm)" 4019ms
+2026-03-15T12:50:57.000Z	211 admin	Quit	
+May 15 12:51:12 cache-01 sshd[2762]: pam_unix(sshd:session): session opened for user deploy by (uid=0)
+May 15 12:51:25 cache-01 systemd[16125]: Reloading.
+2026-03-15T12:53:09.000Z	252 replicator	Query	DELETE FROM sessions WHERE expires_at < NOW()
+172.67.68.10 - - [09/May/2026:12:54:54 +0000] "GET /checkout HTTP/1.1" 204 31792 "-" "libwww-perl/6.72" 1565ms
+192.0.2.88 - - [09/May/2026:12:55:31 +0000] "POST /products/laptop HTTP/1.1" 200 35251 "-" "zgrab/0.x" 4487ms
+2026-03-15T12:56:32.000Z	265 app_user	Init DB	ecommerce_db
+167.94.138.52 - - [09/May/2026:12:58:21 +0000] "POST /config.php HTTP/1.1" 422 496 "https://shop.example.com/products" "Wget/1.21.4" 2356ms
+May 15 12:59:00 cache-01 kernel[31438]: net_ratelimit: 32 callbacks suppressed
+162.55.36.149 - - [09/May/2026:12:59:43 +0000] "POST /robots.txt HTTP/1.1" 200 24508 "-" "libwww-perl/6.72" 4418ms
+95.214.55.25 - - [09/May/2026:13:01:12 +0000] "POST /shell.php HTTP/1.1" 204 17427 "-" "libwww-perl/6.72" 2437ms
+149.28.200.120 - - [09/May/2026:13:02:03 +0000] "GET /favicon.ico HTTP/1.1" 500 670 "https://www.google.com/" "masscan/1.3 (https://github.com/robertdavidgraham/masscan)" 3128ms
+2026/05/09 13:02:33 [error] 25035#60: *69781 client intended to send too large body: 20971520 bytes, client: 104.21.44.80, server: api.example.com
+203.0.113.5 - - [09/May/2026:13:04:15 +0000] "DELETE /about HTTP/1.1" 404 558 "https://shop.example.com/" "zgrab/0.x" 4167ms
+2026-03-15T13:04:51.000Z	227 replicator	Connect	replicator@10.0.0.3 on ecommerce_db using TCP/IP
+2026/05/09 13:06:11 [notice] 28613#14: *96112 upstream prematurely closed connection while reading response header from upstream, client: 37.19.221.13
+194.165.16.11 - - [09/May/2026:13:08:00 +0000] "POST /about HTTP/1.1" 200 32102 "https://www.bing.com/" "axios/1.6.8" 4294ms
+66.240.192.138 - - [09/May/2026:13:08:51 +0000] "GET /api/v1/users/profile HTTP/1.1" 500 749 "-" "masscan/1.3 (https://github.com/robertdavidgraham/masscan)" 2862ms
+167.94.138.52 - - [09/May/2026:13:10:40 +0000] "POST /api/v1/users/profile HTTP/1.1" 401 407 "-" "axios/1.6.8" 1942ms
+2026-03-15T13:10:53.000Z	229 reporting	Query	SELECT id FROM products WHERE stock < 10 AND active = 1
+91.108.4.10 - - [09/May/2026:13:12:32 +0000] "GET /shell.php HTTP/1.1" 200 64705 "https://www.google.com/" "-" 1571ms
+37.19.221.13 - - [09/May/2026:13:13:07 +0000] "GET /index.html HTTP/1.1" 204 80461 "https://shop.example.com/products" "zgrab/0.x" 1750ms
+51.77.135.89 - - [09/May/2026:13:13:52 +0000] "GET /images/banner.jpg HTTP/1.1" 201 38938 "https://shop.example.com/products" "Scrapy/2.11.1 (+https://scrapy.org)" 3508ms
+2026/05/09 13:15:13 [crit] 19007#54: *31252 limiting connections by zone "conn_limit_per_ip", excess: 1 by zone "conn_limit_per_ip", client: 194.165.16.11
+2026-03-15T13:15:53.000Z	203 readonly	Query	DELETE FROM sessions WHERE expires_at < NOW()
+May 15 13:17:26 web-prod-02 postfix/smtpd[7718]: warning: unknown[45.142.212.100]: SASL LOGIN authentication failed: authentication failure
+2026/05/09 13:18:07 [error] 11015#24: *94811 could not be resolved (3: Host not found), client: 194.165.16.11, server: blog.example.com
+95.214.55.25 - - [09/May/2026:13:19:14 +0000] "GET /api/v1/auth/logout HTTP/1.1" 200 36622 "https://shop.example.com/products" "Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 Mobile Safari/537.36" 496ms
+2026-03-15T13:19:48.000Z	268 reporting	Field List	users
+2026/05/09 13:20:22 [error] 26031#38: *91720 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 198.51.100.22, server: cdn.example.com, upstream: "http://127.0.0.1:8080"
+2026/05/09 13:22:04 [warn] 23618#10: *47098 upstream prematurely closed connection while reading response header from upstream, client: 66.240.192.138
+194.165.16.11 - - [09/May/2026:13:23:39 +0000] "DELETE /products/phone HTTP/1.1" 304 5945 "https://shop.example.com/products" "masscan/1.3 (https://github.com/robertdavidgraham/masscan)" 977ms
+May 15 13:24:09 worker-01 cron[27100]: (root) CMD (/usr/local/bin/backup-db.sh >> /var/log/backup.log 2>&1)
+2026-03-15T13:25:27.000Z	269 replicator	Statistics	
+2026/05/09 13:26:57 [error] 27070#29: *55096 connect() failed (111: Connection refused) while connecting to upstream, client: 91.108.4.10, server: blog.example.com, request: "GET /api/v1/products HTTP/1.1", upstream: "http://127.0.0.1:8080/api/v1/products"
+194.165.16.11 - - [09/May/2026:13:27:28 +0000] "OPTIONS /about HTTP/1.1" 200 70682 "https://shop.example.com/products" "masscan/1.3 (https://github.com/robertdavidgraham/masscan)" 2884ms
+May 15 13:28:25 db-master dockerd[10849]: time="2026-03-15T13:28:25Z" level=error msg="Handler for DELETE /v1.43/containers/a18a4b25a5bf returned error: removal of container a18a4b25a5bf is already in progress"
+2026/05/09 13:29:41 [error] 20124#60: *12908 connect() failed (111: Connection refused) while connecting to upstream, client: 192.0.2.88, server: blog.example.com, request: "GET /api/v1/products HTTP/1.1", upstream: "http://127.0.0.1:8080/api/v1/products"
+185.180.143.49 - - [09/May/2026:13:31:10 +0000] "POST /products/headphones HTTP/1.1" 200 17703 "https://shop.example.com/products" "python-requests/2.31.0" 5056ms
+2026/05/09 13:32:20 [error] 15485#48: *36966 upstream prematurely closed connection while reading response header from upstream, client: 71.6.135.131
+2026/05/09 13:33:05 [error] 10048#16: *79485 FastCGI sent in stderr: "PHP message: PHP Fatal error: Uncaught Error: Call to a member function query() on null" while reading response header from FastCGI upstream, client: 45.142.212.100
+May 15 13:33:53 worker-01 dockerd[30777]: time="2026-03-15T13:33:53Z" level=error msg="Handler for DELETE /v1.43/containers/e6e5fb590887 returned error: removal of container e6e5fb590887 is already in progress"
+2026-03-15T13:34:05.000Z	224 replicator	Query	SELECT * FROM coupons WHERE code = 'SAVE20' AND expires_at > NOW() AND used_count < max_uses
+2026/05/09 13:35:15 [warn] 17264#53: *12027 no live upstreams while connecting to upstream, client: 45.142.212.100, server: shop.example.com, upstream: "backend_pool"
+2026/05/09 13:36:07 [error] 13140#28: *79592 FastCGI sent in stderr: "PHP message: PHP Fatal error: Uncaught Error: Call to a member function query() on null" while reading response header from FastCGI upstream, client: 185.180.143.49
+May 15 13:37:00 web-prod-02 postfix/smtpd[22305]: disconnect from mail.example.org[66.240.192.138] ehlo=1 mail=1 rcpt=0 quit=1 commands=3
+2026-03-15T13:37:59.000Z	272 replicator	Field List	coupons
+149.28.200.120 - - [09/May/2026:13:39:34 +0000] "GET /products/laptop HTTP/1.1" 200 37537 "https://reddit.com/r/deals" "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4 Safari/605.1.15" 275ms
+May 15 13:40:39 web-prod-02 dockerd[1734]: time="2026-03-15T13:40:39Z" level=error msg="Handler for DELETE /v1.43/containers/064b2e5fda9b returned error: removal of container 064b2e5fda9b is already in progress"
+51.77.135.89 - - [09/May/2026:13:42:16 +0000] "GET /api/v1/search?q=laptop HTTP/1.1" 301 42021 "https://www.google.com/" "Mozilla/5.0 (X11; Linux x86_64; rv:124.0) Gecko/20100101 Firefox/124.0" 6156ms
+104.21.44.80 - - [09/May/2026:13:42:55 +0000] "PUT /api/v1/orders HTTP/1.1" 200 32878 "https://shop.example.com/products" "Scrapy/2.11.1 (+https://scrapy.org)" 2200ms
+66.240.192.138 - - [09/May/2026:13:43:58 +0000] "GET /api/v1/wishlist HTTP/1.1" 400 159 "https://www.bing.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" 4123ms
+2026-03-15T13:44:46.000Z	255 readonly	Init DB	ecommerce_db
+2026/05/09 13:46:08 [error] 25806#64: *87980 SSL_write() failed (32: Broken pipe) while sending response to client, client: 149.28.200.120
+2026-03-15T13:46:50.000Z	270 admin	Query	SELECT COUNT(*) FROM orders WHERE DATE(created_at) = CURDATE()
+2026-03-15T13:47:57.000Z	213 reporting	Query	SELECT * FROM coupons WHERE code = 'SAVE20' AND expires_at > NOW() AND used_count < max_uses
+2026-03-15T13:48:13.000Z	205 readonly	Statistics	
+2026/05/09 13:49:55 [warn] 31173#51: *44880 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 71.6.135.131, server: cdn.example.com, upstream: "http://127.0.0.1:8080"
+2026/05/09 13:50:42 [error] 22769#22: *4091 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 194.165.16.11, server: cdn.example.com, upstream: "http://127.0.0.1:8080"
+2026/05/09 13:51:43 [notice] 22935#62: *46006 connect() failed (111: Connection refused) while connecting to upstream, client: 66.240.192.138, server: blog.example.com, request: "GET /api/v1/products HTTP/1.1", upstream: "http://127.0.0.1:8080/api/v1/products"
+149.28.200.120 - - [09/May/2026:13:52:16 +0000] "GET /backup.zip HTTP/1.1" 502 622 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4 Safari/605.1.15" 5453ms
+194.165.16.11 - - [09/May/2026:13:53:07 +0000] "GET /favicon.ico HTTP/1.1" 403 761 "https://t.co/abc123" "Wget/1.21.4" 2453ms
+80.94.95.107 - - [09/May/2026:13:54:47 +0000] "HEAD /products/headphones HTTP/1.1" 200 50431 "https://shop.example.com/" "python-requests/2.31.0" 4162ms
+May 15 13:55:48 worker-01 dockerd[31107]: time="2026-03-15T13:55:48Z" level=info msg="ignoring event" module=libcontainerd namespace=moby topic=/tasks/delete
+2026-03-15T13:57:35.000Z	230 admin	Connect	admin@localhost on ecommerce_db using TCP/IP
+May 15 13:58:41 web-prod-02 kernel[29107]: nf_conntrack: nf_conntrack: table full, dropping packet
+May 15 13:59:21 cache-01 postfix/smtpd[5130]: connect from unknown[192.0.2.88]
+194.165.16.11 - - [09/May/2026:14:00:16 +0000] "OPTIONS /robots.txt HTTP/1.1" 200 55937 "https://reddit.com/r/deals" "curl/8.6.0" 6076ms
+185.220.101.34 - - [09/May/2026:14:01:45 +0000] "POST /shell.php HTTP/1.1" 301 58110 "-" "Googlebot/2.1 (+http://www.google.com/bot.html)" 4842ms
+2026-03-15T14:02:36.000Z	251 replicator	Field List	users
+2026/05/09 14:02:53 [error] 27335#64: *3440 limiting requests, excess: 8.560 by zone "api_rate_limit", client: 104.21.44.80
+104.21.44.80 - - [09/May/2026:14:04:40 +0000] "GET /checkout HTTP/1.1" 304 67783 "https://www.google.com/" "Scrapy/2.11.1 (+https://scrapy.org)" 3841ms
+89.248.167.131 - - [09/May/2026:14:05:06 +0000] "POST /products/phone HTTP/1.1" 200 60978 "https://t.co/abc123" "python-requests/2.31.0" 5354ms
+2026-03-15T14:05:48.000Z	226 admin	Init DB	ecommerce_db
+2026/05/09 14:06:49 [error] 31608#56: *95513 SSL_do_handshake() failed (SSL: error:14094418:SSL routines:ssl3_read_bytes:tlsv1 alert unknown ca) while SSL handshaking, client: 185.180.143.49
+2026/05/09 14:07:51 [error] 30984#14: *63446 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 194.165.16.11, server: blog.example.com, upstream: "http://127.0.0.1:8080"
+2026-03-15T14:09:13.000Z	251 admin	Statistics	
+May 15 14:10:44 worker-01 dockerd[18665]: time="2026-03-15T14:10:44Z" level=error msg="Handler for DELETE /v1.43/containers/42491301a03b returned error: removal of container 42491301a03b is already in progress"
+2026/05/09 14:12:03 [error] 17414#2: *95331 upstream prematurely closed connection while reading response header from upstream, client: 37.19.221.13
+2026/05/09 14:13:03 [error] 12145#44: *6272 limiting requests, excess: 8.560 by zone "api_rate_limit", client: 172.67.68.10
+95.214.55.25 - - [09/May/2026:14:14:27 +0000] "PATCH /backup.zip HTTP/1.1" 200 42254 "https://shop.example.com/" "Wget/1.21.4" 3098ms
+May 15 14:14:53 web-prod-01 systemd[10742]: Stopping app.service - Node.js Application Server...
+May 15 14:15:52 db-master cron[13418]: (nobody) CMD (/usr/bin/php /var/www/app/artisan schedule:run >> /dev/null 2>&1)
+2026/05/09 14:17:13 [warn] 10080#19: *12516 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 198.51.100.22, server: shop.example.com, upstream: "http://127.0.0.1:8080"
+192.0.2.88 - - [09/May/2026:14:18:21 +0000] "GET /shell.php HTTP/1.1" 201 2669 "https://www.google.com/" "Googlebot/2.1 (+http://www.google.com/bot.html)" 5902ms
+2026/05/09 14:19:08 [warn] 24744#50: *40797 invalid header: "80.94.95.107" from upstream, client: 80.94.95.107, server: api.example.com
+192.0.2.88 - - [09/May/2026:14:19:23 +0000] "GET /api/v1/auth/login HTTP/1.1" 200 7419 "https://www.google.com/" "Mozilla/5.0 (X11; Linux x86_64; rv:124.0) Gecko/20100101 Firefox/124.0" 1393ms
+167.94.138.52 - - [09/May/2026:14:19:45 +0000] "POST /favicon.ico HTTP/1.1" 200 76250 "-" "Mozilla/5.0 (iPhone; CPU iPhone OS 17_4 like Mac OS X) AppleWebKit/605.1.15 Mobile/15E148 Safari/604.1" 3477ms
+2026-03-15T14:20:23.000Z	233 reporting	Query	INSERT INTO search_logs (query, user_id, results_count, created_at) VALUES ('wireless headphones', 3776, 42, NOW())
+95.214.55.25 - - [09/May/2026:14:21:45 +0000] "POST /contact HTTP/1.1" 304 51013 "https://t.co/abc123" "Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 Mobile Safari/537.36" 2649ms
+192.0.2.88 - - [09/May/2026:14:22:30 +0000] "PUT /products/phone HTTP/1.1" 200 31214 "-" "masscan/1.3 (https://github.com/robertdavidgraham/masscan)" 679ms
+May 15 14:22:46 db-master postfix/smtpd[14961]: connect from unknown[89.248.167.131]
+185.220.101.34 - - [09/May/2026:14:24:10 +0000] "HEAD /api/v1/wishlist HTTP/1.1" 504 721 "https://t.co/abc123" "Wget/1.21.4" 5873ms
+2026/05/09 14:24:30 [warn] 22922#30: *87939 limiting requests, excess: 8.560 by zone "api_rate_limit", client: 51.77.135.89
+May 15 14:25:55 web-prod-01 systemd[8406]: nginx.service: Reloading.
+2026/05/09 14:26:36 [warn] 30305#32: *29204 open() "/var/www/html/api/v1/auth/login" failed (2: No such file or directory), client: 95.214.55.25, server: blog.example.com
+172.67.68.10 - - [09/May/2026:14:28:15 +0000] "POST /api/v1/users/profile HTTP/1.1" 200 78256 "https://t.co/abc123" "Googlebot/2.1 (+http://www.google.com/bot.html)" 2067ms
+203.0.113.5 - - [09/May/2026:14:28:50 +0000] "GET /api/v1/products HTTP/1.1" 400 611 "-" "curl/8.6.0" 4718ms
+172.67.68.10 - - [09/May/2026:14:29:49 +0000] "HEAD /api/v1/products HTTP/1.1" 304 67787 "https://t.co/abc123" "Googlebot/2.1 (+http://www.google.com/bot.html)" 1503ms
+66.240.192.138 - - [09/May/2026:14:31:10 +0000] "POST /api/v1/auth/register HTTP/1.1" 404 576 "https://shop.example.com/" "Mozilla/5.0 (iPhone; CPU iPhone OS 17_4 like Mac OS X) AppleWebKit/605.1.15 Mobile/15E148 Safari/604.1" 4918ms
+May 15 14:32:57 db-master kernel[1511]: SCSI error: return code = 0x08000002
+89.248.167.131 - - [09/May/2026:14:33:52 +0000] "GET /api/v1/wishlist HTTP/1.1" 301 9074 "https://shop.example.com/products" "python-requests/2.31.0" 2710ms
+45.142.212.100 - - [09/May/2026:14:35:02 +0000] "POST /static/css/styles.min.css HTTP/1.1" 200 44241 "https://www.google.com/" "Java/17.0.10" 2914ms
+2026-03-15T14:35:24.000Z	277 reporting	Query	SELECT id, name, price, stock FROM products WHERE category_id = 8139 AND active = 1 ORDER BY created_at DESC LIMIT 20
+2026/05/09 14:36:15 [warn] 13949#25: *20031 limiting connections by zone "conn_limit_per_ip", excess: 1 by zone "conn_limit_per_ip", client: 149.28.200.120
+194.165.16.11 - - [09/May/2026:14:37:24 +0000] "GET /products HTTP/1.1" 200 18694 "-" "Bingbot/2.0 (+http://www.bing.com/bingbot.htm)" 3945ms
+37.19.221.13 - - [09/May/2026:14:39:11 +0000] "POST /blog/how-to-setup-linux HTTP/1.1" 304 81441 "https://www.google.com/" "Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 Mobile Safari/537.36" 3213ms
+37.19.221.13 - - [09/May/2026:14:39:37 +0000] "DELETE /checkout HTTP/1.1" 304 43688 "https://reddit.com/r/deals" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" 1408ms
+66.240.192.138 - - [09/May/2026:14:40:03 +0000] "POST /api/v1/products HTTP/1.1" 401 268 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" 500ms
+89.248.167.131 - - [09/May/2026:14:40:54 +0000] "GET /api/v1/orders/history HTTP/1.1" 500 495 "https://t.co/abc123" "python-requests/2.31.0" 341ms
+172.67.68.10 - - [09/May/2026:14:41:35 +0000] "PUT /phpmyadmin/ HTTP/1.1" 404 561 "https://shop.example.com/products" "Mozilla/5.0 (iPhone; CPU iPhone OS 17_4 like Mac OS X) AppleWebKit/605.1.15 Mobile/15E148 Safari/604.1" 2059ms
+91.108.4.10 - - [09/May/2026:14:42:32 +0000] "OPTIONS /index.html HTTP/1.1" 400 526 "https://t.co/abc123" "masscan/1.3 (https://github.com/robertdavidgraham/masscan)" 953ms
+194.165.16.11 - - [09/May/2026:14:42:48 +0000] "OPTIONS /api/v1/users/profile HTTP/1.1" 502 631 "https://reddit.com/r/deals" "Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 Mobile Safari/537.36" 5953ms
+May 15 14:44:31 web-prod-02 dockerd[10379]: time="2026-03-15T14:44:31Z" level=warning msg="Container exited with non-zero code" container=worker-2 exitCode=137
+2026/05/09 14:46:04 [error] 21568#6: *49082 limiting requests, excess: 8.560 by zone "api_rate_limit", client: 66.240.192.138
+45.142.212.100 - - [09/May/2026:14:46:46 +0000] "GET /favicon.ico HTTP/1.1" 200 76492 "https://shop.example.com/products" "axios/1.6.8" 2256ms
+2026-03-15T14:47:06.000Z	230 backup_user	Query	SELECT TABLE_NAME, TABLE_ROWS FROM information_schema.TABLES WHERE TABLE_SCHEMA = 'ecommerce_db'
+2026/05/09 14:48:46 [error] 31271#54: *8807 FastCGI sent in stderr: "PHP message: PHP Fatal error: Uncaught Error: Call to a member function query() on null" while reading response header from FastCGI upstream, client: 91.108.4.10
+May 15 14:49:34 web-prod-02 cron[10148]: (root) CMD (/usr/bin/certbot renew --quiet >> /var/log/certbot.log 2>&1)
+May 15 14:50:26 worker-01 fail2ban.actions[1976]: Ban 66.240.192.138
+91.108.4.10 - - [09/May/2026:14:50:41 +0000] "GET /products HTTP/1.1" 200 76630 "https://t.co/abc123" "-" 1133ms
+May 15 14:51:00 web-prod-02 dockerd[30131]: time="2026-03-15T14:51:00Z" level=warning msg="Container exited with non-zero code" container=worker-20 exitCode=137
+May 15 14:52:38 web-prod-02 sshd[19554]: pam_unix(sshd:session): session closed for user deploy
+2026-03-15T14:54:17.000Z	220 admin	Field List	coupons
+2026/05/09 14:55:19 [error] 18810#36: *26177 upstream prematurely closed connection while reading response header from upstream, client: 71.6.135.131
+185.180.143.49 - - [09/May/2026:14:55:56 +0000] "GET / HTTP/1.1" 302 3605 "-" "Scrapy/2.11.1 (+https://scrapy.org)" 4768ms
+2026/05/09 14:56:15 [error] 12583#28: *70556 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 203.0.113.5, server: shop.example.com, upstream: "http://127.0.0.1:8080"
+May 15 14:56:31 web-prod-01 kernel[8317]: oom-kill event(s) in system (total 1), killed process 8317 (node) total-vm:1843200kB, anon-rss:462400kB, file-rss:0kB
+May 15 14:56:48 db-master dockerd[20658]: time="2026-03-15T14:56:48Z" level=error msg="Handler for DELETE /v1.43/containers/228fccdb9261 returned error: removal of container 228fccdb9261 is already in progress"
+2026-03-15T14:57:22.000Z	203 replicator	Query	UPDATE products SET stock = stock - 6947 WHERE id = 9430 AND stock >= 6947
+May 15 14:58:12 db-master kernel[8420]: IPv4: Maytian source from 37.19.221.13, on dev eth0
+198.51.100.22 - - [09/May/2026:14:59:21 +0000] "GET /blog/10-best-gadgets-2026 HTTP/1.1" 502 353 "https://shop.example.com/" "Wget/1.21.4" 190ms
+2026/05/09 15:00:04 [error] 10453#18: *65364 no live upstreams while connecting to upstream, client: 89.248.167.131, server: shop.example.com, upstream: "backend_pool"
+May 15 15:01:02 web-prod-02 kernel[5492]: net_ratelimit: 32 callbacks suppressed
+66.240.192.138 - - [09/May/2026:15:02:35 +0000] "HEAD /admin/ HTTP/1.1" 204 34491 "https://reddit.com/r/deals" "masscan/1.3 (https://github.com/robertdavidgraham/masscan)" 1368ms
+2026-03-15T15:03:38.000Z	234 app_user	Query	ROLLBACK
+95.214.55.25 - - [09/May/2026:15:04:39 +0000] "PUT /shell.php HTTP/1.1" 201 33969 "-" "Java/17.0.10" 1108ms
+2026/05/09 15:06:21 [error] 25516#42: *12025 open() "/var/www/html/api/v1/search?q=laptop" failed (2: No such file or directory), client: 51.77.135.89, server: blog.example.com
+91.108.4.10 - - [09/May/2026:15:07:25 +0000] "GET /wp-login.php HTTP/1.1" 204 72549 "-" "libwww-perl/6.72" 3142ms
+2026/05/09 15:08:20 [warn] 24371#62: *65737 upstream prematurely closed connection while reading response header from upstream, client: 104.21.44.80
+71.6.135.131 - - [09/May/2026:15:08:39 +0000] "POST /backup.zip HTTP/1.1" 200 61588 "-" "-" 1051ms
+May 15 15:10:04 cache-01 fail2ban.actions[12270]: Unban 198.51.100.22
+2026-03-15T15:10:57.000Z	206 app_user	Quit	
+May 15 15:11:59 web-prod-02 kernel[23662]: nf_conntrack: nf_conntrack: table full, dropping packet
+2026/05/09 15:12:38 [warn] 10158#28: *89347 limiting requests, excess: 8.560 by zone "api_rate_limit", client: 45.142.212.100
+May 15 15:13:29 worker-01 postfix/smtpd[20415]: connect from unknown[37.19.221.13]
+185.180.143.49 - - [09/May/2026:15:14:15 +0000] "GET /sitemap.xml HTTP/1.1" 201 38373 "https://www.google.com/" "Mozilla/5.0 (X11; Linux x86_64; rv:124.0) Gecko/20100101 Firefox/124.0" 2133ms
+89.248.167.131 - - [09/May/2026:15:14:50 +0000] "GET /phpmyadmin/ HTTP/1.1" 200 23525 "https://www.google.com/" "curl/8.6.0" 1856ms
+2026/05/09 15:15:06 [error] 31442#36: *30363 could not be resolved (3: Host not found), client: 89.248.167.131, server: cdn.example.com
+2026-03-15T15:16:07.000Z	230 reporting	Query	SELECT * FROM users WHERE email = 'john.doe@email.com' LIMIT 1
+May 15 15:17:53 cache-01 dockerd[8611]: time="2026-03-15T15:17:53Z" level=error msg="Handler for DELETE /v1.43/containers/52c155ddffe5 returned error: removal of container 52c155ddffe5 is already in progress"
+2026-03-15T15:19:33.000Z	232 admin	Quit	
+91.108.4.10 - - [09/May/2026:15:20:17 +0000] "GET /api/v1/cart HTTP/1.1" 429 705 "https://www.google.com/" "Scrapy/2.11.1 (+https://scrapy.org)" 2132ms
+51.77.135.89 - - [09/May/2026:15:20:39 +0000] "POST /robots.txt HTTP/1.1" 200 30708 "https://shop.example.com/products" "masscan/1.3 (https://github.com/robertdavidgraham/masscan)" 5980ms
+66.240.192.138 - - [09/May/2026:15:22:22 +0000] "PUT /phpmyadmin/ HTTP/1.1" 400 257 "-" "Googlebot/2.1 (+http://www.google.com/bot.html)" 2128ms
+May 15 15:22:52 cache-01 dockerd[28522]: time="2026-03-15T15:22:52Z" level=warning msg="Container exited with non-zero code" container=worker-1 exitCode=137
+2026-03-15T15:23:36.000Z	223 replicator	Query	SELECT TABLE_NAME, TABLE_ROWS FROM information_schema.TABLES WHERE TABLE_SCHEMA = 'ecommerce_db'
+2026-03-15T15:25:13.000Z	222 backup_user	Field List	products
+104.21.44.80 - - [09/May/2026:15:26:34 +0000] "GET /api/v1/auth/login HTTP/1.1" 200 79926 "-" "python-requests/2.31.0" 2893ms
+May 15 15:27:52 web-prod-01 fail2ban.actions[30369]: Ban 203.0.113.5
+2026-03-15T15:28:26.000Z	270 app_user	Query	DELETE FROM sessions WHERE expires_at < NOW()
+2026-03-15T15:29:39.000Z	255 backup_user	Query	SELECT TABLE_NAME, TABLE_ROWS FROM information_schema.TABLES WHERE TABLE_SCHEMA = 'ecommerce_db'
+2026/05/09 15:31:00 [error] 25051#17: *22665 invalid header: "167.94.138.52" from upstream, client: 167.94.138.52, server: shop.example.com
+May 15 15:32:09 db-master sudo[4190]: pam_unix(sudo:session): session opened for user root by deploy(uid=1001)
+May 15 15:33:00 worker-01 dockerd[7461]: time="2026-03-15T15:33:00Z" level=error msg="Handler for DELETE /v1.43/containers/579fc838c6bc returned error: removal of container 579fc838c6bc is already in progress"
+2026/05/09 15:33:42 [error] 24075#19: *76827 limiting requests, excess: 8.560 by zone "api_rate_limit", client: 172.67.68.10
+2026/05/09 15:34:43 [crit] 19476#11: *58801 connect() failed (111: Connection refused) while connecting to upstream, client: 162.55.36.149, server: blog.example.com, request: "GET /api/v1/products HTTP/1.1", upstream: "http://127.0.0.1:8080/api/v1/products"
+May 15 15:36:30 worker-01 postfix/smtpd[7095]: warning: unknown[91.108.4.10]: SASL LOGIN authentication failed: authentication failure
+185.180.143.49 - - [09/May/2026:15:37:50 +0000] "GET /xmlrpc.php HTTP/1.1" 403 410 "https://shop.example.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4 Safari/605.1.15" 333ms
+2026-03-15T15:38:13.000Z	224 backup_user	Query	SHOW STATUS LIKE 'Threads_connected'
+2026-03-15T15:39:46.000Z	232 replicator	Init DB	ecommerce_db
+45.142.212.100 - - [09/May/2026:15:41:09 +0000] "GET /checkout HTTP/1.1" 200 59321 "https://reddit.com/r/deals" "Mozilla/5.0 (iPhone; CPU iPhone OS 17_4 like Mac OS X) AppleWebKit/605.1.15 Mobile/15E148 Safari/604.1" 3501ms
+162.55.36.149 - - [09/May/2026:15:41:57 +0000] "OPTIONS /.env HTTP/1.1" 400 698 "https://reddit.com/r/deals" "Googlebot/2.1 (+http://www.google.com/bot.html)" 5531ms
+2026-03-15T15:43:44.000Z	231 admin	Query	SHOW STATUS LIKE 'Threads_connected'
+May 15 15:45:15 db-master postfix/smtpd[23406]: disconnect from mail.example.org[71.6.135.131] ehlo=1 mail=1 rcpt=0 quit=1 commands=3
+2026-03-15T15:45:41.000Z	216 admin	Field List	orders
+104.21.44.80 - - [09/May/2026:15:46:44 +0000] "GET /.env HTTP/1.1" 404 441 "https://www.google.com/" "Mozilla/5.0 (X11; Linux x86_64; rv:124.0) Gecko/20100101 Firefox/124.0" 1166ms
+2026/05/09 15:48:02 [error] 21913#49: *52896 SSL_write() failed (32: Broken pipe) while sending response to client, client: 104.21.44.80
+2026/05/09 15:48:44 [crit] 22939#41: *38138 connect() failed (111: Connection refused) while connecting to upstream, client: 104.21.44.80, server: api.example.com, request: "GET /api/v1/products HTTP/1.1", upstream: "http://127.0.0.1:8080/api/v1/products"
+91.108.4.10 - - [09/May/2026:15:50:12 +0000] "GET /api/v1/auth/login HTTP/1.1" 401 784 "https://reddit.com/r/deals" "Bingbot/2.0 (+http://www.bing.com/bingbot.htm)" 1419ms
+2026-03-15T15:51:16.000Z	200 replicator	Query	CALL sp_calculate_shipping(2785, 'US', 'CA')
+95.214.55.25 - - [09/May/2026:15:52:39 +0000] "GET /.env HTTP/1.1" 400 290 "-" "masscan/1.3 (https://github.com/robertdavidgraham/masscan)" 107ms
+May 15 15:54:00 db-master kernel[19394]: nf_conntrack: nf_conntrack: table full, dropping packet
+2026/05/09 15:55:09 [warn] 21283#23: *95073 invalid header: "89.248.167.131" from upstream, client: 89.248.167.131, server: api.example.com
+2026-03-15T15:56:12.000Z	261 admin	Init DB	ecommerce_db
+162.55.36.149 - - [09/May/2026:15:57:53 +0000] "DELETE /wp-login.php HTTP/1.1" 206 42576 "-" "Mozilla/5.0 (iPhone; CPU iPhone OS 17_4 like Mac OS X) AppleWebKit/605.1.15 Mobile/15E148 Safari/604.1" 3147ms
+172.67.68.10 - - [09/May/2026:15:59:35 +0000] "POST /images/banner.jpg HTTP/1.1" 200 56656 "https://www.bing.com/" "Wget/1.21.4" 450ms
+2026/05/09 16:00:58 [error] 29705#29: *99049 SSL_write() failed (32: Broken pipe) while sending response to client, client: 51.77.135.89
+May 15 16:01:39 web-prod-01 postfix/smtpd[28147]: NOQUEUE: reject: RCPT from unknown[89.248.167.131]: 554 5.7.1 Service unavailable; Client host [89.248.167.131] blocked using zen.spamhaus.org
+104.21.44.80 - - [09/May/2026:16:02:27 +0000] "HEAD /blog/10-best-gadgets-2026 HTTP/1.1" 200 4129 "-" "axios/1.6.8" 4375ms
+37.19.221.13 - - [09/May/2026:16:02:42 +0000] "OPTIONS /api/v1/payments/intent HTTP/1.1" 200 30745 "https://shop.example.com/products" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" 3544ms
+2026/05/09 16:04:23 [error] 25139#21: *80068 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 89.248.167.131, server: cdn.example.com, upstream: "http://127.0.0.1:8080"
+2026/05/09 16:05:44 [error] 12601#39: *42253 invalid header: "149.28.200.120" from upstream, client: 149.28.200.120, server: blog.example.com
+May 15 16:06:15 web-prod-01 kernel[10250]: TCP: request_sock_TCP: Possible SYN flooding on port 80. Sending cookies. Check SNMP counters.
+66.240.192.138 - - [09/May/2026:16:06:28 +0000] "HEAD /api/v1/wishlist HTTP/1.1" 204 16957 "https://www.google.com/" "Go-http-client/2.0" 2262ms
+2026-03-15T16:07:51.000Z	234 readonly	Query	UPDATE cart SET quantity = 8636 WHERE user_id = 1496 AND product_id = 888
+May 15 16:09:32 web-prod-02 postfix/smtpd[8793]: connect from unknown[185.220.101.34]
+May 15 16:10:54 cache-01 sshd[9010]: Failed password for admin from 71.6.135.131 port 31241 ssh2
+May 15 16:11:25 web-prod-01 postfix/smtpd[7214]: connect from unknown[95.214.55.25]
+2026/05/09 16:12:26 [warn] 22413#36: *39098 invalid header: "172.67.68.10" from upstream, client: 172.67.68.10, server: blog.example.com
+2026/05/09 16:13:02 [crit] 31735#52: *90296 connect() failed (111: Connection refused) while connecting to upstream, client: 185.220.101.34, server: api.example.com, request: "GET /api/v1/products HTTP/1.1", upstream: "http://127.0.0.1:8080/api/v1/products"
+May 15 16:14:34 web-prod-02 kernel[27030]: EXT4-fs warning (device sda1): ext4_dx_add_entry: Directory index full!
+2026/05/09 16:15:53 [error] 22004#33: *97859 no live upstreams while connecting to upstream, client: 80.94.95.107, server: api.example.com, upstream: "backend_pool"
+2026-03-15T16:16:26.000Z	236 app_user	Query	INSERT INTO search_logs (query, user_id, results_count, created_at) VALUES ('wireless headphones', 6032, 42, NOW())
+May 15 16:18:14 web-prod-01 kernel[8807]: clocksource: timekeeping watchdog on CPU0: Mayking clocksource 'tsc' as unstable
+2026-03-15T16:18:56.000Z	261 reporting	Query	SELECT u.email, u.name, o.total FROM users u JOIN orders o ON u.id = o.user_id WHERE o.status = 'pending'
+80.94.95.107 - - [09/May/2026:16:19:28 +0000] "GET /sitemap.xml HTTP/1.1" 404 503 "-" "Mozilla/5.0 (iPhone; CPU iPhone OS 17_4 like Mac OS X) AppleWebKit/605.1.15 Mobile/15E148 Safari/604.1" 4332ms
+2026/05/09 16:20:40 [warn] 16017#58: *83812 open() "/var/www/html/config.php" failed (2: No such file or directory), client: 192.0.2.88, server: shop.example.com
+2026-03-15T16:22:23.000Z	243 admin	Query	SELECT u.email, u.name, o.total FROM users u JOIN orders o ON u.id = o.user_id WHERE o.status = 'pending'
+2026/05/09 16:22:39 [error] 15169#2: *60713 FastCGI sent in stderr: "PHP message: PHP Fatal error: Uncaught Error: Call to a member function query() on null" while reading response header from FastCGI upstream, client: 71.6.135.131
+2026-03-15T16:23:16.000Z	236 reporting	Query	INSERT INTO orders (user_id, total, status, created_at) VALUES (2373, 808.93, 'pending', NOW())
+104.21.44.80 - - [09/May/2026:16:24:39 +0000] "PUT /api/v1/users/profile HTTP/1.1" 304 39498 "https://shop.example.com/" "Scrapy/2.11.1 (+https://scrapy.org)" 1264ms
+2026/05/09 16:25:56 [warn] 23799#57: *34433 FastCGI sent in stderr: "PHP message: PHP Fatal error: Uncaught Error: Call to a member function query() on null" while reading response header from FastCGI upstream, client: 66.240.192.138
+May 15 16:27:01 web-prod-02 sudo[30983]: pam_unix(sudo:session): session opened for user root by deploy(uid=1001)
+71.6.135.131 - - [09/May/2026:16:28:20 +0000] "PATCH /api/v1/orders/history HTTP/1.1" 404 429 "-" "Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 Mobile Safari/537.36" 1764ms
+2026-03-15T16:28:32.000Z	262 app_user	Connect	app_user@localhost on ecommerce_db using Socket
+May 15 16:29:17 web-prod-01 dockerd[3108]: time="2026-03-15T16:29:17Z" level=error msg="Handler for DELETE /v1.43/containers/a94285cda43f returned error: removal of container a94285cda43f is already in progress"
+May 15 16:30:59 worker-01 systemd[25212]: app.service: Scheduled restart job, restart counter is at 3.
+2026/05/09 16:31:30 [warn] 10633#23: *92606 connect() failed (111: Connection refused) while connecting to upstream, client: 198.51.100.22, server: cdn.example.com, request: "GET /api/v1/products HTTP/1.1", upstream: "http://127.0.0.1:8080/api/v1/products"
+80.94.95.107 - - [09/May/2026:16:31:52 +0000] "OPTIONS /products/phone HTTP/1.1" 404 664 "-" "Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 Mobile Safari/537.36" 2410ms
+2026/05/09 16:33:05 [warn] 14830#2: *65971 connect() failed (111: Connection refused) while connecting to upstream, client: 45.142.212.100, server: blog.example.com, request: "GET /api/v1/products HTTP/1.1", upstream: "http://127.0.0.1:8080/api/v1/products"
+May 15 16:34:41 cache-01 cron[9209]: (nobody) CMD (/usr/bin/php /var/www/app/artisan schedule:run >> /dev/null 2>&1)
+185.220.101.34 - - [09/May/2026:16:36:24 +0000] "GET /robots.txt HTTP/1.1" 403 484 "-" "axios/1.6.8" 3025ms
+May 15 16:37:37 cache-01 systemd[25365]: Reloading.
+2026-03-15T16:39:08.000Z	260 readonly	Connect	readonly@localhost on ecommerce_db using TCP/IP
+2026/05/09 16:40:01 [warn] 18270#39: *85879 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 80.94.95.107
+2026/05/09 16:41:34 [error] 25316#38: *65043 invalid header: "185.220.101.34" from upstream, client: 185.220.101.34, server: shop.example.com

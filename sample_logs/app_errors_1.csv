@@ -1,0 +1,2 @@
+timestamp,level,service,error_type,message,request_id,user_id
+2026-05-09T03:42:18Z,ERROR,payment-service,ConnectionError,Failed to connect to payment gateway: timeout after 30s,req-a1b2c3,user-1001
