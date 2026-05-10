@@ -31,6 +31,9 @@ app.add_middleware(
 workflow = build_workflow()
 
 
+LAST_ANALYSIS_RESPONSE = {}
+
+
 CONFIGURED_AGENTS = [
     {
         'name': 'jenkins_fetcher',
@@ -85,6 +88,14 @@ async def list_agents():
     }
 
 
+@app.get('/api/v1/getresponse')
+async def get_response():
+
+    return {
+        'response': LAST_ANALYSIS_RESPONSE
+    }
+
+
 @app.post('/api/v1/config/llm')
 async def configure_llm(request: LLMConfigRequest):
 
@@ -121,14 +132,18 @@ async def configure_llm(request: LLMConfigRequest):
 @app.post('/api/v1/analyze')
 async def analyze(request: AnalyzeRequest):
 
+    global LAST_ANALYSIS_RESPONSE
+
     result = workflow.invoke({
         'jenkins': request.jenkins,
         'llm': request.llm
     })
 
-    return {
+    LAST_ANALYSIS_RESPONSE = {
         'parsed_logs': result['parsed_logs'],
         'remediation': result['remediation'],
         'cookbook': result['cookbook'],
         'jira_ticket': result['jira_ticket']
     }
+
+    return LAST_ANALYSIS_RESPONSE
