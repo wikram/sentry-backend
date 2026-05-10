@@ -2,11 +2,8 @@ import json
 import logging
 import time
 
-from langchain_core.messages import HumanMessage
-from langchain_core.messages import SystemMessage
-
-from orchestrator.state import IncidentState
-from utils.llm import get_llm
+from models.state import AgentState
+from services.llm_service import LLMService
 
 
 logger = logging.getLogger(__name__)
@@ -29,114 +26,107 @@ Severity guidelines:
 - LOW: warnings, deprecation notices, minor config issues
 
 Return a JSON array of objects. No markdown, no explanation, just the JSON array.
-
-Example input:
-2024-01-10 12:00:00 ERROR disk: /dev/sda1 is 95% full
-
-Example output:
-[{"timestamp": "2024-01-10T12:00:00Z", "severity": "HIGH", "category": "disk", "source": "disk", "raw_line": "disk: /dev/sda1 is 95% full", "summary": "Root disk nearly full at 95% capacity"}]"""
+"""
 
 
 
-def classify_logs(state: IncidentState) -> dict:
-    """Classify raw log entries by severity and category using LLM.
-
-    Parses unstructured logs of any format and produces structured
-    LogEntry objects with severity, category, and summary fields.
-
-    Args:
-        state: Current incident state containing raw_logs.
-
-    Returns:
-        Dict with classified_entries and agent_trace updates.
-    """
+def classify_logs(state: AgentState) -> dict:
+    """Classify raw log entries by severity and category using LLM."""
 
     start_time = time.time()
 
-    raw_logs = state.get("raw_logs", "")
+    raw_logs = state.get(
+        'raw_logs',
+        ''
+    )
 
     if not raw_logs or not raw_logs.strip():
 
         logger.warning(
-            "classify_logs called with empty raw_logs — skipping LLM call"
+            'classify_logs called with empty raw_logs'
         )
 
         end_time = time.time()
 
         return {
-            "classified_entries": [],
-            "agent_trace": [{
-                "agent_name": "classifier",
-                "start_time": start_time,
-                "end_time": end_time,
-                "input_summary": "Raw logs: 0 lines",
-                "output_summary": "Skipped — empty input",
-                "status": "skipped",
+            'classified_entries': [],
+            'agent_trace': [{
+                'agent_name': 'classifier',
+                'start_time': start_time,
+                'end_time': end_time,
+                'input_summary': 'Raw logs: 0 lines',
+                'output_summary': 'Skipped — empty input',
+                'status': 'skipped',
             }],
         }
 
-    log_line_count = len(raw_logs.splitlines())
+    log_line_count = len(
+        raw_logs.splitlines()
+    )
 
     logger.info(
-        "Classifying %d lines of logs",
+        'Classifying %d lines of logs',
         log_line_count
     )
 
-    llm = get_llm()
+    llm = LLMService()
 
-    messages = [
-        SystemMessage(
-            content=CLASSIFIER_SYSTEM_PROMPT
-        ),
-        HumanMessage(
-            content=f"Classify these logs:\n\n{raw_logs}"
-        ),
-    ]
+    prompt = f"""
+{CLASSIFIER_SYSTEM_PROMPT}
 
-    response = llm.invoke(messages)
+Classify these logs:
 
-    raw_content = response.content.strip()
+{raw_logs}
+"""
 
-    if raw_content.startswith("```"):
+    response = llm.invoke(prompt)
+
+    raw_content = response.strip()
+
+    if raw_content.startswith('```'):
+
         raw_content = raw_content.split(
-            "\n",
+            '\n',
             1
         )[1].rsplit(
-            "```",
+            '```',
             1
         )[0].strip()
 
     try:
-        classified = json.loads(raw_content)
+
+        classified = json.loads(
+            raw_content
+        )
 
     except json.JSONDecodeError as error:
 
         logger.error(
-            "Failed to parse classifier JSON response: %s\nRaw content: %s",
+            'Failed to parse classifier JSON response: %s\nRaw content: %s',
             error,
             raw_content
         )
 
-        raise
+        classified = []
 
     end_time = time.time()
 
     logger.info(
-        "Classified %d entries in %.1fs",
+        'Classified %d entries in %.1fs',
         len(classified),
         end_time - start_time
     )
 
     trace_entry = {
-        "agent_name": "classifier",
-        "start_time": start_time,
-        "end_time": end_time,
-        "input_summary": f"Raw logs: {log_line_count} lines",
-        "output_summary": f"Classified {len(classified)} entries",
-        "status": "completed",
+        'agent_name': 'classifier',
+        'start_time': start_time,
+        'end_time': end_time,
+        'input_summary': f'Raw logs: {log_line_count} lines',
+        'output_summary': f'Classified {len(classified)} entries',
+        'status': 'completed',
     }
 
-    return {
-        "classified_entries": classified,
-        "agent_trace": [trace_entry],
-    }
+    state['classified_entries'] = classified
+    state['agent_trace'] = [trace_entry]
+
+    return state
