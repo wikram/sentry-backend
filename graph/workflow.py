@@ -46,11 +46,6 @@ def build_workflow():
     )
 
     workflow.set_entry_point(
-        'fetch_logs'
-    )
-
-    workflow.add_edge(
-        'fetch_logs',
         'log_reader'
     )
 

@@ -1,17 +1,37 @@
 import os
 
+from pathlib import Path
+
 from dotenv import load_dotenv
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
 from graph.workflow import build_workflow
 
 
-load_dotenv()
+BASE_DIR = Path(__file__).resolve().parent
+ENV_PATH = BASE_DIR / '.env'
+
+
+load_dotenv(dotenv_path=ENV_PATH)
 
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=['*'],
+    allow_credentials=True,
+    allow_methods=['*'],
+    allow_headers=['*'],
+)
+
+
 workflow = build_workflow()
+
+
+LAST_ANALYSIS_RESPONSE = {}
 
 
 CONFIGURED_AGENTS = [
@@ -43,8 +63,7 @@ CONFIGURED_AGENTS = [
 
 
 class AnalyzeRequest(BaseModel):
-    jenkins: dict
-    llm: dict
+    error: str
 
 
 class LLMConfigRequest(BaseModel):
@@ -68,16 +87,22 @@ async def list_agents():
     }
 
 
+@app.get('/api/v1/getresponse')
+async def get_response():
+
+    return {
+        'response': LAST_ANALYSIS_RESPONSE
+    }
+
+
 @app.post('/api/v1/config/llm')
 async def configure_llm(request: LLMConfigRequest):
 
-    env_path = '.env'
-
     lines = []
 
-    if os.path.exists(env_path):
+    if ENV_PATH.exists():
 
-        with open(env_path, 'r') as file:
+        with open(ENV_PATH, 'r') as file:
             lines = file.readlines()
 
     updated = False
@@ -92,7 +117,7 @@ async def configure_llm(request: LLMConfigRequest):
     if not updated:
         lines.append(f'LLM_MODEL={request.model}\n')
 
-    with open(env_path, 'w') as file:
+    with open(ENV_PATH, 'w') as file:
         file.writelines(lines)
 
     os.environ['LLM_MODEL'] = request.model
@@ -106,14 +131,18 @@ async def configure_llm(request: LLMConfigRequest):
 @app.post('/api/v1/analyze')
 async def analyze(request: AnalyzeRequest):
 
+    global LAST_ANALYSIS_RESPONSE
+
     result = workflow.invoke({
-        'jenkins': request.jenkins,
-        'llm': request.llm
+        'raw_logs': request.error,
+        'llm': {}
     })
 
-    return {
+    LAST_ANALYSIS_RESPONSE = {
         'parsed_logs': result['parsed_logs'],
         'remediation': result['remediation'],
         'cookbook': result['cookbook'],
         'jira_ticket': result['jira_ticket']
     }
+
+    return LAST_ANALYSIS_RESPONSE
