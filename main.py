@@ -14,6 +14,34 @@ app = FastAPI()
 workflow = build_workflow()
 
 
+CONFIGURED_AGENTS = [
+    {
+        'name': 'jenkins_fetcher',
+        'description': 'Fetches Jenkins console logs'
+    },
+    {
+        'name': 'log_reader',
+        'description': 'Parses and classifies logs'
+    },
+    {
+        'name': 'remediation_agent',
+        'description': 'Generates remediation suggestions'
+    },
+    {
+        'name': 'cookbook_agent',
+        'description': 'Creates recovery checklists'
+    },
+    {
+        'name': 'jira_agent',
+        'description': 'Creates Jira tickets for critical issues'
+    },
+    {
+        'name': 'notification_agent',
+        'description': 'Sends Slack notifications'
+    }
+]
+
+
 class AnalyzeRequest(BaseModel):
     jenkins: dict
     llm: dict
@@ -28,6 +56,15 @@ async def health():
 
     return {
         'status': 'healthy'
+    }
+
+
+@app.get('/api/v1/agents')
+async def list_agents():
+
+    return {
+        'count': len(CONFIGURED_AGENTS),
+        'agents': CONFIGURED_AGENTS
     }
 
 
