@@ -7,6 +7,10 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
+from agents.classifier import classify_logs
+from agents.cookbook_agent import cookbook_agent
+from agents.log_reader import parse_logs
+from agents.remediation_agent import remediation_agent
 from graph.workflow import build_workflow
 
 
@@ -36,28 +40,24 @@ LAST_ANALYSIS_RESPONSE = {}
 
 CONFIGURED_AGENTS = [
     {
-        'name': 'jenkins_fetcher',
-        'description': 'Fetches Jenkins console logs'
+        'name': 'log_reader',
+        'description': 'Parses and classifies logs',
+        'api': '/api/v1/agents/log-reader'
     },
     {
-        'name': 'log_reader',
-        'description': 'Parses and classifies logs'
+        'name': 'classifier',
+        'description': 'Classifies logs using LLM',
+        'api': '/api/v1/agents/classifier'
     },
     {
         'name': 'remediation_agent',
-        'description': 'Generates remediation suggestions'
+        'description': 'Generates remediation suggestions',
+        'api': '/api/v1/agents/remediation'
     },
     {
         'name': 'cookbook_agent',
-        'description': 'Creates recovery checklists'
-    },
-    {
-        'name': 'jira_agent',
-        'description': 'Creates Jira tickets for critical issues'
-    },
-    {
-        'name': 'notification_agent',
-        'description': 'Sends Slack notifications'
+        'description': 'Creates recovery checklists',
+        'api': '/api/v1/agents/cookbook'
     }
 ]
 
@@ -142,6 +142,76 @@ async def configure_llm(request: LLMConfigRequest):
     }
 
 
+@app.post('/api/v1/agents/log-reader')
+async def run_log_reader(request: AnalyzeRequest):
+
+    state = {
+        'raw_logs': request.error
+    }
+
+    result = parse_logs(state)
+
+    return {
+        'parsed_logs': result.get('parsed_logs')
+    }
+
+
+@app.post('/api/v1/agents/classifier')
+async def run_classifier(request: AnalyzeRequest):
+
+    state = {
+        'raw_logs': request.error
+    }
+
+    result = classify_logs(state)
+
+    return {
+        'classified_entries': result.get(
+            'classified_entries'
+        ),
+        'agent_trace': result.get(
+            'agent_trace'
+        )
+    }
+
+
+@app.post('/api/v1/agents/remediation')
+async def run_remediation(request: AnalyzeRequest):
+
+    state = {
+        'raw_logs': request.error
+    }
+
+    state = parse_logs(state)
+
+    result = remediation_agent(state)
+
+    return {
+        'remediation': result.get(
+            'remediation'
+        )
+    }
+
+
+@app.post('/api/v1/agents/cookbook')
+async def run_cookbook(request: AnalyzeRequest):
+
+    state = {
+        'raw_logs': request.error
+    }
+
+    state = parse_logs(state)
+    state = remediation_agent(state)
+
+    result = cookbook_agent(state)
+
+    return {
+        'cookbook': result.get(
+            'cookbook'
+        )
+    }
+
+
 @app.post('/api/v1/analyze')
 async def analyze(request: AnalyzeRequest):
 
@@ -153,10 +223,10 @@ async def analyze(request: AnalyzeRequest):
     })
 
     LAST_ANALYSIS_RESPONSE = {
-        'parsed_logs': result['parsed_logs'],
-        'remediation': result['remediation'],
-        'cookbook': result['cookbook'],
-        'jira_ticket': result['jira_ticket']
+        'parsed_logs': result.get('parsed_logs'),
+        'classified_entries': result.get('classified_entries'),
+        'remediation': result.get('remediation'),
+        'cookbook': result.get('cookbook')
     }
 
     return LAST_ANALYSIS_RESPONSE
