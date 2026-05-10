@@ -4,27 +4,32 @@ from dotenv import load_dotenv
 from openai import OpenAI
 
 
-load_dotenv()
+load_dotenv(override=True)
 
 
 class LLMService:
 
-    def __init__(self, llm_config):
+    def __init__(self, llm_config=None):
 
         self.client = OpenAI(
             base_url='https://openrouter.ai/api/v1',
             api_key=os.getenv('OPENROUTER_API_KEY')
         )
 
-        self.model = os.getenv(
-            'LLM_MODEL',
-            llm_config.get('model')
-        )
+        self.model = os.getenv('LLM_MODEL')
 
-        self.temperature = llm_config.get(
-            'temperature',
-            0
-        )
+        if not self.model:
+            raise ValueError(
+                'LLM_MODEL is not configured in .env'
+            )
+
+        self.temperature = 0
+
+        if llm_config:
+            self.temperature = llm_config.get(
+                'temperature',
+                0
+            )
 
     def invoke(self, prompt):
 
