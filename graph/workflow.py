@@ -6,8 +6,6 @@ from agents.jenkins_fetcher import jenkins_fetcher
 from agents.log_reader import parse_logs
 from agents.remediation_agent import remediation_agent
 from agents.cookbook_agent import cookbook_agent
-from agents.jira_agent import jira_agent
-from agents.notification_agent import notification_agent
 
 
 
@@ -35,16 +33,6 @@ def build_workflow():
         cookbook_agent
     )
 
-    workflow.add_node(
-        'jira',
-        jira_agent
-    )
-
-    workflow.add_node(
-        'notification',
-        notification_agent
-    )
-
     workflow.set_entry_point(
         'log_reader'
     )
@@ -61,16 +49,6 @@ def build_workflow():
 
     workflow.add_edge(
         'cookbook',
-        'jira'
-    )
-
-    workflow.add_edge(
-        'jira',
-        'notification'
-    )
-
-    workflow.add_edge(
-        'notification',
         END
     )
 
