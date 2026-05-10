@@ -13,7 +13,15 @@ class AnalyzeRequest(BaseModel):
     llm: dict
 
 
-@app.post('/analyze')
+@app.get('/api/v1/health')
+async def health():
+
+    return {
+        'status': 'healthy'
+    }
+
+
+@app.post('/api/v1/analyze')
 async def analyze(request: AnalyzeRequest):
 
     result = workflow.invoke({
