@@ -63,8 +63,7 @@ CONFIGURED_AGENTS = [
 
 
 class AnalyzeRequest(BaseModel):
-    jenkins: dict
-    llm: dict
+    error: str
 
 
 class LLMConfigRequest(BaseModel):
@@ -135,8 +134,8 @@ async def analyze(request: AnalyzeRequest):
     global LAST_ANALYSIS_RESPONSE
 
     result = workflow.invoke({
-        'jenkins': request.jenkins,
-        'llm': request.llm
+        'raw_logs': request.error,
+        'llm': {}
     })
 
     LAST_ANALYSIS_RESPONSE = {
