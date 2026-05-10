@@ -4,6 +4,7 @@ from models.state import AgentState
 
 from agents.jenkins_fetcher import jenkins_fetcher
 from agents.log_reader import parse_logs
+from agents.classifier import classify_logs
 from agents.remediation_agent import remediation_agent
 from agents.cookbook_agent import cookbook_agent
 
@@ -24,6 +25,11 @@ def build_workflow():
     )
 
     workflow.add_node(
+        'classifier',
+        classify_logs
+    )
+
+    workflow.add_node(
         'remediation',
         remediation_agent
     )
@@ -39,6 +45,11 @@ def build_workflow():
 
     workflow.add_edge(
         'log_reader',
+        'classifier'
+    )
+
+    workflow.add_edge(
+        'classifier',
         'remediation'
     )
 
