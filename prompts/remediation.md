@@ -21,10 +21,10 @@ Provide:
 Return JSON ONLY:
 
 ```json
-{
+{{
   "root_cause": "",
   "immediate_fix": "",
   "prevention": "",
   "severity": ""
-}
+}}
 ```
