@@ -7,7 +7,8 @@ from jira.exceptions import JIRAError
 from langchain_core.messages import SystemMessage, HumanMessage
 from orchestrator.state import IncidentState
 from utils.llm import get_llm
-from services.prompt_loader import load_prompt
+from utils.llm_service import LLMService
+from utils.prompt_loader import load_prompt
 
 logger = logging.getLogger(__name__)
 
@@ -200,7 +201,7 @@ def create_jira_tickets(state: IncidentState) -> dict:
 
     # Use LLM to generate ticket specifications
     try:
-        llm = get_llm()
+        llm = LLMService(state['llm'])
         remediations_json = json.dumps(critical_remediations, indent=2)
         messages = [
             SystemMessage(content=JIRA_SYSTEM_PROMPT),

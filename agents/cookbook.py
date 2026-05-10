@@ -4,8 +4,8 @@ import time
 from langchain_core.messages import SystemMessage, HumanMessage
 from orchestrator.state import IncidentState
 from utils.llm import get_llm
-from services.llm_service import LLMService
-from services.prompt_loader import load_prompt
+from utils.llm_service import LLMService
+from utils.prompt_loader import load_prompt
 
 logger = logging.getLogger(__name__)
 
@@ -44,7 +44,7 @@ def synthesize_cookbook(state: IncidentState) -> dict:
 
     logger.info("Synthesizing cookbook from %d remediations", len(remediations))
 
-    llm = get_llm()
+    llm = LLMService(state['llm'])
     remediations_json = json.dumps(remediations, indent=2)
     messages = [
         SystemMessage(content=COOKBOOK_SYSTEM_PROMPT),

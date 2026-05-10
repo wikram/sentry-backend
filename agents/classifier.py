@@ -4,8 +4,8 @@ import time
 from langchain_core.messages import SystemMessage, HumanMessage
 from orchestrator.state import IncidentState
 from utils.llm import get_llm
-from services.llm_service import LLMService
-from services.prompt_loader import load_prompt
+from utils.llm_service import LLMService
+from utils.prompt_loader import load_prompt
 
 logger = logging.getLogger(__name__)
 
@@ -44,7 +44,7 @@ def classify_logs(state: IncidentState) -> dict:
     log_line_count = len(raw_logs.splitlines())
     logger.info("Classifying %d lines of logs", log_line_count)
 
-    llm = get_llm()
+    llm = LLMService(state['llm'])
     messages = [
         SystemMessage(content=CLASSIFIER_SYSTEM_PROMPT),
         HumanMessage(content=f"Classify these logs:\n\n{raw_logs}"),

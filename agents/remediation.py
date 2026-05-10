@@ -4,7 +4,8 @@ import time
 from langchain_core.messages import SystemMessage, HumanMessage
 from orchestrator.state import IncidentState
 from utils.llm import get_llm
-from services.prompt_loader import load_prompt
+from utils.llm_service import LLMService
+from utils.prompt_loader import load_prompt
 
 logger = logging.getLogger(__name__)
 
@@ -43,7 +44,7 @@ def generate_remediations(state: IncidentState) -> dict:
 
     logger.info("Generating remediations for %d classified entries", len(classified_entries))
 
-    llm = get_llm()
+    llm = LLMService(state['llm'])
     entries_json = json.dumps(classified_entries, indent=2)
     messages = [
         SystemMessage(content=REMEDIATION_SYSTEM_PROMPT),
