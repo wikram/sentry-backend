@@ -23,15 +23,6 @@ ERROR_PATTERNS = {
 }
 
 
-def extract_failed_stage(logs):
-
-    pattern = r'Stage \"(.*?)\"'
-
-    matches = re.findall(pattern, logs)
-
-    return matches[-1] if matches else 'unknown'
-
-
 
 def detect_issue(logs):
 
@@ -46,34 +37,14 @@ def detect_issue(logs):
 
 
 
-def extract_error_context(logs):
-
-    lines = logs.splitlines()
-
-    error_lines = []
-
-    for line in lines:
-
-        if (
-            'ERROR' in line
-            or 'FAIL' in line
-            or 'Exception' in line
-            or 'fatal' in line.lower()
-        ):
-            error_lines.append(line)
-
-    return '\n'.join(error_lines[-50:])
-
-
-
 def parse_logs(state):
 
     logs = state['raw_logs']
 
     state['parsed_logs'] = {
-        'failed_stage': extract_failed_stage(logs),
+        'failed_stage': 'direct_error_input',
         'issue_type': detect_issue(logs),
-        'error_context': extract_error_context(logs)
+        'error_context': logs
     }
 
     return state
