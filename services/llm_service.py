@@ -1,4 +1,10 @@
+import os
+
+from dotenv import load_dotenv
 from openai import OpenAI
+
+
+load_dotenv()
 
 
 class LLMService:
@@ -7,10 +13,13 @@ class LLMService:
 
         self.client = OpenAI(
             base_url='https://openrouter.ai/api/v1',
-            api_key=llm_config['api_key']
+            api_key=os.getenv('OPENROUTER_API_KEY')
         )
 
-        self.model = llm_config['model']
+        self.model = os.getenv(
+            'LLM_MODEL',
+            llm_config.get('model')
+        )
 
         self.temperature = llm_config.get(
             'temperature',
