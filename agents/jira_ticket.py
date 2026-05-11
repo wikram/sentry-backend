@@ -22,7 +22,7 @@ logging.basicConfig(
     ]
 )
 
-JIRA_SYSTEM_PROMPT = load_prompt('tira_ticket.md')
+JIRA_SYSTEM_PROMPT = load_prompt('jira_ticket.md')
 
 
 def _validate_jira_config():

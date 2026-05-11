@@ -48,6 +48,7 @@ class IncidentState(TypedDict):
     raw_logs: str
     classified_entries: list[LogEntry]
     remediations: list[Remediation]
+    llm: dict  # LLM configuration passed to agents
     cookbook: str
     jira_tickets: list[JIRATicket]
     slack_notifications: list[SlackMessage]

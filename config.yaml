@@ -1,0 +1,45 @@
+server:
+  bind_ip: "0.0.0.0"
+  bind_port: 8000
+  api_prefix: "/api"
+
+logging:
+  enabled: true
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "logs/app.log"
+  rotate: true
+  max_bytes: 10485760  # 10 MB
+  backup_count: 5
+
+paths:
+  raw_logs: "logs/raw"
+  archive_logs: "logs/archive"
+  prompts: "prompts"
+
+database:
+  enabled: false
+  driver: "postgresql"
+  host: "localhost"
+  port: 5432
+  name: "sentry_backend"
+  user: "sentry_user"
+  password: "change_me"
+  pool_size: 10
+  timeout_seconds: 30
+
+llm:
+  model: "openai/gpt-4o"
+  temperature: 0
+
+external_services:
+  openrouter_api_base: "https://openrouter.ai/api/v1"
+  jira:
+    enabled: false
+    instance_url: "https://your-jira-instance.atlassian.net"
+    project_key: "OPS"
+    user_email: "jira-user@example.com"
+    api_token: "change_me"
+  slack:
+    enabled: false
+    webhook_url: "https://hooks.slack.com/services/XXX/YYY/ZZZ"

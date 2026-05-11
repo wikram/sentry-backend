@@ -90,3 +90,34 @@ def build_graph():
     graph.add_edge("jira_ticket", END)
 
     return graph.compile()
+
+
+def get_agent_definitions() -> list[dict[str, str]]:
+    """Return metadata for all defined graph agents."""
+    return [
+        {
+            "name": "classifier",
+            "label": "Classifier",
+            "description": "Classifies raw logs by severity and category.",
+        },
+        {
+            "name": "remediation",
+            "label": "Remediation",
+            "description": "Generates remediation suggestions for classified incidents.",
+        },
+        {
+            "name": "cookbook",
+            "label": "Cookbook",
+            "description": "Synthesizes a runbook from remediation steps.",
+        },
+        {
+            "name": "slack_notifier",
+            "label": "Slack Notifier",
+            "description": "Sends incident notifications to Slack.",
+        },
+        {
+            "name": "jira_ticket",
+            "label": "JIRA Ticket",
+            "description": "Creates JIRA tickets for high-severity incidents.",
+        },
+    ]
