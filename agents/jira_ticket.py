@@ -42,7 +42,7 @@ def _validate_jira_config():
     
     # Validate project key format (should be 2-4 uppercase letters, not an issue ID)
     project_key = config["project_key"]
-    if not (2 <= len(project_key) <= 4 and project_key.isupper() and project_key.isalpha()):
+    if not (2 <= len(project_key) <= 6 and project_key.isupper() and project_key.isalpha()):
         logger.error("JIRA_PROJECT_KEY should be 2-4 uppercase letters (e.g., 'OPS', 'DEV'), not an issue ID")
         return None
     logger.info("JIRA config validated. URL: %s, Project: %s", config["url"], project_key)

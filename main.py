@@ -372,7 +372,7 @@ async def update_llm_model(request: LLMModelUpdateRequest) -> dict:
 @app.post("/api/analyze", response_model=None)
 async def analyze_logs(
     request: AnalysisRequest,
-    response_format: Optional[str] = "json",
+    response_format: Optional[str] = "text",
 ):
     """Analyze logs and generate incident remediations.
 
@@ -424,7 +424,7 @@ async def analyze_logs(
 @app.post("/api/analyze-file", response_model=None)
 async def analyze_file(
     file: UploadFile = File(...),
-    response_format: Optional[str] = "json",
+    response_format: Optional[str] = "text",
 ):
     """Analyze logs from an uploaded file.
 

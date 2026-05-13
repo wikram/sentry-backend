@@ -1,0 +1,358 @@
+2026-05-11 22:43:20,753 INFO main ================================================================================
+2026-05-11 22:43:20,754 INFO main Sentry Incident Analyzer API Server Stopped
+2026-05-11 22:43:20,754 INFO main ================================================================================
+2026-05-11 22:43:32,619 INFO utils.db Database is disabled in configuration
+2026-05-11 22:43:32,620 INFO main Database connection not established (disabled or unavailable)
+2026-05-11 22:43:32,620 INFO main ================================================================================
+2026-05-11 22:43:32,620 INFO main Sentry Incident Analyzer API Server Started
+2026-05-11 22:43:32,621 INFO main ================================================================================
+2026-05-11 22:43:32,699 INFO main ================================================================================
+2026-05-11 22:44:38,829 INFO main Processing analysis request: 21 characters
+2026-05-11 22:44:38,830 INFO main Building analysis graph...
+2026-05-11 22:44:38,839 INFO main Starting incident analysis workflow...
+2026-05-11 22:44:38,852 INFO orchestrator.graph Graph node: classifier started
+2026-05-11 22:44:38,853 INFO agents.classifier Classifying 1 lines of logs
+2026-05-11 22:44:43,398 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-11 22:44:43,782 INFO agents.classifier Classified 1 entries in 4.9s
+2026-05-11 22:44:43,783 INFO orchestrator.graph Graph node: classifier completed
+2026-05-11 22:44:43,784 INFO orchestrator.graph Graph node: remediation started
+2026-05-11 22:44:43,785 INFO agents.remediation Generating remediations for 1 classified entries
+2026-05-11 22:44:46,096 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-11 22:44:47,144 INFO agents.remediation Generated 1 remediations in 3.4s
+2026-05-11 22:44:47,145 INFO orchestrator.graph Graph node: remediation completed
+2026-05-11 22:44:47,152 INFO orchestrator.graph Graph node: cookbook started
+2026-05-11 22:44:47,153 INFO orchestrator.graph Graph node: jira_ticket started
+2026-05-11 22:44:47,154 INFO orchestrator.graph Graph node: slack_notifier started
+2026-05-11 22:44:47,153 INFO agents.cookbook Synthesizing cookbook from 1 remediations
+2026-05-11 22:44:47,154 INFO agents.jira_ticket Found 1 CRITICAL and 0 HIGH severity entries
+2026-05-11 22:44:47,155 INFO agents.slack_notifier Sending Slack notifications for 1 remediations
+2026-05-11 22:44:47,155 INFO agents.jira_ticket Generating JIRA tickets for 1 critical/high remediations
+2026-05-11 22:44:47,610 ERROR agents.slack_notifier Failed to send Slack notification: The request to the Slack API failed. (url: https://slack.com/api/chat.postMessage)
+The server responded with: {'ok': False, 'error': 'not_allowed_token_type'}
+2026-05-11 22:44:47,611 INFO agents.slack_notifier Slack notifier completed in 0.5s — 0 sent
+2026-05-11 22:44:47,612 INFO orchestrator.graph Graph node: slack_notifier completed
+2026-05-11 22:44:49,640 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-11 22:44:49,686 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-11 22:44:50,865 INFO agents.jira_ticket LLM generated 1 ticket specifications
+2026-05-11 22:44:50,865 INFO agents.jira_ticket JIRA config validated. URL: https://wikrampatankar.atlassian.net, Project: OPS
+2026-05-11 22:44:51,954 INFO agents.cookbook Cookbook synthesized in 4.8s
+2026-05-11 22:44:51,955 INFO orchestrator.graph Graph node: cookbook completed
+2026-05-11 22:44:52,392 INFO agents.jira_ticket JIRA client connected - attempting to create 1 tickets
+2026-05-11 22:44:52,392 INFO agents.jira_ticket Creating ticket 1/1: CRITICAL: Docker container is experiencing an Out of Memory (OOM) condition.
+2026-05-11 22:44:53,018 ERROR agents.jira_ticket   Ensure JIRA_PROJECT_KEY is correct (should be 2-4 uppercase letters like 'OPS', 'DEV')
+2026-05-11 22:44:53,018 INFO agents.jira_ticket JIRA ticket creation complete: 0 created, 1 failed, 0 mocked
+2026-05-11 22:44:53,021 INFO orchestrator.graph Graph node: jira_ticket completed
+2026-05-11 22:44:53,023 INFO main Incident analysis workflow completed successfully
+2026-05-11 22:45:29,416 INFO main Processing analysis request: 21 characters
+2026-05-11 22:45:29,417 INFO main Building analysis graph...
+2026-05-11 22:45:29,432 INFO main Starting incident analysis workflow...
+2026-05-11 22:45:29,435 INFO orchestrator.graph Graph node: classifier started
+2026-05-11 22:45:29,436 INFO agents.classifier Classifying 1 lines of logs
+2026-05-11 22:45:31,513 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-11 22:45:32,336 INFO agents.classifier Classified 1 entries in 2.9s
+2026-05-11 22:45:32,336 INFO orchestrator.graph Graph node: classifier completed
+2026-05-11 22:45:32,338 INFO orchestrator.graph Graph node: remediation started
+2026-05-11 22:45:32,338 INFO agents.remediation Generating remediations for 1 classified entries
+2026-05-11 22:45:34,632 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-11 22:45:36,307 INFO agents.remediation Generated 1 remediations in 4.0s
+2026-05-11 22:45:36,308 INFO orchestrator.graph Graph node: remediation completed
+2026-05-11 22:45:36,310 INFO orchestrator.graph Graph node: cookbook started
+2026-05-11 22:45:36,311 INFO orchestrator.graph Graph node: jira_ticket started
+2026-05-11 22:45:36,311 INFO agents.cookbook Synthesizing cookbook from 1 remediations
+2026-05-11 22:45:36,312 INFO orchestrator.graph Graph node: slack_notifier started
+2026-05-11 22:45:36,312 INFO agents.jira_ticket Found 1 CRITICAL and 0 HIGH severity entries
+2026-05-11 22:45:36,314 INFO agents.slack_notifier Sending Slack notifications for 1 remediations
+2026-05-11 22:45:36,314 INFO agents.jira_ticket Generating JIRA tickets for 1 critical/high remediations
+2026-05-11 22:45:36,729 ERROR agents.slack_notifier Failed to send Slack notification: The request to the Slack API failed. (url: https://slack.com/api/chat.postMessage)
+The server responded with: {'ok': False, 'error': 'not_allowed_token_type'}
+2026-05-11 22:45:36,730 INFO agents.slack_notifier Slack notifier completed in 0.4s — 0 sent
+2026-05-11 22:45:36,731 INFO orchestrator.graph Graph node: slack_notifier completed
+2026-05-11 22:45:38,999 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-11 22:45:39,384 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-11 22:45:40,231 INFO agents.jira_ticket LLM generated 1 ticket specifications
+2026-05-11 22:45:40,232 INFO agents.jira_ticket JIRA config validated. URL: https://wikrampatankar.atlassian.net, Project: OPS
+2026-05-11 22:45:41,472 INFO agents.cookbook Cookbook synthesized in 5.2s
+2026-05-11 22:45:41,473 INFO orchestrator.graph Graph node: cookbook completed
+2026-05-11 22:45:42,026 INFO agents.jira_ticket JIRA client connected - attempting to create 1 tickets
+2026-05-11 22:45:42,027 INFO agents.jira_ticket Creating ticket 1/1: CRITICAL: Docker container ran out of memory
+2026-05-11 22:45:42,346 ERROR agents.jira_ticket   Ensure JIRA_PROJECT_KEY is correct (should be 2-4 uppercase letters like 'OPS', 'DEV')
+2026-05-11 22:45:42,347 INFO agents.jira_ticket JIRA ticket creation complete: 0 created, 1 failed, 0 mocked
+2026-05-11 22:45:42,349 INFO orchestrator.graph Graph node: jira_ticket completed
+2026-05-11 22:45:42,351 INFO main Incident analysis workflow completed successfully
+2026-05-11 22:49:28,849 INFO main ================================================================================
+2026-05-11 22:49:28,849 INFO main Sentry Incident Analyzer API Server Stopped
+2026-05-11 22:49:28,850 INFO main ================================================================================
+2026-05-11 22:49:48,938 INFO utils.db Database is disabled in configuration
+2026-05-11 22:49:48,939 INFO main Database connection not established (disabled or unavailable)
+2026-05-11 22:49:48,940 INFO main ================================================================================
+2026-05-11 22:49:48,940 INFO main Sentry Incident Analyzer API Server Started
+2026-05-11 22:49:48,940 INFO main ================================================================================
+2026-05-11 22:49:49,049 INFO main ================================================================================
+2026-05-11 22:50:13,833 INFO main Processing analysis request: 21 characters
+2026-05-11 22:50:13,834 INFO main Building analysis graph...
+2026-05-11 22:50:13,848 INFO main Starting incident analysis workflow...
+2026-05-11 22:50:13,860 INFO orchestrator.graph Graph node: classifier started
+2026-05-11 22:50:13,861 INFO agents.classifier Classifying 1 lines of logs
+2026-05-11 22:50:19,267 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-11 22:50:19,725 INFO agents.classifier Classified 1 entries in 5.9s
+2026-05-11 22:50:19,725 INFO orchestrator.graph Graph node: classifier completed
+2026-05-11 22:50:19,727 INFO orchestrator.graph Graph node: remediation started
+2026-05-11 22:50:19,728 INFO agents.remediation Generating remediations for 1 classified entries
+2026-05-11 22:50:22,907 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-11 22:50:24,714 INFO agents.remediation Generated 1 remediations in 5.0s
+2026-05-11 22:50:24,715 INFO orchestrator.graph Graph node: remediation completed
+2026-05-11 22:50:24,719 INFO orchestrator.graph Graph node: cookbook started
+2026-05-11 22:50:24,720 INFO agents.cookbook Synthesizing cookbook from 1 remediations
+2026-05-11 22:50:24,720 INFO orchestrator.graph Graph node: jira_ticket started
+2026-05-11 22:50:24,723 INFO orchestrator.graph Graph node: slack_notifier started
+2026-05-11 22:50:24,723 INFO agents.jira_ticket Found 1 CRITICAL and 0 HIGH severity entries
+2026-05-11 22:50:24,724 INFO agents.slack_notifier Sending Slack notifications for 1 remediations
+2026-05-11 22:50:24,724 INFO agents.jira_ticket Generating JIRA tickets for 1 critical/high remediations
+2026-05-11 22:50:25,306 ERROR agents.slack_notifier Failed to send Slack notification: The request to the Slack API failed. (url: https://slack.com/api/chat.postMessage)
+The server responded with: {'ok': False, 'error': 'not_allowed_token_type'}
+2026-05-11 22:50:25,308 INFO agents.slack_notifier Slack notifier completed in 0.6s — 0 sent
+2026-05-11 22:50:25,308 INFO orchestrator.graph Graph node: slack_notifier completed
+2026-05-11 22:50:27,993 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-11 22:50:28,112 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-11 22:50:29,425 INFO agents.jira_ticket LLM generated 1 ticket specifications
+2026-05-11 22:50:29,426 INFO agents.jira_ticket JIRA config validated. URL: https://wikrampatankar.atlassian.net, Project: OPS
+2026-05-11 22:50:31,588 INFO agents.jira_ticket JIRA client connected - attempting to create 1 tickets
+2026-05-11 22:50:31,590 INFO agents.jira_ticket Creating ticket 1/1: CRITICAL: Docker container out of memory error
+2026-05-11 22:50:31,717 INFO agents.cookbook Cookbook synthesized in 7.0s
+2026-05-11 22:50:31,718 INFO orchestrator.graph Graph node: cookbook completed
+2026-05-11 22:50:32,062 ERROR agents.jira_ticket   Ensure JIRA_PROJECT_KEY is correct (should be 2-4 uppercase letters like 'OPS', 'DEV')
+2026-05-11 22:50:32,063 INFO agents.jira_ticket JIRA ticket creation complete: 0 created, 1 failed, 0 mocked
+2026-05-11 22:50:32,066 INFO orchestrator.graph Graph node: jira_ticket completed
+2026-05-11 22:50:32,069 INFO main Incident analysis workflow completed successfully
+2026-05-11 22:51:01,239 INFO main Processing analysis request: 21 characters
+2026-05-11 22:51:01,240 INFO main Building analysis graph...
+2026-05-11 22:51:01,248 INFO main Starting incident analysis workflow...
+2026-05-11 22:51:01,251 INFO orchestrator.graph Graph node: classifier started
+2026-05-11 22:51:01,252 INFO agents.classifier Classifying 1 lines of logs
+2026-05-11 22:51:03,594 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-11 22:51:04,488 INFO agents.classifier Classified 1 entries in 3.2s
+2026-05-11 22:51:04,489 INFO orchestrator.graph Graph node: classifier completed
+2026-05-11 22:51:04,490 INFO orchestrator.graph Graph node: remediation started
+2026-05-11 22:51:04,490 INFO agents.remediation Generating remediations for 1 classified entries
+2026-05-11 22:51:07,016 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-11 22:51:08,409 INFO agents.remediation Generated 1 remediations in 3.9s
+2026-05-11 22:51:08,410 INFO orchestrator.graph Graph node: remediation completed
+2026-05-11 22:51:08,414 INFO orchestrator.graph Graph node: cookbook started
+2026-05-11 22:51:08,415 INFO orchestrator.graph Graph node: jira_ticket started
+2026-05-11 22:51:08,416 INFO agents.cookbook Synthesizing cookbook from 1 remediations
+2026-05-11 22:51:08,417 INFO agents.jira_ticket Found 1 CRITICAL and 0 HIGH severity entries
+2026-05-11 22:51:08,417 INFO orchestrator.graph Graph node: slack_notifier started
+2026-05-11 22:51:08,419 INFO agents.jira_ticket Generating JIRA tickets for 1 critical/high remediations
+2026-05-11 22:51:08,419 INFO agents.slack_notifier Sending Slack notifications for 1 remediations
+2026-05-11 22:51:08,753 ERROR agents.slack_notifier Failed to send Slack notification: The request to the Slack API failed. (url: https://slack.com/api/chat.postMessage)
+The server responded with: {'ok': False, 'error': 'not_allowed_token_type'}
+2026-05-11 22:51:08,754 INFO agents.slack_notifier Slack notifier completed in 0.3s — 0 sent
+2026-05-11 22:51:08,755 INFO orchestrator.graph Graph node: slack_notifier completed
+2026-05-11 22:51:11,175 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-11 22:51:11,409 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-11 22:51:12,979 INFO agents.cookbook Cookbook synthesized in 4.6s
+2026-05-11 22:51:12,980 INFO orchestrator.graph Graph node: cookbook completed
+2026-05-11 22:51:13,897 INFO agents.jira_ticket LLM generated 1 ticket specifications
+2026-05-11 22:51:13,898 INFO agents.jira_ticket JIRA config validated. URL: https://wikrampatankar.atlassian.net, Project: OPS
+2026-05-11 22:51:15,748 INFO agents.jira_ticket JIRA client connected - attempting to create 1 tickets
+2026-05-11 22:51:15,749 INFO agents.jira_ticket Creating ticket 1/1: CRITICAL: Docker container ran out of memory
+2026-05-11 22:51:16,198 ERROR agents.jira_ticket   Ensure JIRA_PROJECT_KEY is correct (should be 2-4 uppercase letters like 'OPS', 'DEV')
+2026-05-11 22:51:16,199 INFO agents.jira_ticket JIRA ticket creation complete: 0 created, 1 failed, 0 mocked
+2026-05-11 22:51:16,201 INFO orchestrator.graph Graph node: jira_ticket completed
+2026-05-11 22:51:16,203 INFO main Incident analysis workflow completed successfully
+2026-05-12 12:29:15,924 INFO main Processing analysis request: 21 characters
+2026-05-12 12:29:15,942 INFO main Building analysis graph...
+2026-05-12 12:29:16,190 INFO main Starting incident analysis workflow...
+2026-05-12 12:29:16,246 INFO orchestrator.graph Graph node: classifier started
+2026-05-12 12:29:16,248 INFO agents.classifier Classifying 1 lines of logs
+2026-05-12 12:29:20,254 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-12 12:29:21,308 INFO agents.classifier Classified 1 entries in 5.1s
+2026-05-12 12:29:21,311 INFO orchestrator.graph Graph node: classifier completed
+2026-05-12 12:29:21,314 INFO orchestrator.graph Graph node: remediation started
+2026-05-12 12:29:21,315 INFO agents.remediation Generating remediations for 1 classified entries
+2026-05-12 12:29:25,038 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-12 12:29:27,053 INFO agents.remediation Generated 1 remediations in 5.7s
+2026-05-12 12:29:27,054 INFO orchestrator.graph Graph node: remediation completed
+2026-05-12 12:29:27,062 INFO orchestrator.graph Graph node: cookbook started
+2026-05-12 12:29:27,065 INFO agents.cookbook Synthesizing cookbook from 1 remediations
+2026-05-12 12:29:27,066 INFO orchestrator.graph Graph node: jira_ticket started
+2026-05-12 12:29:27,070 INFO agents.jira_ticket Found 1 CRITICAL and 0 HIGH severity entries
+2026-05-12 12:29:27,071 INFO orchestrator.graph Graph node: slack_notifier started
+2026-05-12 12:29:27,075 INFO agents.jira_ticket Generating JIRA tickets for 1 critical/high remediations
+2026-05-12 12:29:27,077 INFO agents.slack_notifier Sending Slack notifications for 1 remediations
+2026-05-12 12:29:27,453 ERROR agents.slack_notifier Failed to send Slack notification: The request to the Slack API failed. (url: https://slack.com/api/chat.postMessage)
+The server responded with: {'ok': False, 'error': 'not_allowed_token_type'}
+2026-05-12 12:29:27,454 INFO agents.slack_notifier Slack notifier completed in 0.4s — 0 sent
+2026-05-12 12:29:27,455 INFO orchestrator.graph Graph node: slack_notifier completed
+2026-05-12 12:29:30,566 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-12 12:29:31,164 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-12 12:29:32,049 INFO agents.cookbook Cookbook synthesized in 5.0s
+2026-05-12 12:29:32,049 INFO orchestrator.graph Graph node: cookbook completed
+2026-05-12 12:29:32,330 INFO agents.jira_ticket LLM generated 1 ticket specifications
+2026-05-12 12:29:32,332 INFO agents.jira_ticket JIRA config validated. URL: https://wikrampatankar.atlassian.net, Project: OPS
+2026-05-12 12:29:35,550 INFO agents.jira_ticket JIRA client connected - attempting to create 1 tickets
+2026-05-12 12:29:35,551 INFO agents.jira_ticket Creating ticket 1/1: CRITICAL: Docker container ran out of memory
+2026-05-12 12:29:36,457 ERROR agents.jira_ticket   Ensure JIRA_PROJECT_KEY is correct (should be 2-4 uppercase letters like 'OPS', 'DEV')
+2026-05-12 12:29:36,462 INFO agents.jira_ticket JIRA ticket creation complete: 0 created, 1 failed, 0 mocked
+2026-05-12 12:29:36,470 INFO orchestrator.graph Graph node: jira_ticket completed
+2026-05-12 12:29:36,478 INFO main Incident analysis workflow completed successfully
+2026-05-12 12:32:13,808 INFO main Processing analysis request: 21 characters
+2026-05-12 12:32:13,812 INFO main Building analysis graph...
+2026-05-12 12:32:13,878 INFO main Starting incident analysis workflow...
+2026-05-12 12:32:13,897 INFO orchestrator.graph Graph node: classifier started
+2026-05-12 12:32:13,903 INFO agents.classifier Classifying 1 lines of logs
+2026-05-12 12:32:17,388 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-12 12:32:17,958 INFO agents.classifier Classified 1 entries in 4.1s
+2026-05-12 12:32:17,959 INFO orchestrator.graph Graph node: classifier completed
+2026-05-12 12:32:17,960 INFO orchestrator.graph Graph node: remediation started
+2026-05-12 12:32:17,961 INFO agents.remediation Generating remediations for 1 classified entries
+2026-05-12 12:32:21,243 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-12 12:32:24,995 INFO agents.remediation Generated 1 remediations in 7.0s
+2026-05-12 12:32:24,996 INFO orchestrator.graph Graph node: remediation completed
+2026-05-12 12:32:25,000 INFO orchestrator.graph Graph node: cookbook started
+2026-05-12 12:32:25,001 INFO agents.cookbook Synthesizing cookbook from 1 remediations
+2026-05-12 12:32:25,002 INFO orchestrator.graph Graph node: jira_ticket started
+2026-05-12 12:32:25,006 INFO orchestrator.graph Graph node: slack_notifier started
+2026-05-12 12:32:25,007 INFO agents.jira_ticket Found 1 CRITICAL and 0 HIGH severity entries
+2026-05-12 12:32:25,007 INFO agents.slack_notifier Sending Slack notifications for 1 remediations
+2026-05-12 12:32:25,008 INFO agents.jira_ticket Generating JIRA tickets for 1 critical/high remediations
+2026-05-12 12:32:25,354 ERROR agents.slack_notifier Failed to send Slack notification: The request to the Slack API failed. (url: https://slack.com/api/chat.postMessage)
+The server responded with: {'ok': False, 'error': 'not_allowed_token_type'}
+2026-05-12 12:32:25,356 INFO agents.slack_notifier Slack notifier completed in 0.3s — 0 sent
+2026-05-12 12:32:25,356 INFO orchestrator.graph Graph node: slack_notifier completed
+2026-05-12 12:32:29,024 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-12 12:32:32,178 INFO agents.jira_ticket LLM generated 1 ticket specifications
+2026-05-12 12:32:32,178 INFO agents.jira_ticket JIRA config validated. URL: https://wikrampatankar.atlassian.net, Project: OPS
+2026-05-12 12:32:33,093 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-12 12:32:34,612 INFO agents.cookbook Cookbook synthesized in 9.6s
+2026-05-12 12:32:34,613 INFO orchestrator.graph Graph node: cookbook completed
+2026-05-12 12:32:34,943 INFO agents.jira_ticket JIRA client connected - attempting to create 1 tickets
+2026-05-12 12:32:34,944 INFO agents.jira_ticket Creating ticket 1/1: CRITICAL: Docker container ran out of memory.
+2026-05-12 12:32:35,623 ERROR agents.jira_ticket   Ensure JIRA_PROJECT_KEY is correct (should be 2-4 uppercase letters like 'OPS', 'DEV')
+2026-05-12 12:32:35,625 INFO agents.jira_ticket JIRA ticket creation complete: 0 created, 1 failed, 0 mocked
+2026-05-12 12:32:35,631 INFO orchestrator.graph Graph node: jira_ticket completed
+2026-05-12 12:32:35,634 INFO main Incident analysis workflow completed successfully
+2026-05-12 12:36:01,634 INFO main Processing analysis request: 18 characters
+2026-05-12 12:36:01,637 INFO main Building analysis graph...
+2026-05-12 12:36:01,700 INFO main Starting incident analysis workflow...
+2026-05-12 12:36:01,715 INFO orchestrator.graph Graph node: classifier started
+2026-05-12 12:36:01,716 INFO agents.classifier Classifying 1 lines of logs
+2026-05-12 12:36:04,656 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-12 12:36:05,424 INFO agents.classifier Classified 1 entries in 3.7s
+2026-05-12 12:36:05,425 INFO orchestrator.graph Graph node: classifier completed
+2026-05-12 12:36:05,426 INFO orchestrator.graph Graph node: remediation started
+2026-05-12 12:36:05,427 INFO agents.remediation Generating remediations for 1 classified entries
+2026-05-12 12:36:09,034 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-12 12:36:12,066 INFO agents.remediation Generated 1 remediations in 6.6s
+2026-05-12 12:36:12,067 INFO orchestrator.graph Graph node: remediation completed
+2026-05-12 12:36:12,073 INFO orchestrator.graph Graph node: cookbook started
+2026-05-12 12:36:12,074 INFO agents.cookbook Synthesizing cookbook from 1 remediations
+2026-05-12 12:36:12,077 INFO orchestrator.graph Graph node: jira_ticket started
+2026-05-12 12:36:12,078 INFO agents.jira_ticket Found 1 CRITICAL and 0 HIGH severity entries
+2026-05-12 12:36:12,078 INFO orchestrator.graph Graph node: slack_notifier started
+2026-05-12 12:36:12,081 INFO agents.jira_ticket Generating JIRA tickets for 1 critical/high remediations
+2026-05-12 12:36:12,082 INFO agents.slack_notifier Sending Slack notifications for 1 remediations
+2026-05-12 12:36:12,468 ERROR agents.slack_notifier Failed to send Slack notification: The request to the Slack API failed. (url: https://slack.com/api/chat.postMessage)
+The server responded with: {'ok': False, 'error': 'not_allowed_token_type'}
+2026-05-12 12:36:12,471 INFO agents.slack_notifier Slack notifier completed in 0.4s — 0 sent
+2026-05-12 12:36:12,472 INFO orchestrator.graph Graph node: slack_notifier completed
+2026-05-12 12:36:14,821 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-12 12:36:15,322 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-12 12:36:16,594 INFO agents.jira_ticket LLM generated 1 ticket specifications
+2026-05-12 12:36:16,595 INFO agents.jira_ticket JIRA config validated. URL: https://wikrampatankar.atlassian.net, Project: OPS
+2026-05-12 12:36:18,393 INFO agents.jira_ticket JIRA client connected - attempting to create 1 tickets
+2026-05-12 12:36:18,394 INFO agents.jira_ticket Creating ticket 1/1: CRITICAL: Kubernetes system experienced an Out of Memory (OOM) event.
+2026-05-12 12:36:18,783 INFO agents.cookbook Cookbook synthesized in 6.7s
+2026-05-12 12:36:18,783 INFO orchestrator.graph Graph node: cookbook completed
+2026-05-12 12:36:19,086 ERROR agents.jira_ticket   Ensure JIRA_PROJECT_KEY is correct (should be 2-4 uppercase letters like 'OPS', 'DEV')
+2026-05-12 12:36:19,087 INFO agents.jira_ticket JIRA ticket creation complete: 0 created, 1 failed, 0 mocked
+2026-05-12 12:36:19,089 INFO orchestrator.graph Graph node: jira_ticket completed
+2026-05-12 12:36:19,092 INFO main Incident analysis workflow completed successfully
+2026-05-12 12:45:11,379 INFO main ================================================================================
+2026-05-12 12:45:11,380 INFO main Sentry Incident Analyzer API Server Stopped
+2026-05-12 12:45:11,380 INFO main ================================================================================
+2026-05-12 12:45:41,306 INFO utils.db Database is disabled in configuration
+2026-05-12 12:45:41,307 INFO main Database connection not established (disabled or unavailable)
+2026-05-12 12:45:41,307 INFO main ================================================================================
+2026-05-12 12:45:41,308 INFO main Sentry Incident Analyzer API Server Started
+2026-05-12 12:45:41,308 INFO main ================================================================================
+2026-05-12 12:45:41,589 INFO main ================================================================================
+2026-05-12 12:45:42,201 INFO main Processing analysis request: 18 characters
+2026-05-12 12:45:42,203 INFO main Building analysis graph...
+2026-05-12 12:45:42,233 INFO main Starting incident analysis workflow...
+2026-05-12 12:45:42,281 INFO orchestrator.graph Graph node: classifier started
+2026-05-12 12:45:42,284 INFO agents.classifier Classifying 1 lines of logs
+2026-05-12 12:45:51,455 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-12 12:45:52,552 INFO agents.classifier Classified 1 entries in 10.3s
+2026-05-12 12:45:52,553 INFO orchestrator.graph Graph node: classifier completed
+2026-05-12 12:45:52,554 INFO orchestrator.graph Graph node: remediation started
+2026-05-12 12:45:52,555 INFO agents.remediation Generating remediations for 1 classified entries
+2026-05-12 12:45:55,770 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-12 12:45:59,360 INFO agents.remediation Generated 1 remediations in 6.8s
+2026-05-12 12:45:59,361 INFO orchestrator.graph Graph node: remediation completed
+2026-05-12 12:45:59,366 INFO orchestrator.graph Graph node: cookbook started
+2026-05-12 12:45:59,368 INFO orchestrator.graph Graph node: jira_ticket started
+2026-05-12 12:45:59,368 INFO agents.cookbook Synthesizing cookbook from 1 remediations
+2026-05-12 12:45:59,370 INFO orchestrator.graph Graph node: slack_notifier started
+2026-05-12 12:45:59,371 INFO agents.jira_ticket Found 1 CRITICAL and 0 HIGH severity entries
+2026-05-12 12:45:59,372 INFO agents.slack_notifier Sending Slack notifications for 1 remediations
+2026-05-12 12:45:59,373 INFO agents.jira_ticket Generating JIRA tickets for 1 critical/high remediations
+2026-05-12 12:45:59,875 ERROR agents.slack_notifier Failed to send Slack notification: The request to the Slack API failed. (url: https://slack.com/api/chat.postMessage)
+The server responded with: {'ok': False, 'error': 'not_allowed_token_type'}
+2026-05-12 12:45:59,876 INFO agents.slack_notifier Slack notifier completed in 0.5s — 0 sent
+2026-05-12 12:45:59,877 INFO orchestrator.graph Graph node: slack_notifier completed
+2026-05-12 12:46:02,464 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-12 12:46:02,565 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-12 12:46:04,214 INFO agents.jira_ticket LLM generated 1 ticket specifications
+2026-05-12 12:46:04,215 ERROR agents.jira_ticket JIRA_PROJECT_KEY should be 2-4 uppercase letters (e.g., 'OPS', 'DEV'), not an issue ID
+2026-05-12 12:46:04,215 WARNING agents.jira_ticket JIRA client unavailable - running in mock mode
+2026-05-12 12:46:04,216 WARNING agents.jira_ticket Check JIRA configuration in .env file
+2026-05-12 12:46:04,216 INFO agents.jira_ticket JIRA ticket creation complete: 0 created, 0 failed, 1 mocked
+2026-05-12 12:46:04,217 INFO orchestrator.graph Graph node: jira_ticket completed
+2026-05-12 12:46:05,730 INFO agents.cookbook Cookbook synthesized in 6.4s
+2026-05-12 12:46:05,733 INFO orchestrator.graph Graph node: cookbook completed
+2026-05-12 12:46:05,735 INFO main Incident analysis workflow completed successfully
+2026-05-12 12:48:15,978 INFO main ================================================================================
+2026-05-12 12:48:15,978 INFO main Sentry Incident Analyzer API Server Stopped
+2026-05-12 12:48:15,979 INFO main ================================================================================
+2026-05-12 12:48:24,647 INFO utils.db Database is disabled in configuration
+2026-05-12 12:48:24,648 INFO main Database connection not established (disabled or unavailable)
+2026-05-12 12:48:24,649 INFO main ================================================================================
+2026-05-12 12:48:24,649 INFO main Sentry Incident Analyzer API Server Started
+2026-05-12 12:48:24,650 INFO main ================================================================================
+2026-05-12 12:48:24,743 INFO main ================================================================================
+2026-05-12 12:48:28,255 INFO main Processing analysis request: 18 characters
+2026-05-12 12:48:28,256 INFO main Building analysis graph...
+2026-05-12 12:48:28,275 INFO main Starting incident analysis workflow...
+2026-05-12 12:48:28,288 INFO orchestrator.graph Graph node: classifier started
+2026-05-12 12:48:28,289 INFO agents.classifier Classifying 1 lines of logs
+2026-05-12 12:48:35,094 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-12 12:48:35,526 INFO agents.classifier Classified 1 entries in 7.2s
+2026-05-12 12:48:35,527 INFO orchestrator.graph Graph node: classifier completed
+2026-05-12 12:48:35,530 INFO orchestrator.graph Graph node: remediation started
+2026-05-12 12:48:35,531 INFO agents.remediation Generating remediations for 1 classified entries
+2026-05-12 12:48:39,132 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-12 12:48:40,911 INFO agents.remediation Generated 1 remediations in 5.4s
+2026-05-12 12:48:40,912 INFO orchestrator.graph Graph node: remediation completed
+2026-05-12 12:48:40,914 INFO orchestrator.graph Graph node: cookbook started
+2026-05-12 12:48:40,915 INFO agents.cookbook Synthesizing cookbook from 1 remediations
+2026-05-12 12:48:40,915 INFO orchestrator.graph Graph node: jira_ticket started
+2026-05-12 12:48:40,917 INFO orchestrator.graph Graph node: slack_notifier started
+2026-05-12 12:48:40,917 INFO agents.jira_ticket Found 1 CRITICAL and 0 HIGH severity entries
+2026-05-12 12:48:40,917 INFO agents.slack_notifier Sending Slack notifications for 1 remediations
+2026-05-12 12:48:40,918 INFO agents.jira_ticket Generating JIRA tickets for 1 critical/high remediations
+2026-05-12 12:48:41,384 ERROR agents.slack_notifier Failed to send Slack notification: The request to the Slack API failed. (url: https://slack.com/api/chat.postMessage)
+The server responded with: {'ok': False, 'error': 'not_allowed_token_type'}
+2026-05-12 12:48:41,385 INFO agents.slack_notifier Slack notifier completed in 0.5s — 0 sent
+2026-05-12 12:48:41,385 INFO orchestrator.graph Graph node: slack_notifier completed
+2026-05-12 12:48:43,267 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-12 12:48:43,974 INFO httpx HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-12 12:48:44,921 INFO agents.jira_ticket LLM generated 1 ticket specifications
+2026-05-12 12:48:44,922 INFO agents.jira_ticket JIRA config validated. URL: https://wikrampatankar.atlassian.net, Project: SCRUM
+2026-05-12 12:48:45,830 INFO agents.cookbook Cookbook synthesized in 4.9s
+2026-05-12 12:48:45,832 INFO orchestrator.graph Graph node: cookbook completed
+2026-05-12 12:48:46,376 INFO agents.jira_ticket JIRA client connected - attempting to create 1 tickets
+2026-05-12 12:48:46,376 INFO agents.jira_ticket Creating ticket 1/1: CRITICAL: Kubernetes system experienced an Out of Memory condition.
+2026-05-12 12:48:46,776 INFO agents.jira_ticket JIRA ticket creation complete: 0 created, 1 failed, 0 mocked
+2026-05-12 12:48:46,778 INFO orchestrator.graph Graph node: jira_ticket completed
+2026-05-12 12:48:46,780 INFO main Incident analysis workflow completed successfully

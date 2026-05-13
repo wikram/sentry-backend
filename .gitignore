@@ -5,3 +5,6 @@ __pycache__/
 *.pyc
 .streamlit/secrets.toml
 .superpowers/
+jira_ticket_debug.log
+logs/
+logs/app.log
