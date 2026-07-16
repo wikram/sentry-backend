@@ -43,7 +43,7 @@ from typing import Optional
 from dotenv import load_dotenv, set_key
 from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import PlainTextResponse
+from fastapi.responses import PlainTextResponse, HTMLResponse
 from pydantic import BaseModel
 import uvicorn
 
@@ -291,10 +291,7 @@ async def startup_event():
     configure_logging()
 
     # Initialize database if enabled
-    if init_database():
-        logger.info("Database connection established")
-    else:
-        logger.info("Database connection not established (disabled or unavailable)")
+    db_connected = init_database()
 
     logger.info("=" * 80)
     logger.info("Sentry Incident Analyzer API Server Started")
@@ -302,6 +299,13 @@ async def startup_event():
     logger.info("📚 Interactive API docs available at: http://localhost:8000/docs")
     logger.info("📘 Alternative docs available at: http://localhost:8000/redoc")
     logger.info("❤️  Health check: http://localhost:8000/api/health")
+    if db_connected:
+        from utils.db import get_database
+        db = get_database()
+        host = db.config.get("host", "localhost")
+        port = db.config.get("port", 5432)
+        db_name = db.config.get("name", "sentry")
+        logger.info(f"🟢 Database Status: Connected successfully ({db_name} @ {host}:{port})")
     logger.info("=" * 80)
 
 
@@ -350,6 +354,29 @@ def list_agents():
     return {"agents": get_agent_definitions()}
 
 
+@app.get("/api/listagents")
+def list_agents_db():
+    """Get agents list from stored procedure fn_ai_engine_list and return as a JSON list for ReactJS."""
+    from utils.db import get_database
+    db = get_database()
+    
+    if not db.is_enabled():
+        raise HTTPException(status_code=400, detail="Database is disabled in configuration")
+        
+    if not db._initialized:
+        raise HTTPException(status_code=500, detail="Database is not initialized or unreachable")
+
+    # Stored procedure call
+    query = "SELECT * FROM fn_ai_engine_list();"
+    results = db.execute_query(query)
+    
+    if results is None:
+        raise HTTPException(
+            status_code=500,
+            detail="Failed to query database. Ensure stored procedure fn_ai_engine_list() exists and is functional."
+        )
+        
+    return results
 @app.post("/api/config/llm-model")
 async def update_llm_model(request: LLMModelUpdateRequest) -> dict:
     """Update the configured LLM model in the .env file."""

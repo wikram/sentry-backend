@@ -95,9 +95,9 @@ class DatabaseConnection:
             )
 
             # Test connection
-            conn = self.get_connection()
+            conn = self.connection_pool.getconn()
             if conn:
-                conn.close()
+                self.connection_pool.putconn(conn)
                 self._initialized = True
                 logger.info("Database connection pool initialized successfully")
                 return True

@@ -18,13 +18,13 @@ paths:
   prompts: "prompts"
 
 database:
-  enabled: false
+  enabled: true
   driver: "postgresql"
-  host: "localhost"
+  host: "192.168.1.133"
   port: 5432
-  name: "sentry_backend"
-  user: "sentry_user"
-  password: "change_me"
+  name: "sentry"
+  user: "usentry"
+  password: "password"
   pool_size: 10
   timeout_seconds: 30
 
