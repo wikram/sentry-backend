@@ -107,6 +107,26 @@ class LLMModelUpdateRequest(BaseModel):
         }
 
 
+class AddAgentRequest(BaseModel):
+    """Request model for adding a new agent."""
+    name: str
+    llm_model: str
+    conn_url: str
+    api_key: str
+    is_primary: bool = False
+
+    class Config:
+        schema_extra = {
+            "example": {
+                "name": "log_classifier_agent",
+                "llm_model": "anthropic/claude-sonnet-4.5",
+                "conn_url": "https://api.example.com",
+                "api_key": "",
+                "is_primary":  False
+            }
+        }
+
+
 class LogEntry(BaseModel):
     """Response model for classified log entries."""
     timestamp: str
@@ -347,13 +367,6 @@ def health_check():
         "database": db_status,
     }
 
-
-@app.get("/api/agents")
-def list_agents():
-    """Return the list of available incident analysis agents."""
-    return {"agents": get_agent_definitions()}
-
-
 @app.get("/api/listagents")
 def list_agents_db():
     """Get agents list from stored procedure fn_ai_engine_list and return as a JSON list for ReactJS."""
@@ -366,17 +379,75 @@ def list_agents_db():
     if not db._initialized:
         raise HTTPException(status_code=500, detail="Database is not initialized or unreachable")
 
-    # Stored procedure call
-    query = "SELECT * FROM fn_ai_engine_list();"
-    results = db.execute_query(query)
-    
+    conn = db.get_connection()
+    if not conn:
+        raise HTTPException(status_code=500, detail="Failed to acquire database connection")
+
+    try:
+        with conn.cursor() as cursor:
+            # Call procedure using CALL statement with 2 parameters
+            cursor.execute("SELECT id,name,llm_model,conn_url,is_primary FROM fn_ai_engine_list();")
+            results = cursor.fetchall()
+    except Exception as e:
+        logger.error("Failed to execute stored procedure fn_ai_engine_list: %s", e)
+        raise HTTPException(
+            status_code=500,
+            detail=f"Failed to retrieve agents via fn_ai_engine_list. Ensure procedure exists and parameters are correct: {e}"
+        )
+    finally:
+        db.return_connection(conn)
+
+    # Query the table directly so we can include llm_model, which fn_ai_engine_list()
+    # does not expose in its RETURNS TABLE definition.
+    #results = db.execute_query(
+    #    "SELECT id, name, llm_model, is_primary FROM ai_engine ORDER BY id;"
+    #)
+
     if results is None:
         raise HTTPException(
             status_code=500,
-            detail="Failed to query database. Ensure stored procedure fn_ai_engine_list() exists and is functional."
+            detail="Failed to query agents from the database."
         )
-        
+
     return results
+
+
+@app.post("/api/addagent")
+async def add_agent_db(request: AddAgentRequest):
+    """Add a new agent by calling sp_ai_engine_insert procedure."""
+    from utils.db import get_database
+    db = get_database()
+    
+    if not db.is_enabled():
+        raise HTTPException(status_code=400, detail="Database is disabled in configuration")
+        
+    if not db._initialized:
+        raise HTTPException(status_code=500, detail="Database is not initialized or unreachable")
+
+    name = request.name.strip()
+    if not name:
+        raise HTTPException(status_code=400, detail="Agent name cannot be empty")
+
+    conn = db.get_connection()
+    if not conn:
+        raise HTTPException(status_code=500, detail="Failed to acquire database connection")
+
+    try:
+        with conn.cursor() as cursor:
+            # Call procedure using CALL statement with 2 parameters
+            cursor.execute("CALL sp_ai_engine_insert(%s,%s,%s,%s,%s);", (name, request.llm_model,request.conn_url,request.api_key,request.is_primary))
+            conn.commit()
+    except Exception as e:
+        conn.rollback()
+        logger.error("Failed to execute stored procedure sp_ai_engine_insert: %s", e)
+        raise HTTPException(
+            status_code=500,
+            detail=f"Failed to add agent via sp_ai_engine_insert. Ensure procedure exists and parameters are correct: {e}"
+        )
+    finally:
+        db.return_connection(conn)
+
+    return {"status": "success", "message": f"Agent '{name}' added successfully"}
 @app.post("/api/config/llm-model")
 async def update_llm_model(request: LLMModelUpdateRequest) -> dict:
     """Update the configured LLM model in the .env file."""
