@@ -106,14 +106,45 @@ class LLMModelUpdateRequest(BaseModel):
             }
         }
 
+class SecureValidateUser(BaseModel):
+    """Request model for validating user."""
+    username: str
+    password: str
+
+    class Config:
+        schema_extra = {
+            "example": {
+                "username": "admin",
+                "password": "password"
+            }
+        }
+
+class InsertUser(BaseModel):
+    """Request model for inserting user."""
+    name: str
+    username: str
+    password: str
+    role: str
+    
+    class Config:
+        schema_extra = {
+            "example": {
+                "name": "John Doe",
+                "username": "johndoe",
+                "password": "password",
+                "role": "user"
+            }
+        }
+
 
 class AddAgentRequest(BaseModel):
     """Request model for adding a new agent."""
     name: str
     llm_model: str
     conn_url: str
-    api_key: str
+    api_key: str='skprj-xxxxxxxx'
     is_primary: bool = False
+    is_active: bool = True
 
     class Config:
         schema_extra = {
@@ -122,10 +153,46 @@ class AddAgentRequest(BaseModel):
                 "llm_model": "anthropic/claude-sonnet-4.5",
                 "conn_url": "https://api.example.com",
                 "api_key": "",
-                "is_primary":  False
+                "is_primary":  False,
+                "is_active": True
             }
         }
 
+class UpdateAgentRequest(BaseModel):
+    """Request model for updating an existing agent."""
+    agent_id: int
+    name: str
+    llm_model: str
+    conn_url: str
+    api_key: str='skprj-xxxxxxxx'
+    is_primary: bool = False
+    is_active: bool = False
+
+    class Config:
+        schema_extra = {
+            "example": {
+                "agent_id": 1,  # Agent ID is required for updating an existing agent.
+                "name": "log_classifier_agent",
+                "llm_model": "anthropic/claude-sonnet-4.5",
+                "conn_url": "https://api.example.com",
+                "api_key": "",
+                "is_primary":  False,
+                "is_active": False
+            }
+        }
+
+class deleteAgentRequest(BaseModel):
+    """Request model for deleting an existing agent."""
+    agent_id: int
+    name: str
+    
+    class Config:
+        schema_extra = {
+            "example": {
+                "agent_id": 1,
+                "name": "agent1"
+            }
+        }   
 
 class LogEntry(BaseModel):
     """Response model for classified log entries."""
@@ -354,7 +421,7 @@ def root():
 
 @app.get("/api/health")
 def health_check():
-    """Health check endpoint for the API."""
+    """Health check endpoint for the API.""" 
     from utils.db import get_database
 
     db = get_database()
@@ -386,7 +453,8 @@ def list_agents_db():
     try:
         with conn.cursor() as cursor:
             # Call procedure using CALL statement with 2 parameters
-            cursor.execute("SELECT id,name,llm_model,conn_url,is_primary FROM fn_ai_engine_list();")
+            #cursor.execute("SELECT id,name,llm_model,conn_url,is_primary FROM fn_ai_engine_list();")
+            cursor.callproc("fn_ai_engine_list")
             results = cursor.fetchall()
     except Exception as e:
         logger.error("Failed to execute stored procedure fn_ai_engine_list: %s", e)
@@ -435,7 +503,7 @@ async def add_agent_db(request: AddAgentRequest):
     try:
         with conn.cursor() as cursor:
             # Call procedure using CALL statement with 2 parameters
-            cursor.execute("CALL sp_ai_engine_insert(%s,%s,%s,%s,%s);", (name, request.llm_model,request.conn_url,request.api_key,request.is_primary))
+            cursor.execute("CALL sp_ai_engine_insert(%s,%s,%s,%s,%s,%s);", (name, request.llm_model,request.conn_url,request.api_key,request.is_primary,request.is_active))
             conn.commit()
     except Exception as e:
         conn.rollback()
@@ -448,6 +516,196 @@ async def add_agent_db(request: AddAgentRequest):
         db.return_connection(conn)
 
     return {"status": "success", "message": f"Agent '{name}' added successfully"}
+
+@app.post("/api/updateagent")
+async def update_agent_db(request: UpdateAgentRequest):
+    """Update an existing agent by calling sp_ai_engine_update procedure."""
+    from utils.db import get_database
+    db = get_database()
+    
+    if not db.is_enabled():
+        raise HTTPException(status_code=400, detail="Database is disabled in configuration")
+        
+    if not db._initialized:
+        raise HTTPException(status_code=500, detail="Database is not initialized or unreachable")
+
+    name = request.name.strip()
+    if not name:
+        raise HTTPException(status_code=400, detail="Agent name cannot be empty")
+
+    conn = db.get_connection()
+    if not conn:
+        raise HTTPException(status_code=500, detail="Failed to acquire database connection")
+
+    try:
+        with conn.cursor() as cursor:
+            # Call procedure using CALL statement with 2 parameters 
+            cursor.execute("CALL sp_ai_engine_update(%s::bigint,%s,%s,%s,%s,%s,%s);", (request.agent_id,name, request.llm_model,request.conn_url,request.api_key,request.is_primary,request.is_active))
+            conn.commit()
+    except Exception as e:
+        conn.rollback()
+        logger.error("Failed to execute stored procedure sp_ai_engine_update: %s", e)
+        raise HTTPException(
+            status_code=500,
+            detail=f"Failed to update agent via sp_ai_engine_update. Ensure procedure exists and parameters are correct: {e}"
+        )
+    finally:
+        db.return_connection(conn)
+
+    return {"status": "success", "message": f"Agent '{name}' updated successfully"}
+
+@app.post("/api/deleteagent")
+async def delete_agent(request: deleteAgentRequest):
+    """Delete an existing agent by calling sp_ai_engine_delete procedure."""
+    from utils.db import get_database
+    db = get_database()
+    
+    if not db.is_enabled():
+        raise HTTPException(status_code=400, detail="Database is disabled in configuration")
+        
+    if not db._initialized:
+        raise HTTPException(status_code=500, detail="Database is not initialized or unreachable")
+
+    name = request.name.strip()
+    if not name:
+        raise HTTPException(status_code=400, detail="Agent name cannot be empty")
+
+    conn = db.get_connection()
+    if not conn:
+        raise HTTPException(status_code=500, detail="Failed to acquire database connection")
+
+    try:
+        with conn.cursor() as cursor:
+            # Call procedure using CALL statement with 2 parameters 
+            cursor.execute("CALL sp_ai_engine_delete(%s::bigint);", (request.agent_id,))
+            conn.commit()
+    except Exception as e:
+        conn.rollback()
+        logger.error("Failed to execute stored procedure sp_ai_engine_delete: %s", e)
+        raise HTTPException(
+            status_code=500,
+            detail=f"Failed to delete agent via sp_ai_engine_delete. Ensure procedure exists and parameters are correct: {e}"
+        )
+    finally:
+        db.return_connection(conn)
+
+    return {"status": "success", "message": f"Agent '{name}' deleted successfully"} 
+
+@app.post("/api/adduser")
+async def add_user(request: InsertUser):
+    """Add a new user by calling sp_ai_users_insert procedure."""
+    from utils.db import get_database
+    db = get_database()
+    
+    if not db.is_enabled():
+        raise HTTPException(status_code=400, detail="Database is disabled in configuration")
+        
+    if not db._initialized:
+        raise HTTPException(status_code=500, detail="Database is not initialized or unreachable")
+
+    name = request.name.strip()
+    username = request.username.strip()
+    password = request.password.strip()
+    role = request.role.strip()
+    if not name or not username or not password or not role:
+        raise HTTPException(status_code=400, detail="All fields must be non-empty")
+
+    conn = db.get_connection()
+    if not conn:
+        raise HTTPException(status_code=500, detail="Failed to acquire database connection")
+
+    try:
+        with conn.cursor() as cursor:
+            # Call procedure using CALL statement with 2 parameters
+            cursor.execute("CALL sp_ai_users_insert(%s,%s,%s,%s);", (name, username, password, role))
+            conn.commit()
+    except Exception as e:
+        conn.rollback()
+        logger.error("Failed to execute stored procedure sp_ai_users_insert: %s", e)
+        raise HTTPException(
+            status_code=500,
+            detail=f"Failed to add agent via sp_ai_engine_insert. Ensure procedure exists and parameters are correct: {e}"
+        )
+    finally:
+        db.return_connection(conn)
+
+    return {"status": "success", "message": f"Agent '{name}' added successfully"}   
+
+@app.post("/api/login")
+async def login(request: SecureValidateUser):
+    """Log in a user by calling fn_ai_users_validate_secure procedure."""
+    from utils.db import get_database
+    db = get_database()
+    
+    if not db.is_enabled():
+        raise HTTPException(status_code=400, detail="Database is disabled in configuration")
+        
+    if not db._initialized:
+        raise HTTPException(status_code=500, detail="Database is not initialized or unreachable")
+
+    username = request.username.strip()
+    password = request.password.strip()
+    if not username or not password:
+        raise HTTPException(status_code=400, detail="All fields must be non-empty")
+
+    conn = db.get_connection()
+    if not conn:
+        raise HTTPException(status_code=500, detail="Failed to acquire database connection")
+
+    try:
+        with conn.cursor() as cursor:
+            # Call procedure using CALL statement with 2 parameters
+            cursor.callproc("fn_ai_users_validate_secure", (username, password))
+            result = cursor.fetchall()
+            if not result:
+                raise HTTPException(
+                    status_code=401,
+                    detail="Invalid credentials"
+                )
+    except Exception as e:
+        logger.error("Failed to execute stored procedure fn_ai_users_validate_secure: %s", e)
+        raise HTTPException(
+            status_code=500,
+            detail=f"Failed to log in user : {e}"
+        )
+    finally:
+        db.return_connection(conn)
+
+    return {"status": "success", "message": f"User '{username}' logged in successfully"}    
+
+@app.get("/api/getroles")
+async def get_roles():
+    """Get all roles from the database."""
+    from utils.db import get_database
+    db = get_database()
+    
+    if not db.is_enabled():
+        raise HTTPException(status_code=400, detail="Database is disabled in configuration")
+        
+    if not db._initialized:
+        raise HTTPException(status_code=500, detail="Database is not initialized or unreachable")
+
+    conn = db.get_connection()
+    if not conn:
+        raise HTTPException(status_code=500, detail="Failed to acquire database connection")
+
+    try:
+        with conn.cursor() as cursor:
+            # Call procedure using CALL statement with 2 parameters
+            cursor.execute("CALL sp_ai_roles_get();")
+            conn.commit()
+    except Exception as e:
+        conn.rollback()
+        logger.error("Failed to execute stored procedure sp_ai_roles_get: %s", e)
+        raise HTTPException(
+            status_code=500,
+            detail=f"Failed to get roles via sp_ai_roles_get. Ensure procedure exists and parameters are correct: {e}"
+        )
+    finally:
+        db.return_connection(conn)
+
+    return {"status": "success", "message": f"User '{username}' logged in successfully"}    
+
 @app.post("/api/config/llm-model")
 async def update_llm_model(request: LLMModelUpdateRequest) -> dict:
     """Update the configured LLM model in the .env file."""
@@ -588,10 +846,6 @@ async def analyze_file(
             status_code=500,
             detail=f"File analysis failed: {str(e)}"
         )
-
-
-
-
 
 def format_analysis(result: dict) -> str:
     """Produce a human-readable representation of the analysis results."""
