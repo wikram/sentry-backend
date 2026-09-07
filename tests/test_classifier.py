@@ -35,7 +35,7 @@ MOCK_LLM_RESPONSE = json.dumps([
 ])
 
 
-@patch("agents.classifier.get_llm")
+@patch("agents.classifier.LLMService")
 def test_classify_logs_parses_response(mock_chat_class):
     mock_llm = MagicMock()
     mock_llm.invoke.return_value = MagicMock(content=MOCK_LLM_RESPONSE)
@@ -50,7 +50,7 @@ def test_classify_logs_parses_response(mock_chat_class):
     assert result["classified_entries"][2]["source"] == "auth.middleware"
 
 
-@patch("agents.classifier.get_llm")
+@patch("agents.classifier.LLMService")
 def test_classify_logs_adds_trace_entry(mock_chat_class):
     mock_llm = MagicMock()
     mock_llm.invoke.return_value = MagicMock(content=MOCK_LLM_RESPONSE)

@@ -44,7 +44,7 @@ def classify_logs(state: IncidentState) -> dict:
     log_line_count = len(raw_logs.splitlines())
     logger.info("Classifying %d lines of logs", log_line_count)
 
-    llm = LLMService(state['llm'])
+    llm = LLMService(state.get('llm', {}))
     messages = [
         SystemMessage(content=CLASSIFIER_SYSTEM_PROMPT),
         HumanMessage(content=f"Classify these logs:\n\n{raw_logs}"),

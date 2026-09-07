@@ -20,7 +20,7 @@ paths:
 database:
   enabled: true
   driver: "postgresql"
-  host: "192.168.0.133"
+  host: "192.168.1.133"
   port: 5432
   name: "sentry"
   user: "usentry"

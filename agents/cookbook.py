@@ -44,7 +44,7 @@ def synthesize_cookbook(state: IncidentState) -> dict:
 
     logger.info("Synthesizing cookbook from %d remediations", len(remediations))
 
-    llm = LLMService(state['llm'])
+    llm = LLMService(state.get('llm', {}))
     remediations_json = json.dumps(remediations, indent=2)
     messages = [
         SystemMessage(content=COOKBOOK_SYSTEM_PROMPT),

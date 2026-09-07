@@ -54,7 +54,7 @@ MOCK_LLM_RESPONSE = json.dumps([
 ])
 
 
-@patch("agents.jira_ticket.get_llm")
+@patch("agents.jira_ticket.LLMService")
 def test_create_jira_tickets_filters_critical_high(mock_chat_class):
     mock_llm = MagicMock()
     mock_llm.invoke.return_value = MagicMock(content=MOCK_LLM_RESPONSE)
@@ -69,7 +69,7 @@ def test_create_jira_tickets_filters_critical_high(mock_chat_class):
     assert result["jira_tickets"][0]["priority"] == "Critical"
 
 
-@patch("agents.jira_ticket.get_llm")
+@patch("agents.jira_ticket.LLMService")
 def test_create_jira_tickets_adds_trace(mock_chat_class):
     mock_llm = MagicMock()
     mock_llm.invoke.return_value = MagicMock(content=MOCK_LLM_RESPONSE)

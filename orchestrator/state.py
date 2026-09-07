@@ -68,6 +68,7 @@ def make_initial_state(raw_logs: str) -> IncidentState:
         "raw_logs": raw_logs,
         "classified_entries": [],
         "remediations": [],
+        "llm": {},
         "cookbook": "",
         "jira_tickets": [],
         "slack_notifications": [],

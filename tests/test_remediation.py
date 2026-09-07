@@ -42,7 +42,7 @@ MOCK_LLM_RESPONSE = json.dumps([
 ])
 
 
-@patch("agents.remediation.get_llm")
+@patch("agents.remediation.LLMService")
 def test_generate_remediations_parses_response(mock_chat_class):
     mock_llm = MagicMock()
     mock_llm.invoke.return_value = MagicMock(content=MOCK_LLM_RESPONSE)
@@ -57,7 +57,7 @@ def test_generate_remediations_parses_response(mock_chat_class):
     assert "memory limit" in result["remediations"][0]["fix_steps"][0].lower()
 
 
-@patch("agents.remediation.get_llm")
+@patch("agents.remediation.LLMService")
 def test_generate_remediations_adds_trace(mock_chat_class):
     mock_llm = MagicMock()
     mock_llm.invoke.return_value = MagicMock(content=MOCK_LLM_RESPONSE)

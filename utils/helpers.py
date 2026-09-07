@@ -130,17 +130,45 @@ def update_env_variable(key: str, value: str, env_file: Path = Path('.env')) -> 
 
 
 def get_llm_config() -> dict:
-    """Resolve LLM model and temperature using .env-first, DB-fallback priority.
+    """Resolve LLM model and temperature using DB-first, .env-fallback priority.
 
     Resolution order:
-      1. LLM_MODEL (or legacy LLM_MODE) environment variable / .env file.
-      2. TEMPERATURE environment variable / .env file.
-      3. If either value is missing, query fn_ai_engine_get_primaryllm() from DB
-         and persist the results back into .env for future runs.
+      1. Query fn_ai_engine_get_primaryllm() from the database.
+      2. If DB is unreachable or returns no active primary agent, fall back
+         to LLM_MODEL and TEMPERATURE from .env / os.environ.
 
     Returns:
         dict with keys 'model' (str) and 'temperature' (float).
     """
+    # 1. Try querying active primary LLM from the database first
+    try:
+        from utils.db import get_database
+        db = get_database()
+        if db.is_enabled():
+            if not db._initialized:
+                db.initialize()
+            conn = db.get_connection()
+            if conn:
+                try:
+                    with conn.cursor() as cursor:
+                        # Table-returning functions must be called with SELECT in psycopg2.
+                        cursor.execute("SELECT * FROM fn_ai_engine_get_primaryllm();")
+                        row = cursor.fetchone()
+                        if row and cursor.description:
+                            columns = [desc[0] for desc in cursor.description]
+                            row_dict = dict(zip(columns, row))
+                            db_model = (row_dict.get("llm_model") or "").strip()
+                            db_temp = float(row_dict.get("temperature")) if row_dict.get("temperature") is not None else 0.2
+                            if db_model:
+                                os.environ['LLM_MODEL'] = db_model
+                                os.environ['TEMPERATURE'] = str(db_temp)
+                                return {'model': db_model, 'temperature': db_temp}
+                finally:
+                    db.return_connection(conn)
+    except Exception as exc:
+        logger.warning("get_llm_config: DB query failed: %s", exc)
+
+    # 2. Fall back to environment variable / .env file
     load_dotenv(override=False)  # ensure .env values are in os.environ
 
     env_model = (os.environ.get('LLM_MODEL') or '').strip()
@@ -152,40 +180,6 @@ def get_llm_config() -> dict:
         except ValueError:
             env_temp = None
 
-    if env_model and env_temp is not None:
-        # Both values present in .env — no DB call needed.
-        return {'model': env_model, 'temperature': env_temp}
-
-    # At least one value is missing — try the database.
-    try:
-        from utils.db import get_database
-        db = get_database()
-        if db.is_enabled() and db._initialized:
-            conn = db.get_connection()
-            if conn:
-                try:
-                    with conn.cursor() as cursor:
-                        # Table-returning functions must be called with SELECT in psycopg2.
-                        # callproc() is for stored procedures, not set-returning functions.
-                        cursor.execute("SELECT llm_model, temperature FROM fn_ai_engine_get_primaryllm();")
-                        row = cursor.fetchone()  # returns (llm_model, temperature) or None
-                    if row:
-                        db_model = (row[0] or '').strip()
-                        db_temp = float(row[1]) if row[1] is not None else 0.2
-                        # Use DB value only where .env was silent.
-                        resolved_model = env_model or db_model
-                        resolved_temp = env_temp if env_temp is not None else db_temp
-                        # Set in-process environment only — never write to .env.
-                        if resolved_model:
-                            os.environ['LLM_MODEL'] = resolved_model
-                        os.environ['TEMPERATURE'] = str(resolved_temp)
-                        return {'model': resolved_model, 'temperature': resolved_temp}
-                finally:
-                    db.return_connection(conn)
-    except Exception as exc:
-        logger.warning("get_llm_config: DB fallback failed: %s", exc)
-
-    # Final fallback — return whatever partial info we have.
     return {'model': env_model, 'temperature': env_temp if env_temp is not None else 0.2}
 
 

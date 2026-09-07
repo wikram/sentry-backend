@@ -36,7 +36,7 @@ MOCK_COOKBOOK = """# Incident Response Runbook
 - [ ] Monitor connection count after change"""
 
 
-@patch("agents.cookbook.get_llm")
+@patch("agents.cookbook.LLMService")
 def test_synthesize_cookbook_returns_markdown(mock_chat_class):
     mock_llm = MagicMock()
     mock_llm.invoke.return_value = MagicMock(content=MOCK_COOKBOOK)
@@ -51,7 +51,7 @@ def test_synthesize_cookbook_returns_markdown(mock_chat_class):
     assert "- [ ]" in result["cookbook"]
 
 
-@patch("agents.cookbook.get_llm")
+@patch("agents.cookbook.LLMService")
 def test_synthesize_cookbook_adds_trace(mock_chat_class):
     mock_llm = MagicMock()
     mock_llm.invoke.return_value = MagicMock(content=MOCK_COOKBOOK)

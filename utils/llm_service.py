@@ -17,26 +17,29 @@ class LLMResponse:
 class LLMService:
 
     def __init__(self, llm_config=None):
+        llm_config = llm_config or {}
 
         self.client = OpenAI(
-            base_url='https://openrouter.ai/api/v1',
-            api_key=os.getenv('OPENROUTER_API_KEY')
+            base_url=os.getenv('OPENROUTER_API_BASE', 'https://openrouter.ai/api/v1'),
+            api_key=os.getenv('OPENROUTER_API_KEY') or os.getenv('OPENAI_API_KEY', 'dummy-key')
         )
 
-        self.model = os.getenv('LLM_MODEL')
+        model = llm_config.get('model')
+        temperature = llm_config.get('temperature')
 
-        if not self.model:
-            raise ValueError(
-                'LLM_MODEL is not configured in .env'
-            )
+        if not model or temperature is None:
+            try:
+                from utils.helpers import get_llm_config
+                cfg = get_llm_config()
+                if not model:
+                    model = cfg.get('model')
+                if temperature is None:
+                    temperature = cfg.get('temperature', 0)
+            except Exception:
+                pass
 
-        self.temperature = 0
-
-        if llm_config:
-            self.temperature = llm_config.get(
-                'temperature',
-                0
-            )
+        self.model = model or os.getenv('LLM_MODEL') or 'openai/gpt-4o'
+        self.temperature = float(temperature) if temperature is not None else 0
 
     def invoke(self, messages):
         """Invoke the LLM with messages.

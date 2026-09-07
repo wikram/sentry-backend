@@ -201,7 +201,7 @@ def create_jira_tickets(state: IncidentState) -> dict:
 
     # Use LLM to generate ticket specifications
     try:
-        llm = LLMService(state['llm'])
+        llm = LLMService(state.get('llm', {}))
         remediations_json = json.dumps(critical_remediations, indent=2)
         messages = [
             SystemMessage(content=JIRA_SYSTEM_PROMPT),
@@ -245,12 +245,11 @@ def create_jira_tickets(state: IncidentState) -> dict:
         logger.warning("Check JIRA configuration in .env file")
         # Mock mode - create placeholder tickets for testing
         for i, ticket_spec in enumerate(ticket_specs):
-            created_tickets.append({
-                "key": f"MOCK-{i + 1}",
-                "title": ticket_spec.get("title"),
-                "status": "mocked",
-                "message": "JIRA credentials not configured or invalid"
-            })
+            ticket_entry = dict(ticket_spec)
+            ticket_entry["key"] = f"MOCK-{i + 1}"
+            ticket_entry["status"] = "mocked"
+            ticket_entry["message"] = "JIRA credentials not configured or invalid"
+            created_tickets.append(ticket_entry)
 
     end_time = time.time()
     successful = sum(1 for t in created_tickets if t.get("status") == "created")

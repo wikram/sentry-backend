@@ -44,7 +44,7 @@ def generate_remediations(state: IncidentState) -> dict:
 
     logger.info("Generating remediations for %d classified entries", len(classified_entries))
 
-    llm = LLMService(state['llm'])
+    llm = LLMService(state.get('llm', {}))
     entries_json = json.dumps(classified_entries, indent=2)
     messages = [
         SystemMessage(content=REMEDIATION_SYSTEM_PROMPT),

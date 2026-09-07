@@ -38,11 +38,11 @@ MOCK_TICKETS = [
 ]
 
 
-@patch("agents.jira_ticket.get_llm")
+@patch("agents.jira_ticket.LLMService")
 @patch("agents.slack_notifier.WebClient")
-@patch("agents.cookbook.get_llm")
-@patch("agents.remediation.get_llm")
-@patch("agents.classifier.get_llm")
+@patch("agents.cookbook.LLMService")
+@patch("agents.remediation.LLMService")
+@patch("agents.classifier.LLMService")
 def test_graph_runs_all_agents_for_critical(
     mock_classifier_llm,
     mock_remediation_llm,
@@ -94,11 +94,11 @@ def test_build_graph_returns_compiled_graph():
     assert graph is not None
 
 
-@patch("agents.jira_ticket.get_llm")
+@patch("agents.jira_ticket.LLMService")
 @patch("agents.slack_notifier.WebClient")
-@patch("agents.cookbook.get_llm")
-@patch("agents.remediation.get_llm")
-@patch("agents.classifier.get_llm")
+@patch("agents.cookbook.LLMService")
+@patch("agents.remediation.LLMService")
+@patch("agents.classifier.LLMService")
 def test_graph_with_low_severity_skips_jira_and_slack(
     mock_classifier_llm,
     mock_remediation_llm,
