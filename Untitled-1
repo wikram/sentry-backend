@@ -1,0 +1,37 @@
+POST /api/agents
+Content-Type: application/json
+
+{
+  "action": "add",
+  "name": "log_classifier_agent",
+  "llm_model": "anthropic/claude-sonnet-4.5",
+  "temperature": 0.2,
+  "conn_url": "https://api.anthropic.com",
+  "api_key": "skprj-xxxxxxxx",
+  "is_primary": false,
+  "is_active": true
+}
+
+POST /api/agents
+Content-Type: application/json
+
+{
+  "action": "update",
+  "agent_id": 1,
+  "name": "log_classifier_agent_v2",
+  "llm_model": "openai/gpt-4o",
+  "temperature": 0.2,
+  "conn_url": "https://api.openai.com/v1",
+  "api_key": "skprj-yyyyyyyy",
+  "is_primary": true,
+  "is_active": true
+}
+
+POST /api/agents
+Content-Type: application/json
+
+{
+  "action": "delete",
+  "agent_id": 1,
+  "name": "log_classifier_agent"
+}

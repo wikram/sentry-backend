@@ -25,8 +25,15 @@ USAGE:
 
 API Endpoints:
   GET  /api/health           - Health check
-  POST /api/analyze          - Analyze logs (JSON)
-  POST /api/analyze-file     - Analyze uploaded log files
+  POST /api/analyze          - Unified log analysis (JSON payload or file upload)
+  GET  /api/history          - Unified analysis history (with filtering and details)
+  GET  /api/agents           - List configured AI engines/agents
+  POST /api/agents           - Unified agent operations (add, update, delete)
+  GET  /api/config/llm       - Active LLM model & temperature config
+  PUT  /api/config/llm       - Update LLM model & temperature config
+  POST /api/users            - Create new user account
+  POST /api/auth/login       - User authentication
+  GET  /api/roles            - List user roles
   GET  /docs                 - Interactive API documentation (Swagger UI)
   GET  /redoc                - Alternative API documentation (ReDoc)
 """

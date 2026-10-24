@@ -63,12 +63,15 @@ def run_analysis(raw_logs: str) -> dict:
     logger.info("Building analysis graph...")
     graph = build_graph()
 
-    # Initialize incident state with LLM configuration
+    # Resolve LLM configuration once for all downstream agents
+    llm_cfg = get_llm_config()
+
+    # Initialize incident state with resolved LLM configuration
     initial_state: IncidentState = {
         "raw_logs": raw_logs,
         "classified_entries": [],
         "remediations": [],
-        "llm": {},  # LLM configuration for agents (can be extended with temperature, model, etc.)
+        "llm": llm_cfg,  # LLM configuration passed to all agents
     }
 
     logger.info("Starting incident analysis workflow...")

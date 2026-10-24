@@ -71,6 +71,27 @@ def _get_jira_client():
         return None
 
 
+def _build_issue_dict(ticket_data: dict, project_key: str) -> dict:
+    """Build Jira issue fields dictionary from ticket data."""
+    priority_map = {
+        "Critical": "Highest",
+        "High": "High",
+        "Medium": "Medium",
+        "Low": "Low",
+    }
+    issue_dict = {
+        "project": {"key": project_key},
+        "summary": ticket_data.get("title", "Incident Alert"),
+        "description": ticket_data.get("description", "No description provided"),
+        "issuetype": {"name": ticket_data.get("issue_type", "Task")},
+        "priority": {"name": priority_map.get(ticket_data.get("priority", "High"), "High")},
+    }
+    labels = ticket_data.get("labels", [])
+    if labels and isinstance(labels, list):
+        issue_dict["labels"] = labels
+    return issue_dict
+
+
 def _create_jira_ticket(jira_client, ticket_data):
     """Create a single JIRA ticket in the configured project."""
     if not jira_client:
@@ -79,29 +100,7 @@ def _create_jira_ticket(jira_client, ticket_data):
     
     try:
         project_key = os.environ.get("JIRA_PROJECT_KEY", "").strip()
-        
-        # Priority mapping
-        priority_map = {
-            "Critical": "Highest",
-            "High": "High",
-            "Medium": "Medium",
-            "Low": "Low",
-        }
-        
-        # Prepare issue fields
-        issue_dict = {
-            "project": {"key": project_key},
-            "summary": ticket_data.get("title", "Incident Alert"),
-            "description": ticket_data.get("description", "No description provided"),
-            "issuetype": {"name": ticket_data.get("issue_type", "Task")},
-            "priority": {"name": priority_map.get(ticket_data.get("priority", "High"), "High")},
-        }
-        
-        # Add labels if present
-        labels = ticket_data.get("labels", [])
-        if labels and isinstance(labels, list):
-            issue_dict["labels"] = labels
-        
+        issue_dict = _build_issue_dict(ticket_data, project_key)
         logger.debug("Creating JIRA ticket with: %s", json.dumps(issue_dict, indent=2))
         
         issue = jira_client.create_issue(fields=issue_dict)
@@ -125,6 +124,57 @@ def _create_jira_ticket(jira_client, ticket_data):
     except Exception as e:
         logger.error("✗ Unexpected error creating JIRA ticket: %s", str(e))
         return None
+
+
+def _create_jira_tickets_batch(jira_client, ticket_specs: list[dict]) -> list[dict]:
+    """Create multiple JIRA tickets using batch API with fallback to sequential creation."""
+    if not jira_client:
+        logger.error("JIRA client not initialized")
+        return []
+    
+    project_key = os.environ.get("JIRA_PROJECT_KEY", "").strip()
+    jira_url = os.environ.get("JIRA_INSTANCE_URL", "").strip()
+    field_list = [_build_issue_dict(spec, project_key) for spec in ticket_specs]
+    created = []
+
+    # Attempt bulk creation via Jira batch API
+    try:
+        batch_results = jira_client.create_issues(field_list=field_list)
+        for idx, res in enumerate(batch_results):
+            issue = res.get("issue")
+            error = res.get("error")
+            spec = ticket_specs[idx]
+            if issue:
+                ticket_url = f"{jira_url}/browse/{issue.key}"
+                logger.info("✓ Created JIRA ticket via batch API: %s (%s)", issue.key, ticket_url)
+                created.append({
+                    "key": issue.key,
+                    "url": ticket_url,
+                    "title": spec.get("title"),
+                    "priority": spec.get("priority"),
+                    "status": "created"
+                })
+            else:
+                logger.warning("✗ JIRA batch error for ticket %d: %s", idx, error)
+                created.append({
+                    "title": spec.get("title"),
+                    "status": "failed",
+                    "error": str(error) if error else "Failed to create ticket in batch"
+                })
+        return created
+    except Exception as batch_err:
+        logger.warning("JIRA batch creation failed (%s), falling back to sequential create", batch_err)
+        for spec in ticket_specs:
+            res = _create_jira_ticket(jira_client, spec)
+            if res:
+                created.append(res)
+            else:
+                created.append({
+                    "title": spec.get("title"),
+                    "status": "failed",
+                    "error": "Failed to create ticket in JIRA"
+                })
+        return created
 
 
 def create_jira_tickets(state: IncidentState) -> dict:
@@ -228,18 +278,8 @@ def create_jira_tickets(state: IncidentState) -> dict:
     jira_client = _get_jira_client()
     
     if jira_client:
-        logger.info("JIRA client connected - attempting to create %d tickets", len(ticket_specs))
-        for idx, ticket_spec in enumerate(ticket_specs, 1):
-            logger.info("Creating ticket %d/%d: %s", idx, len(ticket_specs), ticket_spec.get("title", "Unknown"))
-            result = _create_jira_ticket(jira_client, ticket_spec)
-            if result:
-                created_tickets.append(result)
-            else:
-                created_tickets.append({
-                    "title": ticket_spec.get("title"),
-                    "status": "failed",
-                    "error": "Failed to create ticket in JIRA"
-                })
+        logger.info("JIRA client connected - creating %d tickets via batch API", len(ticket_specs))
+        created_tickets = _create_jira_tickets_batch(jira_client, ticket_specs)
     else:
         logger.warning("JIRA client unavailable - running in mock mode")
         logger.warning("Check JIRA configuration in .env file")
