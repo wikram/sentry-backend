@@ -1,3 +1,67 @@
+================================================================================
+  SENTRY INCIDENT ANALYZER — API ENDPOINT USAGE GUIDE
+  Base URL: http://localhost:8000
+================================================================================
+
+All requests require the appropriate Content-Type header.
+Authenticated endpoints require: Authorization: Bearer <session-token>
+
+
+================================================================================
+1. ROOT & HEALTH
+================================================================================
+
+### 1.1 — Root (service info)
+GET /
+
+### 1.2 — Health Check
+GET /api/health
+
+
+================================================================================
+2. AUTHENTICATION & USERS
+================================================================================
+
+### 2.1 — Login
+POST /api/auth/login
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "password",
+  "ipaddress": "192.168.1.100",
+  "user_agent": "Mozilla/5.0"
+}
+
+Note: ipaddress and user_agent are optional — they auto-detect from the
+request if omitted.
+
+
+### 2.2 — Register / Create a New User
+POST /api/users
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "username": "johndoe",
+  "password": "securepassword123",
+  "role": "user"
+}
+
+
+### 2.3 — List All Roles
+GET /api/roles
+
+
+================================================================================
+3. AGENT MANAGEMENT
+================================================================================
+
+### 3.1 — List All Agents
+GET /api/agents
+
+
+### 3.2 — Add a New Agent (via unified POST)
 POST /api/agents
 Content-Type: application/json
 
@@ -12,6 +76,10 @@ Content-Type: application/json
   "is_active": true
 }
 
+Note: "action" can be omitted — defaults to "add" when no agent_id is present.
+
+
+### 3.3 — Update an Agent (via unified POST)
 POST /api/agents
 Content-Type: application/json
 
@@ -27,6 +95,10 @@ Content-Type: application/json
   "is_active": true
 }
 
+Note: If "action" is omitted but agent_id IS provided, it defaults to "update".
+
+
+### 3.4 — Delete an Agent (via unified POST)
 POST /api/agents
 Content-Type: application/json
 
@@ -35,3 +107,726 @@ Content-Type: application/json
   "agent_id": 1,
   "name": "log_classifier_agent"
 }
+
+
+### 3.5 — Update an Agent (RESTful PUT)
+PUT /api/agents
+Content-Type: application/json
+
+{
+  "agent_id": 1,
+  "name": "log_classifier_agent_v2",
+  "llm_model": "openai/gpt-4o",
+  "temperature": 0.2,
+  "conn_url": "https://api.openai.com/v1",
+  "api_key": "skprj-yyyyyyyy",
+  "is_primary": true,
+  "is_active": false
+}
+
+Or with agent_id in the path:
+PUT /api/agents/1
+
+
+### 3.6 — Delete an Agent (RESTful DELETE)
+DELETE /api/agents/1
+
+Or with a JSON body:
+DELETE /api/agents
+Content-Type: application/json
+
+{
+  "agent_id": 1,
+  "name": "log_classifier_agent"
+}
+
+
+================================================================================
+4. LLM CONFIGURATION
+================================================================================
+
+### 4.1 — Get Current LLM Config
+GET /api/llm
+
+Returns the active primary model name and temperature.
+
+
+### 4.2 — Update LLM Config
+PUT /api/llm
+Content-Type: application/json
+
+{
+  "model": "openai/gpt-4o",
+  "temperature": 0.2
+}
+
+Also accepts POST:
+POST /api/llm
+
+Note: At least one of "model" or "temperature" must be provided.
+
+
+================================================================================
+5. LOG ANALYSIS
+================================================================================
+
+### 5.1 — Analyze Logs (JSON payload)
+POST /api/analyze
+Content-Type: application/json
+
+{
+  "logs": "2026-05-10T10:23:45Z ERROR OOM killed process\n2026-05-10T10:24:12Z WARN High memory usage",
+  "description": "Kubernetes cluster logs",
+  "model_name": "openai/gpt-4o",
+  "user": "admin"
+}
+
+
+### 5.2 — Analyze Logs (File Upload)
+POST /api/analyze
+Content-Type: multipart/form-data
+
+Form field "file": <attach .log, .txt, .json, or .csv file>
+
+Alternatively, send raw text via a form field:
+Form field "logs": "<raw log text>"
+
+
+### 5.3 — Analyze Logs (control response format)
+POST /api/analyze?response_format=json
+Content-Type: application/json
+
+{
+  "logs": "ERROR: disk full on /dev/sda1"
+}
+
+response_format options:
+  "text"  — (default) returns plain-text formatted output
+  "json"  — returns structured JSON with classified_entries, remediations, etc.
+
+
+================================================================================
+6. ANALYSIS HISTORY
+================================================================================
+
+### 6.1 — Get All Analysis History
+GET /api/history
+
+
+### 6.2 — Filter History by Status
+GET /api/history?status=completed
+GET /api/history?p_status=failed
+
+
+### 6.3 — Filter History by Model
+GET /api/history?model_name=openai/gpt-4o
+GET /api/history?p_model_name=anthropic/claude-sonnet-4.5
+
+
+### 6.4 — Filter History by Analysis Code
+GET /api/history?analysis_code=ANL-1234567890
+
+
+### 6.5 — Full-Text Search in History
+GET /api/history?content_query=OOM
+GET /api/history?p_content_query=disk+full
+
+
+### 6.6 — Combine Multiple Filters
+GET /api/history?status=completed&model_name=openai/gpt-4o&content_query=OOM
+
+
+### 6.7 — Get Full Details for an Analysis
+GET /api/history?analysis_code=ANL-1234567890&include_details=true
+
+Or use the shorthand path:
+GET /api/history/ANL-1234567890
+
+Returns: input_text, error_message, classified_entries, remediations
+
+
+================================================================================
+7. API DOCUMENTATION (AUTO-GENERATED)
+================================================================================
+
+### 7.1 — Swagger UI (Interactive)
+GET /docs
+
+### 7.2 — ReDoc (Read-only)
+GET /redoc
+
+
+================================================================================
+  CURL EXAMPLES
+================================================================================
+
+# Health check
+curl http://localhost:8000/api/health
+
+# Login
+curl -X POST http://localhost:8000/api/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{"username":"admin","password":"password"}'
+
+# Create user
+curl -X POST http://localhost:8000/api/users \
+  -H "Content-Type: application/json" \
+  -d '{"name":"Jane Smith","username":"janesmith","password":"pass123","role":"user"}'
+
+# List agents
+curl http://localhost:8000/api/agents
+
+# Add agent
+curl -X POST http://localhost:8000/api/agents \
+  -H "Content-Type: application/json" \
+  -d '{"action":"add","name":"my_agent","llm_model":"openai/gpt-4o","conn_url":"https://openrouter.ai/api/v1","api_key":"sk-xxx","is_active":true}'
+
+# Update agent (RESTful)
+curl -X PUT http://localhost:8000/api/agents/1 \
+  -H "Content-Type: application/json" \
+  -d '{"agent_id":1,"name":"my_agent_v2","llm_model":"openai/gpt-4o","temperature":0.3,"conn_url":"https://openrouter.ai/api/v1","api_key":"sk-xxx"}'
+
+# Delete agent (RESTful)
+curl -X DELETE http://localhost:8000/api/agents/1
+
+# Get LLM config
+curl http://localhost:8000/api/llm
+
+# Update LLM config
+curl -X PUT http://localhost:8000/api/llm \
+  -H "Content-Type: application/json" \
+  -d '{"model":"openai/gpt-4o","temperature":0.2}'
+
+# Analyze logs (JSON)
+curl -X POST http://localhost:8000/api/analyze \
+  -H "Content-Type: application/json" \
+  -d '{"logs":"2026-05-10T10:23:45Z ERROR OOM killed process","user":"admin"}'
+
+# Analyze logs (file upload)
+curl -X POST http://localhost:8000/api/analyze \
+  -F "file=@/path/to/production.log"
+
+# Analyze logs (get JSON response)
+curl -X POST "http://localhost:8000/api/analyze?response_format=json" \
+  -H "Content-Type: application/json" \
+  -d '{"logs":"ERROR disk full on /dev/sda1"}'
+
+# Get analysis history
+curl http://localhost:8000/api/history
+
+# Filter history
+curl "http://localhost:8000/api/history?status=completed&model_name=openai/gpt-4o"
+
+# Get specific analysis details
+curl http://localhost:8000/api/history/ANL-1234567890
+
+# Get roles
+curl http://localhost:8000/api/roles
+
+
+
+================================================================================
+  NODE.JS / REACT FRONTEND — API CALL EXAMPLES
+================================================================================
+
+Base URL constant (set once):
+
+  const API_BASE = "http://localhost:8000";
+
+
+================================================================================
+1. ROOT & HEALTH
+================================================================================
+
+// 1.1 — Root (service info)
+const getServiceInfo = async () => {
+  const res = await fetch(`${API_BASE}/`);
+  const data = await res.json();
+  return data;
+};
+
+// 1.2 — Health Check
+const healthCheck = async () => {
+  const res = await fetch(`${API_BASE}/api/health`);
+  const data = await res.json();
+  return data;
+};
+
+
+================================================================================
+2. AUTHENTICATION & USERS
+================================================================================
+
+// 2.1 — Login
+const login = async (username, password) => {
+  const res = await fetch(`${API_BASE}/api/auth/login`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ username, password }),
+  });
+  if (!res.ok) {
+    const err = await res.json();
+    throw new Error(err.detail || "Login failed");
+  }
+  return res.json();
+};
+
+// Usage:
+// const result = await login("admin", "password");
+
+
+// 2.2 — Register / Create a New User
+const createUser = async ({ name, username, password, role }) => {
+  const res = await fetch(`${API_BASE}/api/users`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ name, username, password, role }),
+  });
+  if (!res.ok) {
+    const err = await res.json();
+    throw new Error(err.detail || "Failed to create user");
+  }
+  return res.json();
+};
+
+// Usage:
+// await createUser({ name: "Jane Smith", username: "janesmith", password: "pass123", role: "user" });
+
+
+// 2.3 — List All Roles
+const getRoles = async () => {
+  const res = await fetch(`${API_BASE}/api/roles`);
+  if (!res.ok) throw new Error("Failed to fetch roles");
+  return res.json();
+};
+
+
+================================================================================
+3. AGENT MANAGEMENT
+================================================================================
+
+// 3.1 — List All Agents
+const listAgents = async () => {
+  const res = await fetch(`${API_BASE}/api/agents`);
+  if (!res.ok) throw new Error("Failed to fetch agents");
+  return res.json();
+};
+
+
+// 3.2 — Add a New Agent
+const addAgent = async ({ name, llm_model, conn_url, api_key, temperature = 0.2, is_primary = false, is_active = true }) => {
+  const res = await fetch(`${API_BASE}/api/agents`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      action: "add",
+      name,
+      llm_model,
+      temperature,
+      conn_url,
+      api_key,
+      is_primary,
+      is_active,
+    }),
+  });
+  if (!res.ok) {
+    const err = await res.json();
+    throw new Error(err.detail || "Failed to add agent");
+  }
+  return res.json();
+};
+
+// Usage:
+// await addAgent({
+//   name: "my_agent",
+//   llm_model: "openai/gpt-4o",
+//   conn_url: "https://openrouter.ai/api/v1",
+//   api_key: "sk-xxx",
+// });
+
+
+// 3.3 — Update an Agent (via unified POST)
+const updateAgentUnified = async ({ agent_id, name, llm_model, conn_url, api_key, temperature = 0.2, is_primary = false, is_active = true }) => {
+  const res = await fetch(`${API_BASE}/api/agents`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      action: "update",
+      agent_id,
+      name,
+      llm_model,
+      temperature,
+      conn_url,
+      api_key,
+      is_primary,
+      is_active,
+    }),
+  });
+  if (!res.ok) {
+    const err = await res.json();
+    throw new Error(err.detail || "Failed to update agent");
+  }
+  return res.json();
+};
+
+
+// 3.4 — Delete an Agent (via unified POST)
+const deleteAgentUnified = async (agent_id, name = null) => {
+  const res = await fetch(`${API_BASE}/api/agents`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ action: "delete", agent_id, name }),
+  });
+  if (!res.ok) {
+    const err = await res.json();
+    throw new Error(err.detail || "Failed to delete agent");
+  }
+  return res.json();
+};
+
+
+// 3.5 — Update an Agent (RESTful PUT)
+const updateAgent = async (agent_id, { name, llm_model, conn_url, api_key, temperature = 0.2, is_primary = false, is_active = true }) => {
+  const res = await fetch(`${API_BASE}/api/agents/${agent_id}`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      agent_id,
+      name,
+      llm_model,
+      temperature,
+      conn_url,
+      api_key,
+      is_primary,
+      is_active,
+    }),
+  });
+  if (!res.ok) {
+    const err = await res.json();
+    throw new Error(err.detail || "Failed to update agent");
+  }
+  return res.json();
+};
+
+// Usage:
+// await updateAgent(1, {
+//   name: "my_agent_v2",
+//   llm_model: "openai/gpt-4o",
+//   conn_url: "https://openrouter.ai/api/v1",
+//   api_key: "sk-xxx",
+//   is_primary: true,
+// });
+
+
+// 3.6 — Delete an Agent (RESTful DELETE)
+const deleteAgent = async (agent_id) => {
+  const res = await fetch(`${API_BASE}/api/agents/${agent_id}`, {
+    method: "DELETE",
+  });
+  if (!res.ok) {
+    const err = await res.json();
+    throw new Error(err.detail || "Failed to delete agent");
+  }
+  return res.json();
+};
+
+// Usage:
+// await deleteAgent(1);
+
+
+================================================================================
+4. LLM CONFIGURATION
+================================================================================
+
+// 4.1 — Get Current LLM Config
+const getLlmConfig = async () => {
+  const res = await fetch(`${API_BASE}/api/llm`);
+  if (!res.ok) throw new Error("Failed to fetch LLM config");
+  return res.json();
+};
+
+
+// 4.2 — Update LLM Config
+const updateLlmConfig = async ({ model = null, temperature = null }) => {
+  const body = {};
+  if (model) body.model = model;
+  if (temperature !== null) body.temperature = temperature;
+
+  const res = await fetch(`${API_BASE}/api/llm`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body),
+  });
+  if (!res.ok) {
+    const err = await res.json();
+    throw new Error(err.detail || "Failed to update LLM config");
+  }
+  return res.json();
+};
+
+// Usage:
+// await updateLlmConfig({ model: "openai/gpt-4o", temperature: 0.2 });
+// await updateLlmConfig({ temperature: 0.5 }); // update only temperature
+
+
+================================================================================
+5. LOG ANALYSIS
+================================================================================
+
+// 5.1 — Analyze Logs (JSON payload)
+const analyzeLogs = async (logs, { description = null, model_name = null, user = "admin", responseFormat = "json" } = {}) => {
+  const body = { logs };
+  if (description) body.description = description;
+  if (model_name) body.model_name = model_name;
+  if (user) body.user = user;
+
+  const res = await fetch(`${API_BASE}/api/analyze?response_format=${responseFormat}`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body),
+  });
+  if (!res.ok) {
+    const err = await res.json();
+    throw new Error(err.detail || "Analysis failed");
+  }
+
+  // "text" format returns plain text, "json" returns structured JSON
+  if (responseFormat === "text") {
+    return res.text();
+  }
+  return res.json();
+};
+
+// Usage:
+// const result = await analyzeLogs("2026-05-10T10:23:45Z ERROR OOM killed process");
+// const result = await analyzeLogs(logText, { description: "K8s logs", responseFormat: "json" });
+
+
+// 5.2 — Analyze Logs (File Upload)
+const analyzeLogFile = async (file, responseFormat = "json") => {
+  const formData = new FormData();
+  formData.append("file", file); // file is a File object from <input type="file">
+
+  const res = await fetch(`${API_BASE}/api/analyze?response_format=${responseFormat}`, {
+    method: "POST",
+    body: formData,
+    // NOTE: Do NOT set Content-Type header — the browser sets it
+    //       automatically with the correct multipart boundary.
+  });
+  if (!res.ok) {
+    const err = await res.json();
+    throw new Error(err.detail || "File analysis failed");
+  }
+
+  if (responseFormat === "text") {
+    return res.text();
+  }
+  return res.json();
+};
+
+// Usage in a React component:
+// <input type="file" onChange={async (e) => {
+//   const file = e.target.files[0];
+//   if (file) {
+//     const result = await analyzeLogFile(file);
+//     console.log(result);
+//   }
+// }} />
+
+
+// 5.3 — Analyze Logs (raw text via FormData)
+const analyzeLogText = async (rawText, responseFormat = "json") => {
+  const formData = new FormData();
+  formData.append("logs", rawText);
+
+  const res = await fetch(`${API_BASE}/api/analyze?response_format=${responseFormat}`, {
+    method: "POST",
+    body: formData,
+  });
+  if (!res.ok) {
+    const err = await res.json();
+    throw new Error(err.detail || "Analysis failed");
+  }
+
+  if (responseFormat === "text") {
+    return res.text();
+  }
+  return res.json();
+};
+
+
+================================================================================
+6. ANALYSIS HISTORY
+================================================================================
+
+// 6.1 — Get All Analysis History
+const getHistory = async () => {
+  const res = await fetch(`${API_BASE}/api/history`);
+  if (!res.ok) throw new Error("Failed to fetch history");
+  return res.json();
+};
+
+
+// 6.2 — Filter History (with optional params)
+const filterHistory = async ({ status = null, model_name = null, analysis_code = null, content_query = null } = {}) => {
+  const params = new URLSearchParams();
+  if (status) params.append("status", status);
+  if (model_name) params.append("model_name", model_name);
+  if (analysis_code) params.append("analysis_code", analysis_code);
+  if (content_query) params.append("content_query", content_query);
+
+  const res = await fetch(`${API_BASE}/api/history?${params.toString()}`);
+  if (!res.ok) throw new Error("Failed to fetch filtered history");
+  return res.json();
+};
+
+// Usage:
+// const completed = await filterHistory({ status: "completed" });
+// const searched  = await filterHistory({ content_query: "OOM", model_name: "openai/gpt-4o" });
+
+
+// 6.3 — Get Full Details for a Specific Analysis
+const getAnalysisDetails = async (analysisCode) => {
+  const res = await fetch(`${API_BASE}/api/history/${analysisCode}`);
+  if (!res.ok) throw new Error("Failed to fetch analysis details");
+  return res.json();
+};
+
+// Usage:
+// const details = await getAnalysisDetails("ANL-1234567890");
+// details.history[0].classified_entries  — array of classified log entries
+// details.history[0].remediations        — array of remediation suggestions
+
+
+// 6.4 — Get Details via query param (alternative)
+const getAnalysisDetailsAlt = async (analysisCode) => {
+  const params = new URLSearchParams({
+    analysis_code: analysisCode,
+    include_details: "true",
+  });
+  const res = await fetch(`${API_BASE}/api/history?${params.toString()}`);
+  if (!res.ok) throw new Error("Failed to fetch analysis details");
+  return res.json();
+};
+
+
+================================================================================
+7. AXIOS ALTERNATIVE (drop-in replacements)
+================================================================================
+
+If using axios instead of fetch:
+
+  import axios from "axios";
+
+  const api = axios.create({
+    baseURL: "http://localhost:8000",
+    headers: { "Content-Type": "application/json" },
+  });
+
+  // Health check
+  const healthCheck = () => api.get("/api/health");
+
+  // Login
+  const login = (username, password) =>
+    api.post("/api/auth/login", { username, password });
+
+  // Create user
+  const createUser = (userData) =>
+    api.post("/api/users", userData);
+
+  // List agents
+  const listAgents = () => api.get("/api/agents");
+
+  // Add agent
+  const addAgent = (agentData) =>
+    api.post("/api/agents", { action: "add", ...agentData });
+
+  // Update agent (RESTful)
+  const updateAgent = (agentId, agentData) =>
+    api.put(`/api/agents/${agentId}`, { agent_id: agentId, ...agentData });
+
+  // Delete agent (RESTful)
+  const deleteAgent = (agentId) =>
+    api.delete(`/api/agents/${agentId}`);
+
+  // Get LLM config
+  const getLlmConfig = () => api.get("/api/llm");
+
+  // Update LLM config
+  const updateLlmConfig = (config) =>
+    api.put("/api/llm", config);
+
+  // Analyze logs (JSON)
+  const analyzeLogs = (logs, opts = {}) =>
+    api.post("/api/analyze?response_format=json", { logs, ...opts });
+
+  // Analyze logs (file upload)
+  const analyzeLogFile = (file) => {
+    const formData = new FormData();
+    formData.append("file", file);
+    return api.post("/api/analyze?response_format=json", formData, {
+      headers: { "Content-Type": "multipart/form-data" },
+    });
+  };
+
+  // Get history
+  const getHistory = (params = {}) =>
+    api.get("/api/history", { params });
+
+  // Get analysis details
+  const getAnalysisDetails = (code) =>
+    api.get(`/api/history/${code}`);
+
+  // Get roles
+  const getRoles = () => api.get("/api/roles");
+
+
+================================================================================
+8. REACT HOOK EXAMPLE (useApi)
+================================================================================
+
+  import { useState, useCallback } from "react";
+
+  const useApi = () => {
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
+
+    const request = useCallback(async (apiCall) => {
+      setLoading(true);
+      setError(null);
+      try {
+        const result = await apiCall();
+        return result;
+      } catch (err) {
+        setError(err.message);
+        throw err;
+      } finally {
+        setLoading(false);
+      }
+    }, []);
+
+    return { loading, error, request };
+  };
+
+  // Usage in a component:
+  //
+  // function AgentList() {
+  //   const { loading, error, request } = useApi();
+  //   const [agents, setAgents] = useState([]);
+  //
+  //   useEffect(() => {
+  //     request(async () => {
+  //       const data = await listAgents();
+  //       setAgents(data);
+  //     });
+  //   }, []);
+  //
+  //   if (loading) return <p>Loading...</p>;
+  //   if (error)   return <p>Error: {error}</p>;
+  //
+  //   return (
+  //     <ul>
+  //       {agents.map((a, i) => <li key={i}>{JSON.stringify(a)}</li>)}
+  //     </ul>
+  //   );
+  // }

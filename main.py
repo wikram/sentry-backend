@@ -46,6 +46,7 @@ from pathlib import Path
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.openapi.docs import get_redoc_html, get_swagger_ui_html
 import uvicorn
 
 from logger import configure_logging
@@ -66,6 +67,9 @@ app = FastAPI(
     title="Sentry Incident Analyzer API",
     description="AI-powered incident analysis and remediation workflow",
     version="1.0.0",
+    # Built-in docs pages hardcode FastAPI's favicon; served below with ours
+    docs_url=None,
+    redoc_url=None,
 )
 
 # CORS middleware for React UI
@@ -78,6 +82,26 @@ app.add_middleware(
 )
 
 app.include_router(router)
+
+
+@app.get("/docs", include_in_schema=False)
+def swagger_docs():
+    """Swagger UI using the project favicon."""
+    return get_swagger_ui_html(
+        openapi_url=app.openapi_url,
+        title=f"{app.title} - Swagger UI",
+        swagger_favicon_url="/favicon.ico",
+    )
+
+
+@app.get("/redoc", include_in_schema=False)
+def redoc_docs():
+    """ReDoc using the project favicon."""
+    return get_redoc_html(
+        openapi_url=app.openapi_url,
+        title=f"{app.title} - ReDoc",
+        redoc_favicon_url="/favicon.ico",
+    )
 
 
 @app.on_event("startup")

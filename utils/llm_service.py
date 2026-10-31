@@ -1,11 +1,28 @@
 import os
 
+import httpx
 from dotenv import load_dotenv
 from openai import OpenAI
 from langchain_core.messages import BaseMessage
 
 
 load_dotenv(override=True)
+
+_MODELS_TIMEOUT_SECONDS = 15
+
+
+def fetch_openrouter_models() -> list[dict]:
+    """Fetch all models available on OpenRouter.
+
+    The /models route is public, so no API key is sent.
+
+    Returns:
+        List of model objects exactly as returned by OpenRouter.
+    """
+    base_url = os.getenv('OPENROUTER_API_BASE', 'https://openrouter.ai/api/v1').rstrip('/')
+    response = httpx.get(f"{base_url}/models", timeout=_MODELS_TIMEOUT_SECONDS)
+    response.raise_for_status()
+    return response.json()['data']
 
 
 class LLMResponse:

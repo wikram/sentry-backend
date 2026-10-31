@@ -3,8 +3,9 @@ import logging, json , hashlib
 from pathlib import Path
 from typing import Optional
 
+import httpx
 from fastapi import APIRouter, HTTPException, Request, Header, status, Depends
-from fastapi.responses import PlainTextResponse
+from fastapi.responses import FileResponse, PlainTextResponse
 from pydantic import BaseModel
 
 from utils.helpers import (
@@ -14,6 +15,7 @@ from utils.helpers import (
     normalize_analysis_result,
     format_analysis,
 )
+from utils.llm_service import fetch_openrouter_models
 from utils.log_parser import read_uploaded_file
 from utils.db import init_database, close_database , get_database
 
@@ -21,6 +23,7 @@ logger = logging.getLogger(__name__)
 
 _VALID_SEVERITIES = {"critical", "high", "medium", "low", "info"}
 _MAX_INPUT_CHARS = 10_485_760
+_FAVICON_PATH = Path(__file__).parent / "static" / "favicon.ico"
 
 # FastAPI APIRouter initialization
 router = APIRouter()
@@ -346,6 +349,12 @@ def root():
         "docs": "/docs",
         "health": "/api/health"
     }
+
+
+@router.get("/favicon.ico", include_in_schema=False)
+def favicon():
+    """Serve the site favicon."""
+    return FileResponse(_FAVICON_PATH, media_type="image/x-icon")
 
 
 @router.get("/api/health")
@@ -822,6 +831,21 @@ async def update_llm_config_endpoint(request: LLMConfigRequest) -> dict:
     except Exception as e:
         logger.error("Failed to update LLM config in .env: %s", e, exc_info=True)
         raise HTTPException(status_code=500, detail=f"Failed to update LLM config: {e}")
+
+
+@router.get("/api/models")
+def get_models():
+    """Return the list of all models available on OpenRouter."""
+    try:
+        models = fetch_openrouter_models()
+    except httpx.TimeoutException as e:
+        logger.error("Timed out fetching OpenRouter models: %s", e)
+        raise HTTPException(status_code=504, detail="Timed out fetching models from OpenRouter")
+    except (httpx.HTTPError, ValueError, KeyError, TypeError) as e:
+        logger.error("Failed to fetch OpenRouter models: %s", e, exc_info=True)
+        raise HTTPException(status_code=502, detail="Failed to fetch models from OpenRouter")
+
+    return {"status": "success", "message": "Models fetched successfully", "models": models}
 
 
 # ==================== Unified Analysis Endpoints ====================
